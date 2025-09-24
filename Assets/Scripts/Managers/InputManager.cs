@@ -78,6 +78,7 @@ public class InputManager : MonoBehaviour
         if(interact_Input)
         {
             Debug.Log("Interact button has been pressed.");
+
         }
     }
 }
