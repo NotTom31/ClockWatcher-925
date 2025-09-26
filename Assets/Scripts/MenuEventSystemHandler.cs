@@ -152,7 +152,7 @@ public class MenuEventSystemHandler : MonoBehaviour
 
     protected virtual void OnNavigate(InputAction.CallbackContext context)
     {
-        if(EventSystem.current.currentInputModule == null && _lastSelected != null)
+        if(EventSystem.current.currentSelectedGameObject == null && _lastSelected != null)
         {
             EventSystem.current.SetSelectedGameObject(_lastSelected.gameObject);
         }
