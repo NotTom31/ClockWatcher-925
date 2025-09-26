@@ -454,8 +454,11 @@ MonoBehaviour:
   - {fileID: 923885243}
   - {fileID: 1121591628}
   - {fileID: 264735599}
+  _firstSelected: {fileID: 923885243}
+  _navigateReference: {fileID: -8784545083839296357, guid: 981b1c35cf1706043bae67f0087d29eb, type: 3}
   _selectedAnimationScale: 1.2
   _scaleDuration: 0.25
+  _animationExclusions: []
 --- !u!1001 &586123400
 PrefabInstance:
   m_ObjectHideFlags: 0

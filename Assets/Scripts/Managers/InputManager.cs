@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
 
     public bool interact_Input;
 
-    InputSystemActions inputActions;
+    InputSystem_Actions inputActions;
 
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
     {
         if(inputActions == null)
         {
-            inputActions = new InputSystemActions();
+            inputActions = new InputSystem_Actions();
             inputActions.Player.Move.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.Player.Look.performed += i => cameraInput = i.ReadValue<Vector2>();
         }
