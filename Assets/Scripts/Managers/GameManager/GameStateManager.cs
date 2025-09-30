@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
-
     GameBaseState currentState;
 
     public GamePauseState gamePauseState = new GamePauseState();
-    public GameProgressState gameProgressState = new GameProgressState();
+    public GameLoadLevelState gameLoadLevelState = new GameLoadLevelState();
     public GameRestartState gameRestartState = new GameRestartState();
     public GameResumeState gameResumeState = new GameResumeState();
     public GameStartState gameStartState = new GameStartState();
 
-
-    
     public void Start()
     {
         currentState = gameStartState;

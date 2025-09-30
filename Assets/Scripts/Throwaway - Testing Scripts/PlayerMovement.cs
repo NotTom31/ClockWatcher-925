@@ -3,7 +3,7 @@ using FMOD.Studio;
 using FMODUnity;
 
 ////Throw away script for testing
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDataPersistance
 {
     Transform cameraObeject;
     InputManager inputManager;
@@ -47,12 +47,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection,normalVector);
         rigidbody.linearVelocity = projectedVelocity;
 
-        HandleRotation(Time.deltaTime);
+        HandleSound();
     }
 
     public void FixedUpdate()
     {
-        HandleSound();
+        HandleRotation(Time.deltaTime);
     }
 
     #region Movement
@@ -100,5 +100,12 @@ public class PlayerMovement : MonoBehaviour
             playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
-
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+    public void SaveData(GameData data)
+    {
+        data.playerPosition = this.transform.position;
+    }
 }

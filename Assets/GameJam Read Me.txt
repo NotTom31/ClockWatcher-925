@@ -1,0 +1,30 @@
+Hello fellow Gamers! This is a current outline of what is in the project and will go over what some areas are imporant to some people.
+
+
+Scripts
+	-Programmers
+		-Managers -> InputManager
+			This handles all inputs from the user. The declaration of inputs actions stem from the InputSystem_Actions.inputactions object. 
+			If you want to modify or change the user inputs, make sure to regenerate the InputSystem_Actions.inputactions C# if unity doesn't do it automatically.
+			This is tied to the player manager object in the scene.
+
+		-Managers -> GameManager -> GameBaseState
+			Sets up the base class for all game states.
+
+		-Managers -> GameManager -> GameLoadLevelState
+			Handles Loading the game to a level index that is currently set in the load level staate.
+
+		-Managers -> GameManager -> GamePauseState
+			Handles pausing and unpausing the game.
+
+		-Managers -> GameManager -> GameRestartState
+			Handles restarting the current level.
+	-Audio Engineers
+		-
+		-
+		-
+		-
+		-
+	-
+	-
+	-

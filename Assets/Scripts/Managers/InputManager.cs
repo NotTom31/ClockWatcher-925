@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    [Header("Inputs")]
     public float horizontal;
     public float vertical;
     public float moveAmount;
@@ -9,11 +11,21 @@ public class InputManager : MonoBehaviour
     public float mouseY;
 
     public bool interact_Input;
+    public bool pause_Input;
 
-    InputSystemActions inputActions;
+    [Header("Flags")]
+    public bool pauseFlag;
+
+    InputSystem_Actions inputActions;
+    InputActionReference navigateReference;
+    GameStateManager gameStateManager;
 
     Vector2 movementInput;
     Vector2 cameraInput;
+    private void Awake()
+    {
+        gameStateManager = FindFirstObjectByType<GameStateManager>();
+    }
 
     /// <summary>
     /// If this compenent is enabled, subscribe to input events, assigns them to scriptable values and enable the Input Actions object
@@ -22,7 +34,7 @@ public class InputManager : MonoBehaviour
     {
         if(inputActions == null)
         {
-            inputActions = new InputSystemActions();
+            inputActions = new InputSystem_Actions();
             inputActions.Player.Move.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.Player.Look.performed += i => cameraInput = i.ReadValue<Vector2>();
         }
@@ -44,6 +56,7 @@ public class InputManager : MonoBehaviour
     private void LateUpdate()
     {
         interact_Input = false;
+        pause_Input = false;
     }
 
     /// <summary>
@@ -54,6 +67,7 @@ public class InputManager : MonoBehaviour
     {
         MoveInput(delta);
         HandleInteractInput();
+        HandlePauseInput();
     }
 
     /// <summary>
@@ -79,6 +93,25 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Interact button has been pressed.");
 
+        }
+    }
+
+    private void HandlePauseInput()
+    {
+        inputActions.Player.Pause.performed += i => pause_Input = true;
+
+        if(pause_Input)
+        {
+            pauseFlag = !pauseFlag;
+            
+            if (pauseFlag)
+            {
+                gameStateManager.SwitchState(gameStateManager.gamePauseState);
+            }
+            else
+            {
+                gameStateManager.SwitchState(gameStateManager.gameResumeState);
+            }
         }
     }
 }
