@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FMODEvents : MonoBehaviour
 {
+    //Set the reference to the FMOD studio file per sound file.
     [field: Header("Music")]
     [field: SerializeField] public EventReference music { get; private set; }
 
@@ -16,11 +17,11 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference interacted { get; private set; }
     [field: SerializeField] public EventReference interactableIdle { get; private set; }
 
-    public static FMODEvents instance { get; private set;}
+    public static FMODEvents instance { get; private set; }
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }

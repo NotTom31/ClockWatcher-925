@@ -1,9 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 
+//Calls Serializable to process the data into a JSON or JSON into a data object.
 [System.Serializable]
 public class GameData
 {
+    //Add data you would like to cross into new scenes or would like to be saves.
     public long lastUpdated;
 
     public int interactedCount;
@@ -12,22 +13,25 @@ public class GameData
 
     public SerializableDictionary<string, bool> interactionsDone;
 
+    public int sceneToLoadIndex;
+
     /// <summary>
     /// The game starts with thess values when there is no data. 
-    /// Validate this is where the values are need to be on a new game aka when you first load into the scene.
+    /// NOTE: Validate these values are what is needed AKA playerPosition = Vector3.zero will spawn the player at 0,0,0 into the new scene.
     /// </summary>
+
     public GameData()
     {
         this.interactedCount = 0;
         playerPosition = Vector3.zero;
         interactionsDone = new SerializableDictionary<string, bool>();
-    } 
+    }
 
     /// <summary>
     /// Returns a number of how far the game file is.
     /// </summary>
-    /// <returns></returns>
-    public int GetPercentageCompelted()
+    /// <returns>Percentage of game completeion.</returns>
+    public float GetPercentageCompelted()
     {
         //TODO Create a way to calculate how far the player is.
         return 0;

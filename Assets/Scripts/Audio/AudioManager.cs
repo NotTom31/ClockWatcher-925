@@ -38,15 +38,18 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
+
+        //Initialize the reference to the FMOD studio Buses for audio control.
         masterBus = RuntimeManager.GetBus(masterBusPath);
         musicBus = RuntimeManager.GetBus(musicBusPath);
         ambientBus = RuntimeManager.GetBus(ambientBusPath);
         sfxBus = RuntimeManager.GetBus(sfxBusPath);
 
+        //Creates a list of sound instances and emitters.
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
     }
@@ -55,7 +58,6 @@ public class AudioManager : MonoBehaviour
     {
         InitializeAmbience(FMODEvents.instance.ambience);
         InitializeMusic(FMODEvents.instance.music);
-
     }
 
     private void Update()
@@ -67,7 +69,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Plays a single audio clip at the world position.
+    /// Plays a single audio clip at a world position.
     /// </summary>
     /// <param name="sound">The eventreference that will be played</param>
     /// <param name="worldPos">Location in the world.</param>
@@ -138,7 +140,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="area">The assigned area for that Music Instance.</param>
     public void SetMusicArea(MusicArea area)
     {
-        musicEventInstance.setParameterByName(musicArea, (float) area);
+        musicEventInstance.setParameterByName(musicArea, (float)area);
 
     }
 
@@ -147,13 +149,13 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     private void CleanUp()
     {
-        foreach(EventInstance eventInstance in eventInstances)
+        foreach (EventInstance eventInstance in eventInstances)
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             eventInstance.release();
         }
 
-        foreach(StudioEventEmitter emitter in eventEmitters)
+        foreach (StudioEventEmitter emitter in eventEmitters)
         {
             emitter.Stop();
         }

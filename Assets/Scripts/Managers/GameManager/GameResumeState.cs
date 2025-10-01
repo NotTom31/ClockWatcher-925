@@ -4,8 +4,7 @@ public class GameResumeState : GameBaseState
 {
     public override void EnterState(GameStateManager gameStateManager)
     {
-        Debug.Log("Entered the Resume State.");
-
+        //set time scale back to 1 to resume the game.
         Time.timeScale = 1f;
 
         //TODO Verify if we want to pause all audio or swap to menu music

@@ -17,7 +17,6 @@ public class InputManager : MonoBehaviour
     public bool pauseFlag;
 
     InputSystem_Actions inputActions;
-    InputActionReference navigateReference;
     GameStateManager gameStateManager;
 
     Vector2 movementInput;
@@ -32,7 +31,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public void OnEnable()
     {
-        if(inputActions == null)
+        if (inputActions == null)
         {
             inputActions = new InputSystem_Actions();
             inputActions.Player.Move.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
@@ -60,7 +59,7 @@ public class InputManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles the inputs from every frame tick 
+    /// Handles the inputs for every frame tick 
     /// </summary>
     /// <param name="delta">The interval in seconds from the last frame.</param>
     public void TickInput(float delta)
@@ -75,6 +74,7 @@ public class InputManager : MonoBehaviour
     /// <param name="delta"></param>
     private void MoveInput(float delta)
     {
+        //Recieve the raw values for the inputs
         horizontal = movementInput.x;
         vertical = movementInput.y;
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
@@ -84,26 +84,31 @@ public class InputManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Subscribes and handles the interaction button inut.
+    /// Subscribes and handles the interaction button input.
     /// </summary>
     private void HandleInteractInput()
     {
         inputActions.Player.Interact.performed += i => interact_Input = true;
-        if(interact_Input)
+        if (interact_Input)
         {
             Debug.Log("Interact button has been pressed.");
 
         }
     }
 
+    /// <summary>
+    /// Checks for player input to the pause button and pauses/unpauses the game.
+    /// </summary>
     private void HandlePauseInput()
     {
         inputActions.Player.Pause.performed += i => pause_Input = true;
 
-        if(pause_Input)
+        if (pause_Input)
         {
+            //toggle pauseFlag
             pauseFlag = !pauseFlag;
-            
+
+            //checks the pause state or resume state to the gameStateManager.
             if (pauseFlag)
             {
                 gameStateManager.SwitchState(gameStateManager.gamePauseState);

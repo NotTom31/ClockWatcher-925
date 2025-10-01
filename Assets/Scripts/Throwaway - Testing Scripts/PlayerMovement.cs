@@ -90,13 +90,11 @@ public class PlayerMovement : MonoBehaviour, IDataPersistance
             playerFootsteps.getPlaybackState(out playbackState);
             if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {
-                Debug.Log("Footsteps go!");
                 playerFootsteps.start();
             } 
         }
         else
         {
-            Debug.Log("Footsteps Stop!");
             playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }

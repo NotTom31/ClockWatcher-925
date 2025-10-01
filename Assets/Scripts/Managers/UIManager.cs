@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour, IDataPersistance
 {
-    private bool isEnabled;
-
-    public static UIManager instance;
-
     public GameObject pauseUI;
 
     public int interactionCount;
+
+    private bool isEnabled;
+
+    public static UIManager instance;
 
     private void Awake()
     {
@@ -16,13 +16,18 @@ public class UIManager : MonoBehaviour, IDataPersistance
         {
             instance = this;
         }
-
         isEnabled = false;
     }
+
+    /// <summary>
+    /// Enables or disables the Pause UI for the player.
+    /// </summary>
     public void TogglePauseUI()
     {
+        //Toggles isEnabled flag.
         isEnabled = !isEnabled;
 
+        //Set the pauseUI to active.
         pauseUI.SetActive(isEnabled);
     }
     public void LoadData(GameData data)

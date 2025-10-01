@@ -4,10 +4,10 @@ public class GamePauseState : GameBaseState
 {
     public override void EnterState(GameStateManager gameStateManager)
     {
-        Debug.Log("Entered the Pause State.");
-
+        //Toggle the pause UI to appear.
         UIManager.instance.TogglePauseUI();
 
+        //set time scale back to 0 to pause the game.
         Time.timeScale = 0f;
 
         //TODO Verify if we want to pause all audio or swap to menu music
@@ -16,8 +16,7 @@ public class GamePauseState : GameBaseState
 
     public override void OnExit(GameStateManager gameStateManager)
     {
-        Debug.Log("Exitting the Pause State.");
-
+        //Toggle the pause UI to disappear.
         UIManager.instance.TogglePauseUI();
     }
 }
