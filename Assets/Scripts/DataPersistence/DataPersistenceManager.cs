@@ -37,7 +37,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
-        //Check to se if this exists in the scene, delete this object if one exists.
+        //Check to see if this exists in the scene, delete this object if one exists.
         if (instance != null)
         {
             Debug.Log("Found more than one Data Persistance Manager. Destroying the newest one.");

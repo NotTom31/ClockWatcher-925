@@ -51,7 +51,6 @@ public class InteractableObject : MonoBehaviour, IDataPersistance
         model.gameObject.SetActive(false);
     }
 
-
     public void LoadData(GameData data)
     {
         data.interactionsDone.TryGetValue(id, out interacted);

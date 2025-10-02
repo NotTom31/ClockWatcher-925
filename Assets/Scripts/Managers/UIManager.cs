@@ -38,5 +38,4 @@ public class UIManager : MonoBehaviour, IDataPersistance
     {
         data.interactedCount = this.interactionCount;
     }
-
 }

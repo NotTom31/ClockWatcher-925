@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistance
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection,normalVector);
         rigidbody.linearVelocity = projectedVelocity;
 
+
         HandleSound();
     }
 
