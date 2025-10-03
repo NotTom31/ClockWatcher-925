@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -21,9 +20,30 @@ public class InputManager : MonoBehaviour
 
     Vector2 movementInput;
     Vector2 cameraInput;
+
+    public static InputManager instance; 
     private void Awake()
     {
         gameStateManager = FindFirstObjectByType<GameStateManager>();
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        float delta = Time.deltaTime;
+
+        if(CameraManager.instance != null)
+        {
+            //If the player is not on the computer, Handle the camera movement in 3D.
+            if(!PlayerManager.instance.onComputer)
+            {
+               CameraManager.instance.HandleMovement(delta, mouseX, mouseY);
+            }
+        }
     }
 
     /// <summary>
@@ -89,10 +109,10 @@ public class InputManager : MonoBehaviour
     private void HandleInteractInput()
     {
         inputActions.Player.Interact.performed += i => interact_Input = true;
-        if (interact_Input)
+        //Check if the player is interacting and if the game is not paused.
+        if (interact_Input && !pauseFlag)
         {
-            Debug.Log("Interact button has been pressed.");
-
+            CameraManager.instance.HandleRayCast();
         }
     }
 
