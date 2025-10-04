@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-using UnityEngine.InputSystem; //move this into a separate input manager
+using UnityEngine.InputSystem;
 using System.Collections;
 
-public class MenuEventSystemHandler : MonoBehaviour
+public class DynamicEventSystemHandler : MonoBehaviour
 {
     [Header("References")]
     public List<Selectable> Selectables = new List<Selectable>();
-    [SerializeField] protected Selectable _firstSelected;
 
     [Header("Controls")]
     [SerializeField] protected InputActionReference _navigateReference;
@@ -18,7 +17,6 @@ public class MenuEventSystemHandler : MonoBehaviour
     [Header("Animations")]
     [SerializeField] protected float _selectedAnimationScale = 5f;
     [SerializeField] protected float _scaleDuration = 0.25f;
-    [SerializeField] protected List<GameObject> _animationExclusions = new List<GameObject>();
 
     protected Dictionary<Selectable, Vector3> _scales = new Dictionary<Selectable, Vector3>();
 
@@ -27,32 +25,15 @@ public class MenuEventSystemHandler : MonoBehaviour
     protected Tween _scaleUpTween;
     protected Tween _scaleDownTween;
 
-    public virtual void Awake()
-    {
-        foreach (var selectable in Selectables)
-        {
-            AddSelectionListeners(selectable);
-            _scales.Add(selectable, selectable.transform.localScale);
-        }
-    }
-
     public virtual void OnEnable()
     {
         _navigateReference.action.performed += OnNavigate;
-
-        //Ensure all selectables are reset back to original size
-        for (int i = 0; i < Selectables.Count; i++)
-        {
-            Selectables[i].transform.localScale = _scales[Selectables[i]];
-        }
-
-        StartCoroutine(SelectAfterDelay());
     }
 
     protected virtual IEnumerator SelectAfterDelay()
     {
         yield return null;
-        EventSystem.current.SetSelectedGameObject(_firstSelected.gameObject);
+        EventSystem.current.SetSelectedGameObject(Selectables[0].gameObject);
     }
 
     public virtual void OnDisable()
@@ -105,28 +86,22 @@ public class MenuEventSystemHandler : MonoBehaviour
         trigger.triggers.Add(PointerExit);
     }
 
-    public void OnSelect(BaseEventData eventData)
+    public virtual void OnSelect(BaseEventData eventData)
     {
         //Add Sound Here
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
 
-        if (_animationExclusions.Contains(eventData.selectedObject))
-            return;
-
         Vector3 newScale = eventData.selectedObject.transform.localScale * _selectedAnimationScale;
-        _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration);
+        _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration).SetEase(Ease.OutQuad);
     }
 
-    public void OnDeselect(BaseEventData eventData)
+    public virtual void OnDeselect(BaseEventData eventData)
     {
-        if (_animationExclusions.Contains(eventData.selectedObject))
-            return;
-
         Selectable sel = eventData.selectedObject.GetComponent<Selectable>();
-        _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration);
+        _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration).SetEase(Ease.OutQuad);
     }
 
-    public void OnPointerEnter(BaseEventData eventData)
+    public virtual void OnPointerEnter(BaseEventData eventData)
     {
         PointerEventData pointerEventData = eventData as PointerEventData;
         if (pointerEventData != null)
@@ -141,7 +116,7 @@ public class MenuEventSystemHandler : MonoBehaviour
         }
     }
 
-    public void OnPointerExit(BaseEventData eventData)
+    public virtual void OnPointerExit(BaseEventData eventData)
     {
         PointerEventData pointerEventData = eventData as PointerEventData;
         if (pointerEventData != null)
@@ -152,9 +127,31 @@ public class MenuEventSystemHandler : MonoBehaviour
 
     protected virtual void OnNavigate(InputAction.CallbackContext context)
     {
-        if(EventSystem.current.currentSelectedGameObject == null && _lastSelected != null)
+        if (EventSystem.current.currentSelectedGameObject == null && _lastSelected != null)
         {
             EventSystem.current.SetSelectedGameObject(_lastSelected.gameObject);
         }
     }
+
+    #region Helper methods
+
+    public void AddSelectable(Selectable selectable)
+    {
+        Selectables.Add(selectable);
+    }
+
+    public void InitSelectables()
+    {
+        foreach (var selectable in Selectables)
+        {
+            AddSelectionListeners(selectable);
+            _scales.TryAdd(selectable, selectable.transform.localScale);
+        }
+    }
+
+    public void SetFirstSelected()
+    {
+        StartCoroutine(SelectAfterDelay());
+    }
+    #endregion
 }
