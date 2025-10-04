@@ -45,9 +45,6 @@ public class TabButton : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Called when a new tab is created
-    /// </summary>
     public void OpenTab()
     {
         this.gameObject.SetActive(true);

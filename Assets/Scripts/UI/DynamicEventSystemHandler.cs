@@ -92,13 +92,13 @@ public class DynamicEventSystemHandler : MonoBehaviour
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
 
         Vector3 newScale = eventData.selectedObject.transform.localScale * _selectedAnimationScale;
-        _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration);
+        _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration).SetEase(Ease.OutQuad);
     }
 
     public virtual void OnDeselect(BaseEventData eventData)
     {
         Selectable sel = eventData.selectedObject.GetComponent<Selectable>();
-        _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration);
+        _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration).SetEase(Ease.OutQuad);
     }
 
     public virtual void OnPointerEnter(BaseEventData eventData)
