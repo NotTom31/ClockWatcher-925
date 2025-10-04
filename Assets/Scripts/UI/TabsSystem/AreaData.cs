@@ -5,5 +5,5 @@ using System.Collections.Generic;
 public class AreaData : ScriptableObject
 {
     public string AreaName;
-    public List<TabsData> Tabs = new List<TabsData>();
+    public List<TabData> Tabs = new List<TabData>();
 }

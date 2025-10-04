@@ -2,15 +2,18 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName ="Tab Data/Tabs", fileName = "New Tab")]
 
-public class TabsData : ScriptableObject
+public class TabData : ScriptableObject
 {
-    [Header("Level Stats")]
+    [Header("Tab Stats")]
     public string TabID;
     [Tooltip("For Starting Tabs")] public bool ISUnlockedByDefault;
     public SceneField Scene;
 
-    [Header("Level Display Information")]
+    [Header("Tab Display Information")]
     public string tabName;
+
+    [Header("Tab App Prefab")]
+    public GameObject app;
 
     public GameObject tabButtonObj { get; set; }
 }

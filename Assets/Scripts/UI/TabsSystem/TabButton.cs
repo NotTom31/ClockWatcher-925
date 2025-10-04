@@ -3,11 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement; //Might not need
 
-public class TabsButton : MonoBehaviour
+public class TabButton : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _tabNameText;
 
-    public TabsData TabsData { get; set; }
+    public TabData TabData { get; set; }
 
     private Button _button;
 
@@ -22,36 +22,38 @@ public class TabsButton : MonoBehaviour
         ReturnColor = Color.grey;
     }
 
-    public void Setup(TabsData tab, bool isInteractable)
+    public void Setup(TabData tab, bool isInteractable)
     {
-        TabsData = tab;
-        _tabNameText.SetText(TabsData.tabName);
+        TabData = tab;
+        _tabNameText.SetText(TabData.tabName);
 
         _button.interactable = isInteractable;
 
         if (isInteractable)
         {
             _button.onClick.AddListener(OpenTab);
-            ReturnColor = Color.white;
+            ReturnColor = Color.grey;
             _image.color = ReturnColor;
         }
         else
         {
             ReturnColor = Color.grey;
             _image.color = ReturnColor;
+            this.gameObject.SetActive(false);
         }
     }
 
     public void Unlock()
     {
+        this.gameObject.SetActive(true);
         _button.interactable = true;
         _button.onClick.AddListener(OpenTab);
-        ReturnColor = Color.white;
+        ReturnColor = Color.grey;
         _image.color = ReturnColor;
     }
 
     private void OpenTab() //This might need to be changed entirely
     {
-        SceneManager.LoadScene(TabsData.Scene);
+        SceneManager.LoadScene(TabData.Scene);
     }
 }
