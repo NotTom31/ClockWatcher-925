@@ -590,7 +590,7 @@ MonoBehaviour:
   TabButtonPrefab: {fileID: 2867776422536646456, guid: d045887f21c4f224e9a89d08d0e56f0d, type: 3}
   AreaHeaderText: {fileID: 43395895}
   TabHeaderText: {fileID: 1340438938}
-  CurrentArea: {fileID: 11400000, guid: b3765a9ccf42d334fb6882f65f78c49e, type: 2}
+  CurrentArea: {fileID: 11400000, guid: 48ddfff2eba58cc4895592c996ebc994, type: 2}
   UnlockedTabIDs: []
 --- !u!1 &1020014839
 GameObject:
