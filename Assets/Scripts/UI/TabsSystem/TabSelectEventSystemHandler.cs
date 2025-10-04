@@ -33,6 +33,7 @@ public class TabSelectEventSystemHandler : DynamicEventSystemHandler
                 _image.color = Color.white;
             }
         }
+        _tabButton.TabSelected();
     }
 
     public override void OnDeselect(BaseEventData eventData)
@@ -48,5 +49,6 @@ public class TabSelectEventSystemHandler : DynamicEventSystemHandler
                 _image.color = _tabButton.ReturnColor;
             }
         }
+        _tabButton.TabDeselected();
     }
 }

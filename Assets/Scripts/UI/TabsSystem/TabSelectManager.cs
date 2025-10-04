@@ -7,6 +7,7 @@ using TMPro;
 public class TabSelectManager : MonoBehaviour
 {
     public Transform TabParent;
+    public Transform AppParent;
     public GameObject TabButtonPrefab;
     public TextMeshProUGUI AreaHeaderText;
     public TextMeshProUGUI TabHeaderText;
@@ -65,6 +66,15 @@ public class TabSelectManager : MonoBehaviour
             TabButton tabButton = buttonGO.GetComponent<TabButton>();
             tabButton.Setup(CurrentArea.Tabs[i], UnlockedTabIDs.Contains(CurrentArea.Tabs[i].TabID));
 
+            if (tabButton.TabData.app != null)
+            {
+                GameObject appInstance = Instantiate(tabButton.TabData.app, AppParent);
+                appInstance.name = tabButton.TabData.app.name + "_Instance";
+                appInstance.SetActive(false);
+
+                tabButton.AssignedApp = appInstance;
+            }
+
             //populate the selectables for the event system
             Selectable selectable = buttonGO.GetComponent<Selectable>();
             _eventSystemHandler.AddSelectable(selectable);
@@ -77,19 +87,33 @@ public class TabSelectManager : MonoBehaviour
 
     #region Helper Methods
 
-    public void UnlockTab(string tabID, TabButton tabButton)
+    public void OpenTab(string tabID, TabButton tabButton)
     {
         UnlockedTabIDs.Add(tabID);
-        tabButton.Unlock();
+        tabButton.transform.SetAsLastSibling();
+        tabButton.OpenTab();
+    }
 
+    public void CloseTab(string tabID, TabButton tabButton)
+    {
+        UnlockedTabIDs.Remove(tabID);
+        tabButton.CloseTab();
     }
 
     [ContextMenu("Test Tab Unlocking")]
     public void UnlockTabTwoExample()
     {
         TabButton tabButton = _buttonObjects[1].GetComponent<TabButton>();
-        string tabToUnlock = tabButton.TabData.TabID;
-        UnlockTab(tabToUnlock, tabButton);
+        string tabToOpen = tabButton.TabData.TabID;
+        OpenTab(tabToOpen, tabButton);
+    }
+
+    [ContextMenu("Test Tab Locking")]
+    public void LockTabTwoExample()
+    {
+        TabButton tabButton = _buttonObjects[1].GetComponent<TabButton>();
+        string tabToClose = tabButton.TabData.TabID;
+        CloseTab(tabToClose, tabButton);
     }
 
     #endregion

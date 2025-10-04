@@ -9,6 +9,8 @@ public class TabButton : MonoBehaviour
 
     public TabData TabData { get; set; }
 
+    public GameObject AssignedApp;
+
     private Button _button;
 
     private Image _image;
@@ -31,7 +33,7 @@ public class TabButton : MonoBehaviour
 
         if (isInteractable)
         {
-            _button.onClick.AddListener(OpenTab);
+            _button.onClick.AddListener(TabSelected);
             ReturnColor = Color.grey;
             _image.color = ReturnColor;
         }
@@ -43,17 +45,34 @@ public class TabButton : MonoBehaviour
         }
     }
 
-    public void Unlock()
+    /// <summary>
+    /// Called when a new tab is created
+    /// </summary>
+    public void OpenTab()
     {
         this.gameObject.SetActive(true);
         _button.interactable = true;
-        _button.onClick.AddListener(OpenTab);
+        _button.onClick.AddListener(TabSelected);
         ReturnColor = Color.grey;
         _image.color = ReturnColor;
+        AssignedApp.transform.SetAsLastSibling();
     }
 
-    private void OpenTab() //This might need to be changed entirely
+    public void CloseTab()
     {
-        SceneManager.LoadScene(TabData.Scene);
+        AssignedApp.SetActive(false);
+        _button.interactable = false;
+        _button.onClick.RemoveListener(TabSelected);
+        this.gameObject.SetActive(false);
+    }
+
+    public void TabSelected()
+    {
+        AssignedApp.SetActive(true); //change so that its just not visible or something?
+    }
+
+    public void TabDeselected()
+    {
+        AssignedApp.SetActive(false);
     }
 }

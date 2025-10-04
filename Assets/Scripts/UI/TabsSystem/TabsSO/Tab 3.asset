@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Tab 3
   m_EditorClassIdentifier: Assembly-CSharp::TabsData
   TabID: Tab3
-  ISUnlockedByDefault: 0
+  ISUnlockedByDefault: 1
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
   tabName: The Forth
-  webPage: {fileID: 8783142806688302352, guid: 168c43aa8efda1a42a985332409975ed, type: 3}
+  app: {fileID: 8783142806688302352, guid: 168c43aa8efda1a42a985332409975ed, type: 3}
