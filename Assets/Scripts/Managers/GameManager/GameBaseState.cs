@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class GameBaseState
 {
     /// <summary>
@@ -28,5 +26,4 @@ public class GameBaseState
     {
 
     }
-
 }

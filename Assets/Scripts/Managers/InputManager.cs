@@ -38,8 +38,8 @@ public class InputManager : MonoBehaviour
 
         if(CameraManager.instance != null)
         {
-            //If the player is not on the computer, Handle the camera movement in 3D.
-            if(!PlayerManager.instance.onComputer)
+            //If the player is not on the computer or being jumpscared, Handle the camera movement in 3D.
+            if(!PlayerManager.instance.onComputer && !PlayerManager.instance.jumpScaring)
             {
                CameraManager.instance.HandleMovement(delta, mouseX, mouseY);
             }
@@ -94,13 +94,17 @@ public class InputManager : MonoBehaviour
     /// <param name="delta"></param>
     private void MoveInput(float delta)
     {
-        //Recieve the raw values for the inputs
-        horizontal = movementInput.x;
-        vertical = movementInput.y;
-        moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
+        //Remove ability to read inputs if being jumpscared.
+        if(!PlayerManager.instance.jumpScaring)
+        {
+            //Recieve the raw values for the inputs
+            horizontal = movementInput.x;
+            vertical = movementInput.y;
+            moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
 
-        mouseX = cameraInput.x;
-        mouseY = cameraInput.y;
+            mouseX = cameraInput.x;
+            mouseY = cameraInput.y;
+        }
     }
 
     /// <summary>

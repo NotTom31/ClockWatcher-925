@@ -1,8 +1,6 @@
 using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
-    private InputManager inputManager;
-
     [Header("Camera Settings")]
     public float sensX = 20f;
     public float sensY = 20f;
@@ -13,7 +11,10 @@ public class CameraManager : MonoBehaviour
     public float maximumPivot = 35f;
 
     public float moveSpeedToComputer = 0.05f;
-    public float rotateSpeedToComputer = 0.05f;
+    public float rotateSpeedToComputer = 30f;
+
+    public float cameraYMinClamp = -60;
+    public float cameraYMaxClamp = 60;
 
     public Transform orientation;
     public Transform targetTransform;
@@ -31,7 +32,6 @@ public class CameraManager : MonoBehaviour
         {
             instance = this;
         }
-        inputManager = FindAnyObjectByType<InputManager>();
 
         //Sets the raycast mask layer.
         layerMask = LayerMask.GetMask("Interactables");
@@ -47,7 +47,7 @@ public class CameraManager : MonoBehaviour
 
     public void Update()
     {
-        inputManager.TickInput(Time.deltaTime);
+        InputManager.instance.TickInput(Time.deltaTime);
         RepositionCamera(targetTransform);
     }
 
@@ -66,7 +66,9 @@ public class CameraManager : MonoBehaviour
 
         Vector3 rotation = Vector3.zero;
         rotation.y = lookAngle;
-        rotation.x = pivotAngle;
+
+        //Clamp the X axis to prevent looking past certain angles.
+        rotation.x = Mathf.Clamp(pivotAngle, cameraYMinClamp, cameraYMaxClamp);
         //Rotate the Camera to the desired direction. 
         Quaternion targetRotation = Quaternion.Euler(rotation);
         transform.rotation = targetRotation;
@@ -125,8 +127,20 @@ public class CameraManager : MonoBehaviour
     {
         if (!InputManager.instance.pauseFlag)
         {
-            transform.position = Vector3.Slerp(GetComponent<Camera>().transform.position, targetTransform.transform.position, moveSpeedToComputer);
-            transform.rotation = Quaternion.Slerp(GetComponent<Camera>().transform.rotation, targetTransform.transform.rotation, rotateSpeedToComputer);
+            //Get the difference from the quaternions to adjust looking angle
+            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+
+            //If the player is being jumpscared, look at jumpscare position.
+            if (PlayerManager.instance.jumpScaring)
+            {
+                transform.SetPositionAndRotation(Vector3.Slerp(transform.position, orientation.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, lookOnLook, rotateSpeedToComputer  * Time.deltaTime));
+            }
+            //not being jumpscared, look at the computer position.
+            else
+            {
+                //TODO May need to recalculate the rotation as well.
+                transform.SetPositionAndRotation(Vector3.Slerp(transform.position, targetTransform.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, targetTransform.transform.rotation, rotateSpeedToComputer * Time.deltaTime));
+            }
         }
     }
 }
