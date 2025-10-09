@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyStats))]
 public class EnemyStateManager : MonoBehaviour
 {
     EnemyBaseState currentState;
@@ -10,20 +11,16 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyStats enemyStats;
 
     public Transform jumpScareOrientation;
+    public Transform stalkingPosition;
+    public Transform idlePosition;
+   
     public Interactable interactable;
-
-    public static EnemyStateManager instance;
+    
+    public GameObject model;
+     
     private void Awake()
     {
         //Destroy second instance of GameStateManager if it exists.
-        if (instance != null)
-        {
-            Debug.Log("Found more than one emeny Manager. Destroying the newest one.");
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-
         enemyStats = GetComponent<EnemyStats>();
     }
     public void Start()

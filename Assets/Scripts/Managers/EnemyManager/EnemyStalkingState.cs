@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class EnemyStalkingState : EnemyBaseState
 {
+    private float moveSpeed = 1;
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
         //Sets stalk countdown
         enemyStateManager.enemyStats.currentStalkTime = enemyStateManager.enemyStats.TimeBeforeAttack;
-
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
         UpdateStalkTime(enemyStateManager);
+        UpdatePosition(enemyStateManager);
     }
 
     public override void OnExit(EnemyStateManager enemyStateManager)
@@ -21,6 +22,10 @@ public class EnemyStalkingState : EnemyBaseState
         enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.TimeBeforeRetryToStalk;
     }
 
+    /// <summary>
+    /// Manages the enemy stalking time and handles switching states.
+    /// </summary>
+    /// <param name="enemyStateManager"></param>
     public void UpdateStalkTime(EnemyStateManager enemyStateManager)
     {
         //Reduces timing before attacking
@@ -37,5 +42,14 @@ public class EnemyStalkingState : EnemyBaseState
             enemyStateManager.SwitchState(enemyStateManager.enemyAttackingState);
         }
 
+    }
+
+    /// <summary>
+    /// Hanldes updating the enemy models position to a new position.
+    /// </summary>
+    /// <param name="enemyStateManager"></param>
+    public void UpdatePosition(EnemyStateManager enemyStateManager)
+    {
+        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position, moveSpeed * Time.deltaTime);
     }
 }

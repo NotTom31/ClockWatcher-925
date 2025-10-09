@@ -6,6 +6,7 @@ public class EnemyIdleState : EnemyBaseState
     //Check every checkInterval in seconds to roll a chance for the monster to start to stalk.
     private float checkTimer;
     private float checkInterval = 1f;
+    private float moveSpeed = 1f;
 
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
@@ -32,6 +33,8 @@ public class EnemyIdleState : EnemyBaseState
         {
             enemyStateManager.enemyStats.currentRetryWaitTime -= Time.deltaTime;
         }
+
+        UpdatePosition(enemyStateManager);
     }
 
     public override void OnExit(EnemyStateManager enemyStateManager)
@@ -62,5 +65,10 @@ public class EnemyIdleState : EnemyBaseState
             }
         }
         return false;    
+    }
+
+    public void UpdatePosition(EnemyStateManager enemyStateManager)
+    {
+        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.idlePosition.transform.position, moveSpeed * Time.deltaTime);
     }
 }

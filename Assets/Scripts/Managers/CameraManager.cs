@@ -24,6 +24,9 @@ public class CameraManager : MonoBehaviour
     public LayerMask layerMask;
     public float rayCastDistance = 5f;
 
+    [Header("Object Holding")]
+    public Transform objectHolder;
+
     public static CameraManager instance;
 
     private void Awake()
@@ -113,8 +116,6 @@ public class CameraManager : MonoBehaviour
             {
                 //Calls the Interace function on the class
                 hit.transform.GetComponent<Interactable>().Interact();
-
-                Debug.Log(hit.transform.gameObject.name);
             }
         }
     }

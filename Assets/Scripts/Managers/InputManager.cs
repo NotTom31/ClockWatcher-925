@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 
     public bool interact_Input;
     public bool pause_Input;
+    public bool shoot_Input;
 
     [Header("Flags")]
     public bool pauseFlag;
@@ -76,6 +77,7 @@ public class InputManager : MonoBehaviour
     {
         interact_Input = false;
         pause_Input = false;
+        shoot_Input = false;
     }
 
     /// <summary>
@@ -87,6 +89,7 @@ public class InputManager : MonoBehaviour
         MoveInput(delta);
         HandleInteractInput();
         HandlePauseInput();
+        HandleShootInput();
     }
 
     /// <summary>
@@ -140,6 +143,21 @@ public class InputManager : MonoBehaviour
             else
             {
                 gameStateManager.SwitchState(gameStateManager.gameResumeState);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handles throwing the paper ball.
+    /// </summary>
+    private void HandleShootInput()
+    {
+        inputActions.Player.Shoot.performed += i => shoot_Input = true;
+        if(shoot_Input)
+        {
+            if (PlayerManager.instance.holdingObject)
+            {
+                PlayerManager.instance.shootPaper();
             }
         }
     }

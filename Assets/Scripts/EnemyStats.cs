@@ -11,4 +11,6 @@ public class EnemyStats : MonoBehaviour
     public float currentRetryWaitTime;
 
     public bool failedToStalk;
+
+    public bool canResetFromThrowable;
 }
