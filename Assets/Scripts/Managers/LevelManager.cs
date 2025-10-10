@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,12 +14,20 @@ public class LevelManager : MonoBehaviour
 
     public int currentLevel;
 
+    public IEnumerable<EnemyStats> enemyStats;
+
     public static LevelManager instance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentTime = clockInTime;
+
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        enemyStats = FindObjectsByType<EnemyStats>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        ModifiyEnviromentStats();
     }
 
     // Update is called once per frame
@@ -54,5 +64,16 @@ public class LevelManager : MonoBehaviour
     public void checkForUnfinishedTasks()
     {
         //TODO Write the logic for checking tasks at end of day.
+    }
+
+    /// <summary>
+    /// Modifies each enemy stats based on the current level.
+    /// </summary>
+    public void ModifiyEnviromentStats()
+    {
+        foreach(EnemyStats enemy in enemyStats)
+        {
+            enemy.UpdateStats(currentLevel);
+        }
     }
 }
