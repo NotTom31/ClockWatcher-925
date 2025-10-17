@@ -3178,7 +3178,7 @@ MonoBehaviour:
   rotateSpeedToComputer: 60
   cameraYMinClamp: -60
   cameraYMaxClamp: 60
-  orientation: {fileID: 0}
+  orientation: {fileID: 236925288}
   targetTransform: {fileID: 0}
   layerMask:
     serializedVersion: 2
