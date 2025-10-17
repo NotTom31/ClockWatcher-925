@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private RectTransform parentRect;
     private Canvas parentCanvas;
@@ -58,5 +58,15 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ComputerManager.instance.SetGrabCursor();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ComputerManager.instance.SetNormalCursor();
     }
 }
