@@ -21,19 +21,41 @@ public class TabSelectEventSystemHandler : DynamicEventSystemHandler
     {
         base.OnSelect(eventData);
 
-        _image = eventData.selectedObject.GetComponent<Image>();
-        _tabButton = eventData.selectedObject.GetComponent<TabButton>();
+        // Cache the new selection's image and tab button (if any)
+        Image newImage = eventData.selectedObject.GetComponent<Image>();
+        TabButton newTabButton = eventData.selectedObject.GetComponent<TabButton>() ?? eventData.selectedObject.GetComponentInParent<TabButton>();
 
-        if (_tabButton != null)
+        // If we're selecting a TabButton, handle switching from previous tab to new tab
+        if (newTabButton != null)
         {
-            _tabSelectManager.TabHeaderText.SetText(_tabButton.TabData.tabName);
-
-            if (_image != null)
+            // If there was a previous tab that is different and in the same manager, deselect it
+            if (_tabButton != null && _tabButton != newTabButton &&
+                _tabButton.GetComponentInParent<TabSelectManager>() == _tabSelectManager)
             {
-                _image.color = Color.white;
+                // revert previous tab visuals (if we still have its image stored)
+                if (_image != null)
+                {
+                    _image.color = _tabButton.ReturnColor;
+                }
+
+                _tabButton.TabDeselected();
             }
+
+            // Update header and visuals for the newly selected tab
+            _tabSelectManager.TabHeaderText.SetText(newTabButton.TabData.tabName);
+            if (newImage != null)
+                newImage.color = Color.white;
+
+            _tabButton = newTabButton;
+            _image = newImage;
+
+            // call selected on the new tab
+            _tabButton.TabSelected();
         }
-        _tabButton.TabSelected();
+        else
+        {
+            _image = newImage;
+        }
     }
 
     public override void OnDeselect(BaseEventData eventData)
@@ -49,6 +71,6 @@ public class TabSelectEventSystemHandler : DynamicEventSystemHandler
                 _image.color = _tabButton.ReturnColor;
             }
         }
-        _tabButton.TabDeselected();
+        //_tabButton.TabDeselected();
     }
 }
