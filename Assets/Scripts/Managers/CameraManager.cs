@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 public class CameraManager : MonoBehaviour
 {
     [Header("Camera Settings")]
@@ -137,11 +138,6 @@ public class CameraManager : MonoBehaviour
                 UIManager.instance.ToggleInteractUI(true);
                 UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
             }
-            else
-            {
-                UIManager.instance.ToggleInteractUI(false);
-                UIManager.instance.SetUIText();
-            }
         }
         else
         {
@@ -159,7 +155,13 @@ public class CameraManager : MonoBehaviour
         if (!InputManager.instance.pauseFlag)
         {
             //Get the difference from the quaternions to adjust looking angle
-            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+            Vector3 direction = targetTransform.transform.position - transform.position;
+            Quaternion lookOnLook = new Quaternion();
+
+            if (direction.sqrMagnitude > 0.0001f)
+            {
+                lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+            }
 
             //If the player is being jumpscared, look at jumpscare position.
             if (PlayerManager.instance.jumpScaring)
