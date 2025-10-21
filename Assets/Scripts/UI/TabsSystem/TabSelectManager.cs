@@ -70,7 +70,12 @@ public class TabSelectManager : MonoBehaviour
             {
                 GameObject appInstance = Instantiate(tabButton.TabData.app, AppParent);
                 appInstance.name = tabButton.TabData.app.name + "_Instance";
-                appInstance.SetActive(false);
+                CanvasGroup canvasGroup = appInstance.GetComponent<CanvasGroup>();
+
+                // Make app invisible and non-interactable
+                canvasGroup.alpha = 0f;
+                canvasGroup.interactable = false;
+                canvasGroup.blocksRaycasts = false;
 
                 tabButton.AssignedApp = appInstance;
             }
@@ -100,16 +105,16 @@ public class TabSelectManager : MonoBehaviour
         tabButton.CloseTab();
     }
 
-    [ContextMenu("Test Tab Unlocking")]
-    public void UnlockTabTwoExample()
+    [ContextMenu("Test Tab Opening")]
+    public void OpenTabTwoExample()
     {
         TabButton tabButton = _buttonObjects[1].GetComponent<TabButton>();
         string tabToOpen = tabButton.TabData.TabID;
         OpenTab(tabToOpen, tabButton);
     }
 
-    [ContextMenu("Test Tab Locking")]
-    public void LockTabTwoExample()
+    [ContextMenu("Test Tab Closing")]
+    public void CloseTabTwoExample()
     {
         TabButton tabButton = _buttonObjects[1].GetComponent<TabButton>();
         string tabToClose = tabButton.TabData.TabID;
