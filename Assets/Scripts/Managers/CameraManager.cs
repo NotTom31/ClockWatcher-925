@@ -137,6 +137,11 @@ public class CameraManager : MonoBehaviour
                 UIManager.instance.ToggleInteractUI(true);
                 UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
             }
+            else
+            {
+                UIManager.instance.ToggleInteractUI(false);
+                UIManager.instance.SetUIText();
+            }
         }
         else
         {
