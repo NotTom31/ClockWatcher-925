@@ -52,6 +52,7 @@ public class CameraManager : MonoBehaviour
     {
         InputManager.instance.TickInput(Time.deltaTime);
         RepositionCamera(targetTransform);
+        HandleRayCastInteractUI();
     }
 
     /// <summary>
@@ -102,7 +103,7 @@ public class CameraManager : MonoBehaviour
     /// <summary>
     /// Handles the players ability to see items in 3D mode.
     /// </summary>
-    public void HandleRayCast()
+    public void HandleRayCastInteractPressed()
     {
         //Put the raycast in the ceneter of the screen.
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -117,6 +118,30 @@ public class CameraManager : MonoBehaviour
                 //Calls the Interace function on the class
                 hit.transform.GetComponent<Interactable>().Interact();
             }
+        }
+    }
+
+    public void HandleRayCastInteractUI()
+    {
+        //Put the raycast in the ceneter of the screen.
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+
+
+        //Check if the object hit is on the layer mask
+        if (Physics.Raycast(ray, out hit, rayCastDistance, layerMask))
+        {
+            //Check to see if it has the base class interactable.
+            if (hit.transform.GetComponent<Interactable>() != null)
+            {
+                UIManager.instance.ToggleInteractUI(true);
+                UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
+            }
+        }
+        else
+        {
+            UIManager.instance.ToggleInteractUI(false);
+            UIManager.instance.SetUIText();
         }
     }
 

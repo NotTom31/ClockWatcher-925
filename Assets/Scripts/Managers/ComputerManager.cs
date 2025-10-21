@@ -22,6 +22,8 @@ public class ComputerManager : Interactable
         instance = this;
 
         DontDestroyOnLoad(gameObject);
+
+        uiText = "get on computer";
     }
 
     public override void Interact()
