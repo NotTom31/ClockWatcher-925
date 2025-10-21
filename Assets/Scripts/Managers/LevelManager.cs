@@ -18,6 +18,17 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager instance;
 
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("Found more than one Level Manager. Destroying the newest one.");
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

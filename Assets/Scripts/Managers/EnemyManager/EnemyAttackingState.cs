@@ -5,6 +5,8 @@ public class EnemyAttackingState : EnemyBaseState
         //Set the player to being jump scared and make the camera look the jump scare location.
         PlayerManager.instance.jumpScaring = true;
         CameraManager.instance.targetTransform = enemyStateManager.jumpScareOrientation;
+        UIManager.instance.ToggleDeathUI();
+
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

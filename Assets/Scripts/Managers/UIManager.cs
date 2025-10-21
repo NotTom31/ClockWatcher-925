@@ -3,10 +3,13 @@ using UnityEngine;
 public class UIManager : MonoBehaviour, IDataPersistance
 {
     public GameObject pauseUI;
+    public GameObject deathUI;
 
     public int interactionCount;
 
-    private bool isEnabled;
+    private bool isPauseEnabled;
+
+    private bool isDeathEnabled;
 
     public static UIManager instance;
 
@@ -16,7 +19,7 @@ public class UIManager : MonoBehaviour, IDataPersistance
         {
             instance = this;
         }
-        isEnabled = false;
+        isPauseEnabled = false;
     }
 
     /// <summary>
@@ -25,11 +28,21 @@ public class UIManager : MonoBehaviour, IDataPersistance
     public void TogglePauseUI()
     {
         //Toggles isEnabled flag.
-        isEnabled = !isEnabled;
+        isPauseEnabled = !isPauseEnabled;
 
         //Set the pauseUI to active.
-        pauseUI.SetActive(isEnabled);
+        pauseUI.SetActive(isPauseEnabled);
     }
+
+    public void ToggleDeathUI()
+    {
+        //Toggles isEnabled flag.
+        isDeathEnabled = !isDeathEnabled;
+
+        //Set the DeathUI to active.
+        deathUI.SetActive(isDeathEnabled);
+    }
+
     public void LoadData(GameData data)
     {
         this.interactionCount = data.interactedCount;
