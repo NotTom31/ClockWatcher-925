@@ -42,6 +42,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 122
       objectReference: {fileID: 0}
@@ -75,7 +79,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 525
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_LocalPosition.x
@@ -130,8 +134,32 @@ PrefabInstance:
       value: Start Game
       objectReference: {fileID: 0}
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_text
+      value: Name of the game
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontSize
+      value: 43.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1619519124274000064, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -162,7 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   newGameButton: {fileID: 3601114666933641712}
-  continueGameButton: {fileID: 0}
 --- !u!224 &7392854876728623528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}

@@ -3728,7 +3728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1072289501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4584,8 +4584,8 @@ MonoBehaviour:
   interactableEnabled: 0
   canInteract: 1
   cameraPosition: {fileID: 340464947}
-  normalCursor: {fileID: 0}
-  grabCursor: {fileID: 0}
+  normalCursor: {fileID: 2800000, guid: f0984614171222f4197d7a7dad64005b, type: 3}
+  grabCursor: {fileID: 2800000, guid: ab29b2945d3936a4d99364c8dfe3ec94, type: 3}
   cursorHotspot: {x: 0, y: 0}
 --- !u!65 &1425164413
 BoxCollider:
@@ -5471,7 +5471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1737206285
 Transform:
   m_ObjectHideFlags: 0
