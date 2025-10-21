@@ -3303,6 +3303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Phone
   interactableEnabled: 0
   canInteract: 0
+  uiText: 
   phoneLight: {fileID: 0}
 --- !u!4 &917830811
 Transform:
@@ -4619,6 +4620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComputerManager
   interactableEnabled: 0
   canInteract: 1
+  uiText: 
   cameraPosition: {fileID: 340464947}
   normalCursor: {fileID: 0}
   grabCursor: {fileID: 0}
@@ -5107,6 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   pauseUI: {fileID: 3047881428379025015}
   deathUI: {fileID: 333911535}
+  interactableText: {fileID: 1761751729}
   interactionCount: 0
 --- !u!4 &1636795818
 Transform:
@@ -6314,6 +6317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Paper
   interactableEnabled: 0
   canInteract: 1
+  uiText: 
   paper: {fileID: 6297475302074728393, guid: e64435c5e248fc94685bf0cf25cf2fac, type: 3}
 --- !u!135 &1987434426
 SphereCollider:
@@ -6592,6 +6596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lightswitch
   interactableEnabled: 0
   canInteract: 1
+  uiText: 
   lightTimer: 10
   currentLightTimer: 0
 --- !u!1 &2128435195
