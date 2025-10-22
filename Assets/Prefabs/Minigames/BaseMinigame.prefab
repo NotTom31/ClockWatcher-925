@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4222866612422504168}
   - component: {fileID: 2986033567970697727}
   m_Layer: 5
-  m_Name: BaseApp
+  m_Name: BaseMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
