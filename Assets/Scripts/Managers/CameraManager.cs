@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 public class CameraManager : MonoBehaviour
 {
     [Header("Camera Settings")]
@@ -51,6 +52,11 @@ public class CameraManager : MonoBehaviour
     public void Update()
     {
         InputManager.instance.TickInput(Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        HandleRayCastInteractUI();
         RepositionCamera(targetTransform);
     }
 
@@ -102,7 +108,7 @@ public class CameraManager : MonoBehaviour
     /// <summary>
     /// Handles the players ability to see items in 3D mode.
     /// </summary>
-    public void HandleRayCast()
+    public void HandleRayCastInteractPressed()
     {
         //Put the raycast in the ceneter of the screen.
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -120,6 +126,35 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    public void HandleRayCastInteractUI()
+    {
+        //Put the raycast in the ceneter of the screen.
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+
+        //Check if the object hit is on the layer mask
+        if (Physics.Raycast(ray, out hit, rayCastDistance, layerMask))
+        {
+            //Check to see if it has the base class interactable.
+            if (hit.transform.GetComponent<Interactable>() != null && hit.transform.GetComponent<Interactable>().canInteract)
+            {
+                if(PlayerManager.instance.onComputer == false && PlayerManager.instance.jumpScaring == false)
+                {
+                    UIManager.instance.ToggleInteractUI(true);
+                    UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
+                }
+                else
+                {
+                    UIManager.instance.ToggleInteractUI(false);
+                }
+            }
+        }
+        else
+        {
+            UIManager.instance.ToggleInteractUI(false);
+        }
+    }
+
     /// <summary>
     /// Repositions the camera to the selected transform.
     /// </summary>
@@ -129,7 +164,14 @@ public class CameraManager : MonoBehaviour
         if (!InputManager.instance.pauseFlag)
         {
             //Get the difference from the quaternions to adjust looking angle
-            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+            Vector3 direction = targetTransform.transform.position - transform.position;
+            Quaternion lookOnLook = new Quaternion();
+
+            if (direction.sqrMagnitude > 0.0001f)
+            {
+                lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+                Debug.Log("Moving Camera.");
+            }
 
             //If the player is being jumpscared, look at jumpscare position.
             if (PlayerManager.instance.jumpScaring)

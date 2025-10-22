@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4222866612422504168}
   - component: {fileID: 8765665151344648421}
   - component: {fileID: 5911099087964073546}
+  - component: {fileID: 2986033567970697727}
   m_Layer: 5
   m_Name: BaseApp
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 875, y: 525}
+  m_SizeDelta: {x: 875, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8765665151344648421
 CanvasRenderer:
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2986033567970697727
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280334520790174481}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7645583994035900809
 GameObject:
   m_ObjectHideFlags: 0

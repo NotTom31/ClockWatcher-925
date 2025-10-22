@@ -17,6 +17,8 @@ public class EnemyIdleState : EnemyBaseState
         {
             enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.TimeBeforeRetryToStalk;
         }
+
+        enemyStateManager.animator.Play("Idle");
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

@@ -51,5 +51,13 @@ public class EnemyStalkingState : EnemyBaseState
     public void UpdatePosition(EnemyStateManager enemyStateManager)
     {
         enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position, moveSpeed * Time.deltaTime);
+        if(Vector3.Distance(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position) > 0.1f)
+        {
+            enemyStateManager.animator.Play("Walk");
+        }
+        else
+        {
+            enemyStateManager.animator.Play("Idle");
+        }
     }
 }

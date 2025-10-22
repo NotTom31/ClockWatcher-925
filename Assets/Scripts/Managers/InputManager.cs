@@ -119,7 +119,7 @@ public class InputManager : MonoBehaviour
         //Check if the player is interacting and if the game is not paused.
         if (interact_Input && !pauseFlag)
         {
-            CameraManager.instance.HandleRayCast();
+            CameraManager.instance.HandleRayCastInteractPressed();
         }
     }
 

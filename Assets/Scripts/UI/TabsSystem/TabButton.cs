@@ -24,6 +24,11 @@ public class TabButton : MonoBehaviour
         ReturnColor = Color.grey;
     }
 
+    /// <summary>
+    /// Method for setting up initial tabs in the scene.
+    /// </summary>
+    /// <param name="tab">Scriptable object containing each tabs data such as the app prefab and tab name</param>
+    /// <param name="isInteractable">Determines if the tab button can be interacted with. Usually should be set to true</param>
     public void Setup(TabData tab, bool isInteractable)
     {
         TabData = tab;
@@ -45,6 +50,9 @@ public class TabButton : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Open tab is a method for opening tabs after the initial scene setup has already happened. Tabs that are created during initial scene setup are made by Setup
+    /// </summary>
     public void OpenTab()
     {
         this.gameObject.SetActive(true);
@@ -55,6 +63,9 @@ public class TabButton : MonoBehaviour
         AssignedApp.transform.SetAsLastSibling();
     }
 
+    /// <summary>
+    /// Close tab is called when a tab is shut, not when switching tabs
+    /// </summary>
     public void CloseTab()
     {
         AssignedApp.SetActive(false);
@@ -63,13 +74,29 @@ public class TabButton : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Sets the tabs corresponding app as visible and interactable when selected
+    /// </summary>
     public void TabSelected()
     {
-        AssignedApp.SetActive(true); //change so that its just not visible or something?
+        CanvasGroup canvasGroup = AssignedApp.GetComponent<CanvasGroup>();
+
+        // Make app visible and interactable
+        canvasGroup.alpha = 1f;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
     }
 
+    /// <summary>
+    /// Sets the tabs corresponding app as not visible and non-interactable when the tab button is deselected.
+    /// </summary>
     public void TabDeselected()
     {
-        AssignedApp.SetActive(false);
+        CanvasGroup canvasGroup = AssignedApp.GetComponent<CanvasGroup>();
+
+        // Make app invisible and non-interactable
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
     }
 }

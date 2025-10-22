@@ -17,11 +17,13 @@ public class EnemyStateManager : MonoBehaviour
     public Interactable interactable;
     
     public GameObject model;
+    public Animator animator;
      
     private void Awake()
     {
         //Destroy second instance of GameStateManager if it exists.
         enemyStats = GetComponent<EnemyStats>();
+        animator = GetComponentInChildren<Animator>();  
     }
     public void Start()
     {
