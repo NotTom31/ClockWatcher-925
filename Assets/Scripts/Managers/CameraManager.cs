@@ -52,8 +52,12 @@ public class CameraManager : MonoBehaviour
     public void Update()
     {
         InputManager.instance.TickInput(Time.deltaTime);
-        RepositionCamera(targetTransform);
+    }
+
+    private void FixedUpdate()
+    {
         HandleRayCastInteractUI();
+        RepositionCamera(targetTransform);
     }
 
     /// <summary>
@@ -128,21 +132,26 @@ public class CameraManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-
         //Check if the object hit is on the layer mask
         if (Physics.Raycast(ray, out hit, rayCastDistance, layerMask))
         {
             //Check to see if it has the base class interactable.
-            if (hit.transform.GetComponent<Interactable>() != null)
+            if (hit.transform.GetComponent<Interactable>() != null && hit.transform.GetComponent<Interactable>().canInteract)
             {
-                UIManager.instance.ToggleInteractUI(true);
-                UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
+                if(PlayerManager.instance.onComputer == false && PlayerManager.instance.jumpScaring == false)
+                {
+                    UIManager.instance.ToggleInteractUI(true);
+                    UIManager.instance.SetUIText(hit.transform.GetComponent<Interactable>().uiText);
+                }
+                else
+                {
+                    UIManager.instance.ToggleInteractUI(false);
+                }
             }
         }
         else
         {
             UIManager.instance.ToggleInteractUI(false);
-            UIManager.instance.SetUIText();
         }
     }
 
@@ -161,6 +170,7 @@ public class CameraManager : MonoBehaviour
             if (direction.sqrMagnitude > 0.0001f)
             {
                 lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+                Debug.Log("Moving Camera.");
             }
 
             //If the player is being jumpscared, look at jumpscare position.
