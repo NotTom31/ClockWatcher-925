@@ -2967,6 +2967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wag
       objectReference: {fileID: 0}
+    - target: {fileID: 3324337282133595273, guid: 726f96411210aff42b5ee065ee9febc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3866017545022344472, guid: 726f96411210aff42b5ee065ee9febc6, type: 3}
       propertyPath: interactable
       value: 
@@ -3384,6 +3388,10 @@ PrefabInstance:
     - target: {fileID: 8618017308140919705, guid: a7c85225bb59d3d4bac6798b6771e4d0, type: 3}
       propertyPath: m_Name
       value: Crawler
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618017308140919705, guid: a7c85225bb59d3d4bac6798b6771e4d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
