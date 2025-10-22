@@ -7,7 +7,9 @@ public class ComputerManager : Interactable
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
+    [SerializeField] private Texture2D clickCursor;
     [SerializeField] private Texture2D grabCursor;
+    [SerializeField] private Texture2D dragCursor;
     [SerializeField] private Vector2 cursorHotspot = Vector2.zero;
 
     private void Awake()
@@ -50,8 +52,18 @@ public class ComputerManager : Interactable
         Cursor.SetCursor(normalCursor, cursorHotspot, CursorMode.Auto);
     }
 
+    public void SetClickCursor()
+    {
+        Cursor.SetCursor(clickCursor, cursorHotspot, CursorMode.Auto);
+    }
+
     public void SetGrabCursor()
     {
         Cursor.SetCursor(grabCursor, cursorHotspot, CursorMode.Auto);
+    }
+
+    public void SetDragCursor()
+    {
+        Cursor.SetCursor(dragCursor, cursorHotspot, CursorMode.Auto);
     }
 }

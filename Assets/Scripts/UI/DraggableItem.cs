@@ -41,6 +41,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             out Vector2 localPointerPos
         );
 
+        ComputerManager.instance.SetDragCursor();
+
         // Calculate the new position with offset
         Vector2 newPos = localPointerPos + dragOffset;
 
@@ -57,7 +59,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+        ComputerManager.instance.SetGrabCursor();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
