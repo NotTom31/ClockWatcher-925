@@ -95,5 +95,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2707025906357905857}
   m_SourcePrefab: {fileID: 100100000, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+--- !u!1 &804502078909195345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+  m_PrefabInstance: {fileID: 6629879846667317056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2707025906357905857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804502078909195345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5354c7206a49676428763d94717ee8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuMinigameLogic
+  prefabs: []
+  minigameID: 2
+  instantiateOnAwake: -1

@@ -171,6 +171,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7745564871368247840}
+    - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4754909054860080762}
   m_SourcePrefab: {fileID: 100100000, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
 --- !u!1 &804502078909195345 stripped
 GameObject:
@@ -190,6 +193,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   newGameButton: {fileID: 3601114666933641712}
+--- !u!114 &4754909054860080762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804502078909195345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5354c7206a49676428763d94717ee8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  prefabs: []
+  minigameID: 1
+  instantiateOnAwake: -1
 --- !u!224 &7392854876728623528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}

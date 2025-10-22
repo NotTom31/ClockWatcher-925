@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_Pivot.x
@@ -102,17 +106,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_text
-      value: 'Credits:
-
-        Programmers
-
-        art
-
-        music'
+      value: "Credits\n\nProgrammers:\n  Thomas Mezzie\n  Walter Lukkarila\n  Evan
+        Charfauros\n2D Art:\n  Tangent Sacket Pyle\n3D Art:\n  June\nMusic/SFX:\n 
+        Brendan"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_lineSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1619519124274000064, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4589438475249902542, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7244445242320504975}
   m_SourcePrefab: {fileID: 100100000, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+--- !u!1 &804502078909195345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+  m_PrefabInstance: {fileID: 6629879846667317056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7244445242320504975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804502078909195345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5354c7206a49676428763d94717ee8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuMinigameLogic
+  prefabs: []
+  minigameID: 3
+  instantiateOnAwake: -1

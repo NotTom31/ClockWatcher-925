@@ -21,12 +21,12 @@ public class MinigamesManager : MonoBehaviour
             instance = this;
 
         // initialize game ID for each tracked minigame type
-        for (int ii = 0; ii < minigamePrefabs.Count; ii++)
-            minigamePrefabs[ii].GetComponent<MinigameLogic>().minigameID = ii;
+        //for (int ii = 0; ii < minigamePrefabs.Count; ii++)
+        //    minigamePrefabs[ii].GetComponent<MinigameLogic>().minigameID = ii;
     }
 
     // Puts a minigame on computer screen of type "id" with the specified difficulty level. "localPosition" determines where on computer screen
-    public void StartMinigame(int id, int difficulty, Vector2 localPosition)
+    public MinigameLogic StartMinigame(int id, int difficulty, Vector2 localPosition)
     {
         // Use a prefab to instantiate this game at the desired screen position
         MinigameLogic logic = Instantiate(minigamePrefabs[id], computerCanvas.transform).GetComponent<MinigameLogic>();
@@ -42,6 +42,8 @@ public class MinigamesManager : MonoBehaviour
 
         // Tell the minigame to set itself up
         logic.InstantiateGame(difficulty);
+
+        return logic;
     }
 
     // Destroy a minigame. If "track" is true, a record of this minigame's data will be preserved

@@ -45,5 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigamesManager
   minigamePrefabs:
+  - {fileID: 804502078909195345, guid: 6973bde79dff2424fbf8b7f412c5b307, type: 3}
+  - {fileID: 804502078909195345, guid: 97cc477874004144998a6306d03408d3, type: 3}
+  - {fileID: 804502078909195345, guid: 651c45ffa9c03e24f83eb3b6a0eafbfc, type: 3}
   - {fileID: 4020334969380072874, guid: e729ad2009a3afc46a930dae105bde3e, type: 3}
   computerCanvas: {fileID: 0}

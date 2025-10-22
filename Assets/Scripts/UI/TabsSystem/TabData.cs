@@ -6,6 +6,7 @@ public class TabData : ScriptableObject
 {
     [Header("Tab Stats")]
     public string TabID;
+    public int MinigameID;
     [Tooltip("For Starting Tabs")] public bool ISUnlockedByDefault;
 
     [Header("Optional scene reference")] //May be useful for main menu scene switching, or may go unused

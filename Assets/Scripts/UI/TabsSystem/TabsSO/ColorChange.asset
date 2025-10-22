@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9884792f994a70498ae74a54cfc65c9, type: 3}
-  m_Name: Tab 1
+  m_Name: ColorChange
   m_EditorClassIdentifier: Assembly-CSharp::TabsData
   TabID: ColorChange
+  MinigameID: 3
   ISUnlockedByDefault: 1
   Scene:
     m_SceneAsset: {fileID: 0}
