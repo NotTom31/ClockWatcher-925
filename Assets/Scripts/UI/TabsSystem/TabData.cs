@@ -15,8 +15,8 @@ public class TabData : ScriptableObject
     [Header("Tab Display Information")]
     public string tabName;
 
-    [Header("Tab App Prefab")]
-    public GameObject app;
+    [Header("Tab Minigame Prefab")]
+    public GameObject minigame;
 
     public GameObject tabButtonObj { get; set; }
 }

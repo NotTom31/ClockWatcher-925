@@ -9,7 +9,7 @@ public class MinigamesManager : MonoBehaviour
     private static MinigamesManager instance;
     public static MinigamesManager Instance { get { return instance; } }
 
-    [SerializeField] List<GameObject> minigamePrefabs;   //list of instantiable minigames. The order you put them in here determines "gameID"
+    [SerializeField] List<TabData> minigameData;   //list of instantiable minigames. The order you put them in here determines "gameID"
     [SerializeField] Canvas computerCanvas;
     List<MinigameData> games = new List<MinigameData>(); //references to all relevant game instances, completed or running.            
 
@@ -29,7 +29,7 @@ public class MinigamesManager : MonoBehaviour
     public MinigameLogic StartMinigame(int id, int difficulty, Vector2 localPosition)
     {
         // Use a prefab to instantiate this game at the desired screen position
-        MinigameLogic logic = Instantiate(minigamePrefabs[id], computerCanvas.transform).GetComponent<MinigameLogic>();
+        MinigameLogic logic = Instantiate(minigameData[id].minigame, computerCanvas.transform).GetComponent<MinigameLogic>();
         logic.transform.localPosition = localPosition;
 
         // Create a MinigameData to track this minigame

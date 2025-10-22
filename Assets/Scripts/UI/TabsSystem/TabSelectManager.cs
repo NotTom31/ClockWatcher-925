@@ -71,13 +71,13 @@ public class TabSelectManager : MonoBehaviour
             TabButton tabButton = buttonGO.GetComponent<TabButton>();
             tabButton.Setup(CurrentArea.Tabs[i], UnlockedTabIDs.Contains(CurrentArea.Tabs[i].TabID));
 
-            if (tabButton.TabData.app != null)
+            if (tabButton.TabData.minigame != null)
             {
                 GameObject appInstance = MinigamesManager.Instance.StartMinigame(ID[i], 0, Vector2.zero).gameObject;
 
                 //Instantiate(tabButton.TabData.app, AppParent);
                 appInstance.gameObject.transform.parent = AppParent.transform;
-                appInstance.name = tabButton.TabData.app.name + "_Instance";
+                appInstance.name = tabButton.TabData.minigame.name + "_Instance";
                 CanvasGroup canvasGroup = appInstance.GetComponent<CanvasGroup>();
 
                 // Make app invisible and non-interactable
