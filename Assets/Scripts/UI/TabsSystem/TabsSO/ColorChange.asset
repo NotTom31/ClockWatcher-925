@@ -19,4 +19,4 @@ MonoBehaviour:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
   tabName: Color Change
-  app: {fileID: 4020334969380072874, guid: e729ad2009a3afc46a930dae105bde3e, type: 3}
+  minigame: {fileID: 6668731371658587920, guid: 2c43fd47c13735e48842d15dde30aef3, type: 3}

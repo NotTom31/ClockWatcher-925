@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Start Game
   m_EditorClassIdentifier: Assembly-CSharp::TabData
   TabID: Start Game
+  MinigameID: 0
   ISUnlockedByDefault: 1
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
   tabName: Start Game
-  app: {fileID: 804502078909195345, guid: 6973bde79dff2424fbf8b7f412c5b307, type: 3}
+  minigame: {fileID: 804502078909195345, guid: 6973bde79dff2424fbf8b7f412c5b307, type: 3}
