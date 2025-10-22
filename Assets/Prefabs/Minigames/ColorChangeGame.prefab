@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 7540103928895657980}
   - component: {fileID: 1455929337922173077}
   - component: {fileID: 3033984543139215318}
+  - component: {fileID: 2853946454278658232}
   m_Layer: 5
   m_Name: ColorChangeGame
   m_TagString: Untagged
@@ -136,7 +137,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorChangeGameLogic
   prefabs: []
   minigameID: 0
+  instantiateOnAwake: -1
   button: {fileID: 9193414517589880010}
+--- !u!225 &2853946454278658232
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020334969380072874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5320604270105081235
 GameObject:
   m_ObjectHideFlags: 0
