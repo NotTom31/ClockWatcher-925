@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ComputerManager : Interactable
 {
@@ -11,6 +12,12 @@ public class ComputerManager : Interactable
     [SerializeField] private Texture2D grabCursor;
     [SerializeField] private Texture2D dragCursor;
     [SerializeField] private Vector2 cursorHotspot = Vector2.zero;
+
+    [Header("Window Settings")]
+    [SerializeField] private GameObject windowPrefab;
+    [SerializeField] private Transform windowParent;
+
+    private List<GameObject> activeWindows = new List<GameObject>();
 
     private void Awake()
     {
@@ -38,6 +45,7 @@ public class ComputerManager : Interactable
             //unlocks the mouse and make it visable and set the camera target position to the computer
             CameraManager.instance.setMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
+            StartPopupMinigame(3);
         }
         else
         {
@@ -65,5 +73,18 @@ public class ComputerManager : Interactable
     public void SetDragCursor()
     {
         Cursor.SetCursor(dragCursor, cursorHotspot, CursorMode.Auto);
+    }
+
+    public void StartPopupMinigame(int GameID)
+    {
+        GameObject appInstance = MinigamesManager.Instance.StartMinigame(GameID, 0, Vector2.zero).gameObject;
+
+        GameObject newWindow = Instantiate(windowPrefab, windowParent != null ? windowParent : null);
+
+        appInstance.transform.SetParent(newWindow.transform);
+
+        appInstance.transform.localPosition = Vector3.zero;
+
+        activeWindows.Add(newWindow);
     }
 }

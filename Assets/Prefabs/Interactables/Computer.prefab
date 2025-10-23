@@ -199,6 +199,8 @@ MonoBehaviour:
   grabCursor: {fileID: 2800000, guid: ab29b2945d3936a4d99364c8dfe3ec94, type: 3}
   dragCursor: {fileID: 2800000, guid: 62bdc3f6186662a4ca2663223858153d, type: 3}
   cursorHotspot: {x: 0, y: 0}
+  windowPrefab: {fileID: 1521732683626388142, guid: 4e270e2a96e670a428673726cc34fcb2, type: 3}
+  windowParent: {fileID: 6325815385028386004}
 --- !u!65 &531511575817391293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -500,5 +502,10 @@ PrefabInstance:
 --- !u!224 &707899503063730729 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2263467004830502008, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+  m_PrefabInstance: {fileID: 1638050118533334609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6325815385028386004 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4715913625446259333, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
   m_PrefabInstance: {fileID: 1638050118533334609}
   m_PrefabAsset: {fileID: 0}

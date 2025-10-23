@@ -202,6 +202,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8555694650486259345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4715913625446259333}
+  m_Layer: 5
+  m_Name: ApplicationContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4715913625446259333
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555694650486259345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3068741106126856528}
+  m_Father: {fileID: 2263467004830502008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8674694244037822126
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +271,7 @@ RectTransform:
   m_Children:
   - {fileID: 7959031426049236452}
   - {fileID: 6938689406024514819}
-  - {fileID: 3068741106126856528}
+  - {fileID: 4715913625446259333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -288,7 +324,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8846424486626978017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,15 +612,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2263467004830502008}
+    m_TransformParent: {fileID: 4715913625446259333}
     m_Modifications:
     - target: {fileID: 6679129102746017454, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
       propertyPath: m_Name
       value: TabsSELECT
-      objectReference: {fileID: 0}
-    - target: {fileID: 6679129102746017454, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7138957789550958663, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
       propertyPath: m_Pivot.x
@@ -617,14 +649,6 @@ PrefabInstance:
     - target: {fileID: 7138957789550958663, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
       propertyPath: m_SizeDelta.y
       value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138957789550958663, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138957789550958663, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7138957789550958663, guid: f2f609e40b9f9c3439582d96e7c17771, type: 3}
       propertyPath: m_LocalPosition.x
