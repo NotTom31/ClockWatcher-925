@@ -118,6 +118,9 @@ public class SortGameLogic : MinigameLogic
 
     public void Submit()
     {
-        Debug.Log("Score: " + EvaluateScore());
+        float score = EvaluateScore();
+        Debug.Log("SortGame score: " + score);
+        if (score >= 100f)
+            MinigamesManager.Instance.EndMinigame(this);
     }
 }
