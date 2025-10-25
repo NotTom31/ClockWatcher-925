@@ -10,6 +10,7 @@ public class EnemyAttackingState : EnemyBaseState
         UIManager.instance.ToggleDeathUI();
         CameraManager.instance.targetTransform = enemyStateManager.jumpScareOrientation;
 
+        InputManager.instance.MenuFlag = true;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

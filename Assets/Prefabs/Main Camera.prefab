@@ -171,7 +171,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayCastDistance: 50
-  objectHolder: {fileID: 8093750798469121942}
+  objectHolder: {fileID: 8434715023026835818}
 --- !u!1 &6645425044358217755
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,5 +269,10 @@ GameObject:
 --- !u!4 &6329730562488629576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542328756488356585, guid: 3e0f445df910aa34aa65e3327d02db26, type: 3}
+  m_PrefabInstance: {fileID: 4805564811193269153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8434715023026835818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4016906456528906955, guid: 3e0f445df910aa34aa65e3327d02db26, type: 3}
   m_PrefabInstance: {fileID: 4805564811193269153}
   m_PrefabAsset: {fileID: 0}

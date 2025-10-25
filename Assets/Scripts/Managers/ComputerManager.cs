@@ -25,6 +25,7 @@ public class ComputerManager : Interactable
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            Debug.Log("Destroyed Extra");
             return;
         }
 
@@ -43,14 +44,14 @@ public class ComputerManager : Interactable
         if (PlayerManager.instance.onComputer)
         {
             //unlocks the mouse and make it visable and set the camera target position to the computer
-            CameraManager.instance.setMouseLockState(false);
+            CameraManager.instance.SetMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
             //StartPopupMinigame(3);
         }
         else
         {
             //Locks the mouse and make it invisable and set the camera target position to the center of the "room"
-            CameraManager.instance.setMouseLockState(true);
+            CameraManager.instance.SetMouseLockState(true);
             CameraManager.instance.targetTransform = CameraManager.instance.orientation;
         }
     }

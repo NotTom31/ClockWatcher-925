@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// Handles shooting the paper ball.
     /// </summary>
-    public void shootPaper()
+    public void ShootPaper()
     {
         holdingObject = false;
         objectInHand.transform.parent = null;

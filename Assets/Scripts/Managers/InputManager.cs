@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
 
     [Header("Flags")]
     public bool pauseFlag;
+    public bool MenuFlag;
 
     InputSystem_Actions inputActions;
     GameStateManager gameStateManager;
@@ -115,7 +116,11 @@ public class InputManager : MonoBehaviour
     /// </summary>
     private void HandleInteractInput()
     {
+        if (MenuFlag)
+            return;
+
         inputActions.Player.Interact.performed += i => interact_Input = true;
+
         //Check if the player is interacting and if the game is not paused.
         if (interact_Input && !pauseFlag)
         {
@@ -128,6 +133,9 @@ public class InputManager : MonoBehaviour
     /// </summary>
     private void HandlePauseInput()
     {
+        if (MenuFlag)
+            return;
+
         inputActions.Player.Pause.performed += i => pause_Input = true;
 
         if (pause_Input)
@@ -152,12 +160,16 @@ public class InputManager : MonoBehaviour
     /// </summary>
     private void HandleShootInput()
     {
+        if (MenuFlag)
+            return;
+
         inputActions.Player.Shoot.performed += i => shoot_Input = true;
-        if(shoot_Input)
+
+        if (shoot_Input)
         {
             if (PlayerManager.instance.holdingObject)
             {
-                PlayerManager.instance.shootPaper();
+                PlayerManager.instance.ShootPaper();
             }
         }
     }

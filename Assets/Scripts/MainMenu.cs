@@ -10,26 +10,21 @@ public class MainMenu : MonoBehaviour
     {
         DisableMenuButtons();
 
-        Debug.Log("New Game Clicked");
-
         DataPersistenceManager.instance.NewGame();
 
-        SceneManager.LoadSceneAsync("SetupScene");
+        SceneManager.LoadScene(1);
     }
 
     public void OnContinuedGameCliked()
     {
         DisableMenuButtons();
 
-        Debug.Log("Continue Clicked");
         DataPersistenceManager.instance.LoadGame();
-
     }
 
     public void OnQuitGameCliked()
     {
-        Debug.Log("Quit Application Clicked");
-        //Application.Quit();
+        Application.Quit();
     }
 
     private void DisableMenuButtons()
