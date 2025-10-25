@@ -45,7 +45,7 @@ public class ComputerManager : Interactable
             //unlocks the mouse and make it visable and set the camera target position to the computer
             CameraManager.instance.setMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
-            StartPopupMinigame(3);
+            //StartPopupMinigame(3);
         }
         else
         {
@@ -75,6 +75,11 @@ public class ComputerManager : Interactable
         Cursor.SetCursor(dragCursor, cursorHotspot, CursorMode.Auto);
     }
 
+
+    /// <summary>
+    /// Start a minigame that is intended to be cleared instead of persistant
+    /// </summary>
+    /// <param name="GameID">the id of the minigame to start</param>
     public void StartPopupMinigame(int GameID)
     {
         GameObject appInstance = MinigamesManager.Instance.StartMinigame(GameID, 0, Vector2.zero).gameObject;
