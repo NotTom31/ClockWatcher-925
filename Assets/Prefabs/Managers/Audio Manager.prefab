@@ -95,43 +95,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
   <music>k__BackingField:
     Guid:
-      Data1: 1911553978
-      Data2: 1188649154
-      Data3: 1727913621
-      Data4: 865219309
-    Path: event:/Music/Lofi Music
-  <startMenuMusic>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 102099646
+      Data2: 1163790986
+      Data3: -1943344722
+      Data4: -276927030
+    Path: event:/hallways_demo
   <ambience>k__BackingField:
     Guid:
-      Data1: -1345453454
-      Data2: 1206175395
-      Data3: 406554297
-      Data4: 1060562297
-    Path: event:/Ambience/Forest Ambience
+      Data1: 1361404054
+      Data2: 1330623147
+      Data3: 466221993
+      Data4: 53356748
+    Path: event:/hover_mixed
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: 453953957
-      Data2: 1141993130
-      Data3: -881969219
-      Data4: 438275845
-    Path: event:/SFX/PlayerFootsteps
+      Data1: 924562834
+      Data2: 1130745992
+      Data3: 1490199453
+      Data4: 1414008463
+    Path: event:/ambloop
   <interacted>k__BackingField:
     Guid:
-      Data1: -912955281
-      Data2: 1193211775
-      Data3: 1047143337
-      Data4: 164922555
-    Path: event:/SFX/Interact
+      Data1: 1446224952
+      Data2: 1084695677
+      Data3: 20706957
+      Data4: 378219987
+    Path: event:/click
   <interactableIdle>k__BackingField:
     Guid:
-      Data1: 1696729019
-      Data2: 1127656968
-      Data3: 827428744
-      Data4: 332716417
-    Path: event:/SFX/InteractIdle
+      Data1: 1361404054
+      Data2: 1330623147
+      Data3: 466221993
+      Data4: 53356748
+    Path: event:/hover_mixed
