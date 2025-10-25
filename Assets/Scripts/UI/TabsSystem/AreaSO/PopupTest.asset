@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d5e2b96261c6d547ba2040299e4d23f, type: 3}
-  m_Name: New Area
+  m_Name: PopupTest
   m_EditorClassIdentifier: Assembly-CSharp::AreaData
   AreaName: Level 1
   Tabs:
   - {fileID: 11400000, guid: 9034e87af3adede49a0488e59a9fee68, type: 2}
-  - {fileID: 11400000, guid: 9034e87af3adede49a0488e59a9fee68, type: 2}
-  - {fileID: 11400000, guid: e070eca4a9a20954385241be7f374fa4, type: 2}
-  - {fileID: 11400000, guid: 5457f0f428261a840829e9e9c756d78e, type: 2}

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Credits
   m_EditorClassIdentifier: Assembly-CSharp::TabData
   TabID: Credits
+  MinigameID: 1
   ISUnlockedByDefault: 1
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
   tabName: Credits
-  app: {fileID: 804502078909195345, guid: 97cc477874004144998a6306d03408d3, type: 3}
+  minigame: {fileID: 804502078909195345, guid: 97cc477874004144998a6306d03408d3, type: 3}

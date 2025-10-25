@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6022097428160582415
+--- !u!1001 &6629879846667317056
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18,19 +30,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_SizeDelta.x
@@ -88,57 +100,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5911099087964073546, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6933962
-      objectReference: {fileID: 0}
-    - target: {fileID: 5911099087964073546, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6933962
-      objectReference: {fileID: 0}
-    - target: {fileID: 5911099087964073546, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_Name
-      value: App 1
+      value: Credits
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_text
+      value: "Credits\n\nProgrammers:\n  Thomas Mezzie\n  Walter Lukkarila\n  Evan
+        Charfauros\n2D Art:\n  Tangent Sacket Pyle\n3D Art:\n  June\nMusic/SFX:\n 
+        Brendan"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_lineSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1619519124274000064, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4589438475249902542, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5643977768107818801}
+      addedObject: {fileID: 7244445242320504975}
   m_SourcePrefab: {fileID: 100100000, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
---- !u!1 &340852231947180062 stripped
+--- !u!1 &804502078909195345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
-  m_PrefabInstance: {fileID: 6022097428160582415}
+  m_PrefabInstance: {fileID: 6629879846667317056}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-5643977768107818801
+--- !u!114 &7244445242320504975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340852231947180062}
+  m_GameObject: {fileID: 804502078909195345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8534a804e1af740b94f23cc96e4a0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5354c7206a49676428763d94717ee8a7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestScript
-  startTime: 10
-  countdownText: {fileID: 733599225791651521}
---- !u!114 &733599225791651521 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
-  m_PrefabInstance: {fileID: 6022097428160582415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_EditorClassIdentifier: Assembly-CSharp::MenuMinigameLogic
+  prefabs: []
+  minigameID: 3
+  instantiateOnAwake: -1

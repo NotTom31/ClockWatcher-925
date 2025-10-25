@@ -2028,6 +2028,11 @@ Transform:
   - {fileID: 259753347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &1580003862 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7217597881098993972, guid: eed967445a8d2914492a659ff4b968f0, type: 3}
+  m_PrefabInstance: {fileID: 528286205025941928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599795977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,6 +2542,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5cdd18f0d87624a94691d4775ea05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateManager
+--- !u!1001 &1823916087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2753426916867694657, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_Name
+      value: MinigamesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11553
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.88971
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.49611
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440101484110286218, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: computerCanvas
+      value: 
+      objectReference: {fileID: 1580003862}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: minigamePrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: 'minigamePrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 804502078909195345, guid: 6973bde79dff2424fbf8b7f412c5b307, type: 3}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: 'minigamePrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 804502078909195345, guid: 97cc477874004144998a6306d03408d3, type: 3}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: 'minigamePrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 804502078909195345, guid: 651c45ffa9c03e24f83eb3b6a0eafbfc, type: 3}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: 'minigamePrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4020334969380072874, guid: e729ad2009a3afc46a930dae105bde3e, type: 3}
+    - target: {fileID: 8284518542343050318, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
+      propertyPath: 'minigamePrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 804502078909195345, guid: 6973bde79dff2424fbf8b7f412c5b307, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a261d6608f25f194fb278420f9e26c3f, type: 3}
 --- !u!1001 &1828369725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2878,6 +2968,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3647891430179620050, guid: eed967445a8d2914492a659ff4b968f0, type: 3}
+      propertyPath: CurrentArea
+      value: 
+      objectReference: {fileID: 11400000, guid: b3765a9ccf42d334fb6882f65f78c49e, type: 2}
     - target: {fileID: 4898737457709025189, guid: eed967445a8d2914492a659ff4b968f0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3584,3 +3678,4 @@ SceneRoots:
   - {fileID: 1641945937511597830}
   - {fileID: 1599795978}
   - {fileID: 958089546}
+  - {fileID: 1823916087}

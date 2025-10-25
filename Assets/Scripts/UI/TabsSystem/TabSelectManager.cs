@@ -20,6 +20,7 @@ public class TabSelectManager : MonoBehaviour
     private Camera _camera;
 
     private List<GameObject> _buttonObjects = new List<GameObject>();
+    private List<int> minigameIDList = new List<int>();
     private Dictionary<GameObject, Vector3> _buttonLocations = new Dictionary<GameObject, Vector3>();
 
     private void Awake()
@@ -32,7 +33,11 @@ public class TabSelectManager : MonoBehaviour
     {
         AssignAreaText();
         LoadOpenTabs();
-        CreateTabButtons();
+        foreach (TabData tab in CurrentArea.Tabs)
+        {
+            minigameIDList.Add(tab.MinigameID);
+        }
+        CreateTabButtons(minigameIDList);
     }
 
     public void AssignAreaText()
@@ -51,7 +56,7 @@ public class TabSelectManager : MonoBehaviour
         }
     }
 
-    private void CreateTabButtons()
+    private void CreateTabButtons(List<int> ID)
     {
         for (int i = 0; i < CurrentArea.Tabs.Count; i++)
         {
@@ -66,10 +71,13 @@ public class TabSelectManager : MonoBehaviour
             TabButton tabButton = buttonGO.GetComponent<TabButton>();
             tabButton.Setup(CurrentArea.Tabs[i], UnlockedTabIDs.Contains(CurrentArea.Tabs[i].TabID));
 
-            if (tabButton.TabData.app != null)
+            if (tabButton.TabData.minigame != null)
             {
-                GameObject appInstance = Instantiate(tabButton.TabData.app, AppParent);
-                appInstance.name = tabButton.TabData.app.name + "_Instance";
+                GameObject appInstance = MinigamesManager.Instance.StartMinigame(ID[i], 0, Vector2.zero).gameObject;
+
+                //Instantiate(tabButton.TabData.app, AppParent);
+                appInstance.gameObject.transform.parent = AppParent.transform;
+                appInstance.name = tabButton.TabData.minigame.name + "_Instance";
                 CanvasGroup canvasGroup = appInstance.GetComponent<CanvasGroup>();
 
                 // Make app invisible and non-interactable

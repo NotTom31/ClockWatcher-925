@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9884792f994a70498ae74a54cfc65c9, type: 3}
-  m_Name: Tab 1
+  m_Name: PopupTestTab
   m_EditorClassIdentifier: Assembly-CSharp::TabsData
-  TabID: Tab1
-  ISUnlockedByDefault: 1
+  TabID: Default
+  MinigameID: 3
+  ISUnlockedByDefault: 0
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
-  tabName: The Second
-  app: {fileID: 340852231947180062, guid: 01a5913c145c4ce4cad130df7ce72e74, type: 3}
+  tabName: Default
+  minigame: {fileID: 6668731371658587920, guid: 2c43fd47c13735e48842d15dde30aef3, type: 3}
