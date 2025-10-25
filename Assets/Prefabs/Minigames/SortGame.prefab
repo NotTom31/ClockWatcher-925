@@ -793,7 +793,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 2853521932497965283, guid: cb7555d67cff2f04199a9bc1fff5d9a9, type: 3}
   - {fileID: 258139210065213709, guid: 9905748664d7aac4b9e518e94463a603, type: 3}
-  minigameID: 1
+  minigameID: 4
   instantiateOnAwake: 1
   spawnBounds: {fileID: 2160703317699777055}
   sorteeDragArea: {fileID: 8694308880614003547}

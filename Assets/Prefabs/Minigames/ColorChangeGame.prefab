@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_Name
-      value: ColorChange
+      value: ColorChangeGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -218,6 +218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorChangeGameLogic
   prefabs: []
-  minigameID: 0
+  minigameID: 3
   instantiateOnAwake: -1
   button: {fileID: 4684475262874809950}
