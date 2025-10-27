@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PinballBall : MonoBehaviour
@@ -8,40 +8,49 @@ public class PinballBall : MonoBehaviour
     public float minSpeed = 2f;
     public float nudgeForce = 5f;
 
+    [Header("Scale Compensation")]
+    [Tooltip("Set this to your ball's world scale (e.g., 0.1 if it's 10x smaller than normal)")]
+    public float worldScale = 0.1f;
+
     private Rigidbody2D rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    void Start()
-    {
-        //rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+        // Compensate for small world size — reduce gravity’s effect
+        rb.gravityScale *= worldScale;
     }
 
     void FixedUpdate()
     {
         Vector2 currentVel = rb.linearVelocity;
 
+        // Apply scaled speed limits
+        float scaledMax = maxSpeed * worldScale;
+        float scaledMin = minSpeed * worldScale;
+
         float speed = currentVel.magnitude;
-        if (speed > maxSpeed)
+
+        if (speed > scaledMax)
         {
-            rb.linearVelocity = currentVel.normalized * maxSpeed;
+            rb.linearVelocity = currentVel.normalized * scaledMax;
         }
-        else if (speed < minSpeed && speed > 0.1f)
+        else if (speed < scaledMin && speed > 0.1f * worldScale)
         {
-            rb.linearVelocity = currentVel.normalized * minSpeed;
+            rb.linearVelocity = currentVel.normalized * scaledMin;
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Handle collision (sound, effects)
+
     }
 
     public void Nudge(Vector2 direction)
     {
-        rb.AddForce(direction.normalized * nudgeForce, ForceMode2D.Impulse);
+        // Scale impulses so they feel natural at small scale
+        rb.AddForce(direction.normalized * nudgeForce * worldScale, ForceMode2D.Impulse);
     }
 }
+*/
