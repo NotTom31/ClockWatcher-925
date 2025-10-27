@@ -7,7 +7,7 @@ public class GamePauseState : GameBaseState
         //Toggle the pause UI to appear.
         UIManager.instance.TogglePauseUI();
         //unlocks the mouse and makes it visiable.
-        CameraManager.instance.setMouseLockState(false);
+        CameraManager.instance.SetMouseLockState(false);
 
         //set time scale back to 0 to pause the game.
         Time.timeScale = 0f;
@@ -21,6 +21,6 @@ public class GamePauseState : GameBaseState
         //Toggle the pause UI to disappear.
         UIManager.instance.TogglePauseUI();
         //Locks the mouse and makes it invisiable.
-        CameraManager.instance.setMouseLockState(true);
+        CameraManager.instance.SetMouseLockState(true);
     }
 }

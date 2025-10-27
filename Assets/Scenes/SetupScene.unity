@@ -896,6 +896,23 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &413562952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3375418515849657587, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+  m_PrefabInstance: {fileID: 4773122974122696999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &413562957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413562952}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4817c1498d91274194021e7d0e8aa36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &463892839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b135d82560f2dc4b85f9f3ec2adde69, type: 3}
@@ -2310,6 +2327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   currentLevel: 2
+  gameDifficulty: 0
+  switchingStates: 0
 --- !u!4 &1682950328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b135d82560f2dc4b85f9f3ec2adde69, type: 3}
@@ -3128,15 +3147,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3317203666680843175, guid: d9fee473adf99f94f9e0742c8aad58d4, type: 3}
       propertyPath: testSelectedProfileID
-      value: Hi
+      value: 1111113233
       objectReference: {fileID: 0}
     - target: {fileID: 3317203666680843175, guid: d9fee473adf99f94f9e0742c8aad58d4, type: 3}
       propertyPath: disableDataPersistance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3317203666680843175, guid: d9fee473adf99f94f9e0742c8aad58d4, type: 3}
       propertyPath: overrideSelectedProfileId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3426263524544422046, guid: d9fee473adf99f94f9e0742c8aad58d4, type: 3}
       propertyPath: m_Name
@@ -3256,6 +3275,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2157982476009233299, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665093862885639934, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375418515849657587, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636231503495434992, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Name
+      value: DeathMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636231503495434992, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670795849185852331, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670795849185852331, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670795849185852331, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670795849185852331, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528065676631355205, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409870720930706117, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409870720930706117, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446166891381995754, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7954083543368830949, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1107.5
@@ -3299,7 +3370,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3375418515849657587, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 413562957}
   m_SourcePrefab: {fileID: 100100000, guid: ad7a2e755e1ca3a468a17123817ce4cb, type: 3}
 --- !u!1001 &6442714845033259233
 PrefabInstance:
@@ -3312,6 +3386,10 @@ PrefabInstance:
     - target: {fileID: 1147913157990697404, guid: d2757654d776d0e4e8c9df0adf22bf15, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333802503107166972, guid: d2757654d776d0e4e8c9df0adf22bf15, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8911694097260459765, guid: d2757654d776d0e4e8c9df0adf22bf15, type: 3}
       propertyPath: orientation

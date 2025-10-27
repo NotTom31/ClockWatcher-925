@@ -46,18 +46,18 @@ public class CameraManager : MonoBehaviour
     }
     private void Start()
     {
-        setMouseLockState(true);
+        SetMouseLockState(true);
     }
 
     public void Update()
     {
         InputManager.instance.TickInput(Time.deltaTime);
+        RepositionCamera(targetTransform);
     }
 
     private void FixedUpdate()
     {
         HandleRayCastInteractUI();
-        RepositionCamera(targetTransform);
     }
 
     /// <summary>
@@ -87,7 +87,7 @@ public class CameraManager : MonoBehaviour
     /// Handles when to show/hide the cursor and to lock/unlock it.
     /// </summary>
     /// <param name="lockState">True locks the cursor and hides it. False unlocks it and shows it.</param>
-    public void setMouseLockState(bool lockState)
+    public void SetMouseLockState(bool lockState)
     {
         if (lockState)
         {
@@ -100,7 +100,7 @@ public class CameraManager : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
@@ -112,7 +112,7 @@ public class CameraManager : MonoBehaviour
     {
         //Put the raycast in the ceneter of the screen.
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-        RaycastHit hit;
+        RaycastHit hit; 
 
         //Check if hte object hit is on the layer mask
         if (Physics.Raycast(ray, out hit, rayCastDistance, layerMask))
@@ -170,7 +170,6 @@ public class CameraManager : MonoBehaviour
             if (direction.sqrMagnitude > 0.0001f)
             {
                 lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
-                Debug.Log("Moving Camera.");
             }
 
             //If the player is being jumpscared, look at jumpscare position.
