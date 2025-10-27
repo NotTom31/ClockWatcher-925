@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ComputerManager : Interactable
 {
     public static ComputerManager instance { get; private set; }
     public Transform cameraPosition;
+    private Camera mainCamera;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -16,6 +18,9 @@ public class ComputerManager : Interactable
     [Header("Window Settings")]
     [SerializeField] private GameObject windowPrefab;
     [SerializeField] private Transform windowParent;
+
+    [Header("Computer Canavs")]
+    [SerializeField] private Canvas computerCanvas;
 
     private List<GameObject> activeWindows = new List<GameObject>();
 
@@ -34,6 +39,12 @@ public class ComputerManager : Interactable
         DontDestroyOnLoad(gameObject);
 
         uiText = "get on computer";
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void Start()
+    {
+        SetCanvasCamera();
     }
 
     public override void Interact()
@@ -92,5 +103,34 @@ public class ComputerManager : Interactable
         appInstance.transform.localPosition = Vector3.zero;
 
         activeWindows.Add(newWindow);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Every time a scene loads, reassign the camera
+        SetCanvasCamera();
+    }
+
+    private void SetCanvasCamera()
+    {
+        // If no camera was assigned manually, grab the scene's main camera
+        if (mainCamera == null)
+            mainCamera = Camera.main;
+
+        if (computerCanvas == null)
+        {
+            Debug.LogWarning("ComputerManager: No canvas assigned to set the camera on.");
+            return;
+        }
+
+        if (mainCamera == null)
+        {
+            Debug.LogWarning("ComputerManager: No camera found in the scene.");
+            return;
+        }
+
+        // Assign the camera to the canvas
+        computerCanvas.worldCamera = mainCamera;
+        Debug.Log($"ComputerManager: Set {computerCanvas.name}'s camera to {mainCamera.name}");
     }
 }

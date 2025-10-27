@@ -201,6 +201,8 @@ MonoBehaviour:
   cursorHotspot: {x: 0, y: 0}
   windowPrefab: {fileID: 1521732683626388142, guid: 4e270e2a96e670a428673726cc34fcb2, type: 3}
   windowParent: {fileID: 6325815385028386004}
+  mainCamera: {fileID: 0}
+  computerCanvas: {fileID: 7217597881098993972}
 --- !u!65 &531511575817391293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -507,5 +509,10 @@ RectTransform:
 --- !u!224 &6325815385028386004 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4715913625446259333, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+  m_PrefabInstance: {fileID: 1638050118533334609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &7217597881098993972 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8255532351685379941, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
   m_PrefabInstance: {fileID: 1638050118533334609}
   m_PrefabAsset: {fileID: 0}
