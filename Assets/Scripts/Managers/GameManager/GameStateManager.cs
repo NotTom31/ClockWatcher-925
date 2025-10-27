@@ -10,6 +10,8 @@ public class GameStateManager : MonoBehaviour, IDataPersistance
     public GameRestartState gameRestartState = new GameRestartState();
     public GameResumeState gameResumeState = new GameResumeState();
     public GameStartState gameStartState = new GameStartState();
+    public GameLoseState gameLoseState = new GameLoseState();
+    public GameWinState gameWinState = new GameWinState();
 
     public static GameStateManager instance;
 
@@ -50,19 +52,24 @@ public class GameStateManager : MonoBehaviour, IDataPersistance
         currentState.EnterState(this);
     }
 
+    public void MainMenu()
+    {
+        SwitchState(gameRestartState);
+    }
+
     /// <summary>
     /// Loads data from the current GameData File into the game
     /// </summary>
     /// <param name="data">Data from the file.</param>
     public void LoadData(GameData data)
     {
-        gameLoadLevelState.levelIndex = data.sceneToLoadIndex;
+        //gameLoadLevelState.levelIndex = data.sceneToLoadIndex;
 
-        //Checks to see if the data file index matches the current scene, reload the level if not.
-        if (gameLoadLevelState.levelIndex != SceneManager.GetActiveScene().buildIndex)
-        {
-            gameLoadLevelState.EnterState(this);
-        }
+        ////Checks to see if the data file index matches the current scene, reload the level if not.
+        //if (gameLoadLevelState.levelIndex != SceneManager.GetActiveScene().buildIndex)
+        //{
+        //    gameLoadLevelState.EnterState(this);
+        //}
     }
 
     /// <summary>
@@ -71,6 +78,6 @@ public class GameStateManager : MonoBehaviour, IDataPersistance
     /// <param name="data">Data from the game.</param>
     public void SaveData(GameData data)
     {
-        data.sceneToLoadIndex = gameLoadLevelState.levelIndex;
+        //data.sceneToLoadIndex = gameLoadLevelState.levelIndex;
     }
 }
