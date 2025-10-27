@@ -1182,55 +1182,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!1 &584648069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 584648070}
-  - component: {fileID: 584648071}
-  m_Layer: 0
-  m_Name: Audio Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &584648070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584648069}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1722722991}
-  m_Father: {fileID: 923250851}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &584648071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584648069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e98d0acdeba1e4b8e2e6ab9aa2e6cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  masterVolume: 0.179
-  musicVolume: 1
-  ambienceVolume: 1
-  SFXVolume: 1
 --- !u!1 &617167939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 584648070}
+  - {fileID: 1410893956}
   - {fileID: 617167942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2047,6 +1998,68 @@ PrefabInstance:
 Canvas:
   m_CorrespondingSourceObject: {fileID: 7217597881098993972, guid: eed967445a8d2914492a659ff4b968f0, type: 3}
   m_PrefabInstance: {fileID: 528286205025941928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1410893955
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 923250851}
+    m_Modifications:
+    - target: {fileID: 3162294884197837582, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.95541
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.79584
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.301
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+--- !u!4 &1410893956 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3327170725202020441, guid: 1f7c023dabdd9a34c889ce052cc9d5b9, type: 3}
+  m_PrefabInstance: {fileID: 1410893955}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1420668052 stripped
 Transform:
@@ -2407,85 +2420,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712897359}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1722722990
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1722722991}
-  - component: {fileID: 1722722992}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1722722991
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722722990}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 584648070}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1722722992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722722990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39243883a98f7d246ad0a54a2d8b347e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
-  <music>k__BackingField:
-    Guid:
-      Data1: 1911553978
-      Data2: 1188649154
-      Data3: 1727913621
-      Data4: 865219309
-    Path: event:/Music/Lofi Music
-  <ambience>k__BackingField:
-    Guid:
-      Data1: -1345453454
-      Data2: 1206175395
-      Data3: 406554297
-      Data4: 1060562297
-    Path: event:/Ambience/Forest Ambience
-  <playerFootsteps>k__BackingField:
-    Guid:
-      Data1: 453953957
-      Data2: 1141993130
-      Data3: -881969219
-      Data4: 438275845
-    Path: event:/SFX/PlayerFootsteps
-  <interacted>k__BackingField:
-    Guid:
-      Data1: -912955281
-      Data2: 1193211775
-      Data3: 1047143337
-      Data4: 164922555
-    Path: event:/SFX/Interact
-  <interactableIdle>k__BackingField:
-    Guid:
-      Data1: 1696729019
-      Data2: 1127656968
-      Data3: 827428744
-      Data4: 332716417
-    Path: event:/SFX/InteractIdle
 --- !u!1001 &1828369725
 PrefabInstance:
   m_ObjectHideFlags: 0
