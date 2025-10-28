@@ -20,8 +20,6 @@ public class CameraManager : MonoBehaviour
     public Transform orientation;
     public Transform targetTransform;
 
-    public bool cameraLock;
-
     [Header("Raycast Settings")]
 
     public LayerMask layerMask;
@@ -49,7 +47,6 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         SetMouseLockState(true);
-        cameraLock = false;
     }
 
     public void Update()
@@ -165,36 +162,28 @@ public class CameraManager : MonoBehaviour
     /// <param name="targetTransform">Targeted Position and Rotation.</param>
     public void RepositionCamera(Transform targetTransform)
     {
-        if(cameraLock)
+        if (!InputManager.instance.pauseFlag)
         {
-            if (!InputManager.instance.pauseFlag)
+            //Get the difference from the quaternions to adjust looking angle
+            Vector3 direction = targetTransform.transform.position - transform.position;
+            Quaternion lookOnLook = new Quaternion();
+
+            if (direction.sqrMagnitude > 0.0001f)
             {
-                //Get the difference from the quaternions to adjust looking angle
-                Vector3 direction = targetTransform.transform.position - transform.position;
-                Quaternion lookOnLook = new Quaternion();
-
-                if (direction.sqrMagnitude > 0.0001f)
-                {
-                    lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
-                }
-
-                //If the player is being jumpscared, look at jumpscare position.
-                if (PlayerManager.instance.jumpScaring)
-                {
-                    transform.SetPositionAndRotation(Vector3.Slerp(transform.position, orientation.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, lookOnLook, rotateSpeedToComputer * Time.deltaTime));
-                }
-                //not being jumpscared, look at the computer position.
-                else
-                {
-                    //TODO May need to recalculate the rotation as well.
-                    transform.SetPositionAndRotation(Vector3.Slerp(transform.position, targetTransform.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, targetTransform.transform.rotation, rotateSpeedToComputer * Time.deltaTime));
-                }
+                lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
             }
-        }
-        else
-        {
-            transform.position = targetTransform.position;
 
+            //If the player is being jumpscared, look at jumpscare position.
+            if (PlayerManager.instance.jumpScaring)
+            {
+                transform.SetPositionAndRotation(Vector3.Slerp(transform.position, orientation.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, lookOnLook, rotateSpeedToComputer  * Time.deltaTime));
+            }
+            //not being jumpscared, look at the computer position.
+            else
+            {
+                //TODO May need to recalculate the rotation as well.
+                transform.SetPositionAndRotation(Vector3.Slerp(transform.position, targetTransform.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, targetTransform.transform.rotation, rotateSpeedToComputer * Time.deltaTime));
+            }
         }
     }
 }

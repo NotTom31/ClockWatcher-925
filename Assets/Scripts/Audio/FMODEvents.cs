@@ -14,29 +14,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
 
     [field: Header("Interace SFX")]
-    [field: SerializeField] public EventReference paperImpact { get; private set; }
-    [field: SerializeField] public EventReference ballingPaper { get; private set; }
     [field: SerializeField] public EventReference interacted { get; private set; }
     [field: SerializeField] public EventReference interactableIdle { get; private set; }
-
-    [field: Header("Computer SFX")]
-    [field: SerializeField] public EventReference click { get; private set; }
-    [field: SerializeField] public EventReference computerOpen { get; private set; }
-    [field: SerializeField] public EventReference computerClose { get; private set; }
-    [field: SerializeField] public EventReference keyEntered { get; private set; }
-    [field: SerializeField] public EventReference keySpamAll { get; private set; }
-    [field: SerializeField] public EventReference keySpamShort { get; private set; }
-    [field: SerializeField] public EventReference keySpamLong { get; private set; }
-
-    [field: Header("Monsters SFX")]
-    [field: SerializeField] public EventReference crawlerClose { get; private set; }
-    [field: SerializeField] public EventReference crawlerFar { get; private set; }
-    [field: SerializeField] public EventReference crawlerImpact { get; private set; }
-    [field: SerializeField] public EventReference wagsIdle { get; private set; }
-    [field: SerializeField] public EventReference wagsRage { get; private set; }
-    [field: SerializeField] public EventReference wagsStep { get; private set; }
-    [field: SerializeField] public EventReference sting1 { get; private set; }
-    [field: SerializeField] public EventReference sting2 { get; private set; }
 
     public static FMODEvents instance { get; private set; }
 
