@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5206580452381158690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00101, y: 0.00742, z: -0.00085}
+  m_LocalPosition: {x: 0.001, y: 0.0074, z: -0.0021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,7 +58,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.000000018626451, y: 0.81100017, z: -0.00000029802322}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2825623952813911307}
   - {fileID: 3735762149725172806}
@@ -125,6 +125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e1832de1b5fc68948839b4b0b7e8f65a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ff89b3daaea90b45a46c8cc32b3af2d, type: 2}
     - target: {fileID: 919132149155446097, guid: e1832de1b5fc68948839b4b0b7e8f65a, type: 3}
       propertyPath: m_Name
       value: HandNeutral
@@ -203,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9bff922b715b71148bc58e41825ecad6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ff89b3daaea90b45a46c8cc32b3af2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 9bff922b715b71148bc58e41825ecad6, type: 3}
       propertyPath: m_Name
       value: HandTyping1

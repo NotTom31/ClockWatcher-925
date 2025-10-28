@@ -52,12 +52,13 @@ public class CameraManager : MonoBehaviour
     public void Update()
     {
         InputManager.instance.TickInput(Time.deltaTime);
-        RepositionCamera(targetTransform);
     }
 
     private void FixedUpdate()
     {
         HandleRayCastInteractUI();
+        RepositionCamera(targetTransform);
+
     }
 
     /// <summary>

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9884792f994a70498ae74a54cfc65c9, type: 3}
-  m_Name: Quit
-  m_EditorClassIdentifier: Assembly-CSharp::TabData
-  TabID: Quit
-  MinigameID: 2
+  m_Name: EMailTab
+  m_EditorClassIdentifier: Assembly-CSharp::TabsData
+  TabID: EMail
+  MinigameID: 6
   ISUnlockedByDefault: 1
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
-  tabName: Quit
-  minigame: {fileID: 804502078909195345, guid: 651c45ffa9c03e24f83eb3b6a0eafbfc, type: 3}
+  tabName: EMail
+  minigame: {fileID: 2433673102665178850, guid: 6755a2d7ab1cd1847ad6c2cf130abf36, type: 3}

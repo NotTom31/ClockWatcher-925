@@ -42,6 +42,13 @@ public class LevelManager : MonoBehaviour, IDataPersistance
         enemyStats = FindObjectsByType<EnemyStats>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         ModifiyEnviromentStats();
+
+        ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
+    }
+
+    public string GetTime()
+    {
+        return currentTime.ToString();
     }
 
     // Update is called once per frame
@@ -63,6 +70,8 @@ public class LevelManager : MonoBehaviour, IDataPersistance
             checkTimer = 0f;
 
             currentTime = currentTime.Add(TimeSpan.FromMinutes(10));
+
+            ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
         }
 
         if(currentTime == clockOutTime)
