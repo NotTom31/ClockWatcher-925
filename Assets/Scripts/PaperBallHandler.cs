@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using FMODUnity;
 
 public class PaperBallHandler : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class PaperBallHandler : MonoBehaviour
             if(collision.gameObject.GetComponentInParent<EnemyStats>().canResetFromThrowable)
             {
                 collision.gameObject.GetComponentInParent<EnemyStateManager>().SwitchState(collision.gameObject.GetComponentInParent<EnemyStateManager>().enemyIdleState);
-                RuntimeManager.PlayOneShot(FMODEvents.instance.paperImpact, this.gameObject.transform.position);
                 StartCoroutine(SelfDestruct());
             }
         }

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c9153b9cd72424b9e8758cf4d22f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  stalkChance: 0.1
+  stalkChance: 0.2
   currentStalkTime: 0
   TimeBeforeAttack: 30
   TimeBeforeRetryToStalk: 15
