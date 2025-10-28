@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ComputerManager : Interactable
 {
@@ -21,6 +22,7 @@ public class ComputerManager : Interactable
 
     [Header("Computer Canavs")]
     [SerializeField] private Canvas computerCanvas;
+    [SerializeField] private TextMeshProUGUI timeText;
 
     private List<GameObject> activeWindows = new List<GameObject>();
 
@@ -45,6 +47,11 @@ public class ComputerManager : Interactable
     private void Start()
     {
         SetCanvasCamera();
+    }
+
+    public void UpdateTime(string time)
+    {
+        timeText.text = time;
     }
 
     public override void Interact()

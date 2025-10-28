@@ -201,8 +201,8 @@ MonoBehaviour:
   cursorHotspot: {x: 0, y: 0}
   windowPrefab: {fileID: 1521732683626388142, guid: 4e270e2a96e670a428673726cc34fcb2, type: 3}
   windowParent: {fileID: 6325815385028386004}
-  mainCamera: {fileID: 0}
   computerCanvas: {fileID: 7217597881098993972}
+  timeText: {fileID: 4633333997737270875}
 --- !u!65 &531511575817391293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -506,6 +506,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2263467004830502008, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
   m_PrefabInstance: {fileID: 1638050118533334609}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4633333997737270875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6266597663910238218, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+  m_PrefabInstance: {fileID: 1638050118533334609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &6325815385028386004 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4715913625446259333, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
