@@ -125,6 +125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e1832de1b5fc68948839b4b0b7e8f65a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ff89b3daaea90b45a46c8cc32b3af2d, type: 2}
     - target: {fileID: 919132149155446097, guid: e1832de1b5fc68948839b4b0b7e8f65a, type: 3}
       propertyPath: m_Name
       value: HandNeutral
@@ -203,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9bff922b715b71148bc58e41825ecad6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ff89b3daaea90b45a46c8cc32b3af2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 9bff922b715b71148bc58e41825ecad6, type: 3}
       propertyPath: m_Name
       value: HandTyping1

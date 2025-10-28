@@ -9,6 +9,7 @@ public class ComputerManager : Interactable
     public Transform cameraPosition;
     private Camera mainCamera;
     private bool browserEnabled = true;
+    private bool emailEnabled = false;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -24,6 +25,7 @@ public class ComputerManager : Interactable
     [Header("Computer Canavs")]
     [SerializeField] private Canvas computerCanvas;
     [SerializeField] private GameObject browser;
+    [SerializeField] private GameObject email;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI emailCountText;
 
@@ -137,6 +139,26 @@ public class ComputerManager : Interactable
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
             browserEnabled = true;
+        }
+    }
+
+    public void ToggleEmail()
+    {
+        CanvasGroup canvasGroup = email.GetComponent<CanvasGroup>();
+
+        if (emailEnabled)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+            emailEnabled = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            emailEnabled = true;
         }
     }
 

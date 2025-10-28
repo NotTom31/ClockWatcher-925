@@ -229,6 +229,7 @@ MonoBehaviour:
   windowParent: {fileID: 6325815385028386004}
   computerCanvas: {fileID: 7217597881098993972}
   browser: {fileID: 256277334514262504}
+  email: {fileID: 756172213708776139}
   timeText: {fileID: 4633333997737270875}
   emailCountText: {fileID: 5074610193756081514}
 --- !u!65 &531511575817391293
@@ -516,13 +517,97 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7819172680025997336}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleEmail
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ComputerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246875815408143766, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8255532351685379941, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7819172680025997336}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleEmail
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ComputerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506668074742710201, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8674694244037822126, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_Name
       value: MonitorCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7819172680025997336}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleBrowser
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ComputerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222754062827846810, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -540,6 +625,11 @@ GameObject:
 --- !u!224 &707899503063730729 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2263467004830502008, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+  m_PrefabInstance: {fileID: 1638050118533334609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &756172213708776139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2073330901610570906, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
   m_PrefabInstance: {fileID: 1638050118533334609}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4633333997737270875 stripped
