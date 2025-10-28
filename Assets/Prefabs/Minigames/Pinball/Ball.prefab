@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6981211109238332207}
   - component: {fileID: 7388457981558074797}
   - component: {fileID: 7951595353534142289}
-  - component: {fileID: 6365628511154797203}
+  - component: {fileID: 3678103545370751428}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 380391684685452507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: ec7945767ab89994cb37f5315e5231c7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -141,19 +141,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 15
---- !u!114 &6365628511154797203
+--- !u!114 &3678103545370751428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380391684685452507}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c421a2415f3e6514aacdb63d6f7a17c4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pinball
-  maxSpeed: 4
-  minSpeed: 0.1
-  nudgeForce: 5
-  worldScale: 0.1
+  m_EditorClassIdentifier: Assembly-CSharp::PinballBall

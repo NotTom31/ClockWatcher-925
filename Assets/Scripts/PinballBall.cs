@@ -1,9 +1,9 @@
-/*using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PinballBall : MonoBehaviour
 {
-    [Header("Physics Settings")]
+   /* [Header("Physics Settings")]
     public float maxSpeed = 20f;
     public float minSpeed = 2f;
     public float nudgeForce = 5f;
@@ -51,6 +51,5 @@ public class PinballBall : MonoBehaviour
     {
         // Scale impulses so they feel natural at small scale
         rb.AddForce(direction.normalized * nudgeForce * worldScale, ForceMode2D.Impulse);
-    }
+    }*/
 }
-*/
