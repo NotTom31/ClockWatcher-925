@@ -8,6 +8,7 @@ public class ComputerManager : Interactable
     public static ComputerManager instance { get; private set; }
     public Transform cameraPosition;
     private Camera mainCamera;
+    private bool browserEnabled = true;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -22,7 +23,9 @@ public class ComputerManager : Interactable
 
     [Header("Computer Canavs")]
     [SerializeField] private Canvas computerCanvas;
+    [SerializeField] private GameObject browser;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI emailCountText;
 
     private List<GameObject> activeWindows = new List<GameObject>();
 
@@ -49,9 +52,14 @@ public class ComputerManager : Interactable
         SetCanvasCamera();
     }
 
-    public void UpdateTime(string time)
+    public void UpdateTimeUI(string time)
     {
         timeText.text = time;
+    }
+
+    public void UpdateEmailCountUI(string count)
+    {
+        emailCountText.text = count;
     }
 
     public override void Interact()
@@ -110,6 +118,26 @@ public class ComputerManager : Interactable
         appInstance.transform.localPosition = Vector3.zero;
 
         activeWindows.Add(newWindow);
+    }
+
+    public void ToggleBrowser()
+    {
+        CanvasGroup canvasGroup = browser.GetComponent<CanvasGroup>();
+
+        if (browserEnabled)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+            browserEnabled = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            browserEnabled = true;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

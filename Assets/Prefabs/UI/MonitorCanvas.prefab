@@ -491,6 +491,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EMailDesktopIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_text
+      value: E-Mail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_fontSize
+      value: 26.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5571787807631634540, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -622,6 +630,14 @@ PrefabInstance:
     - target: {fileID: 5192384664785435119, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Name
       value: PrinterDesktopIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_text
+      value: Printer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_fontSize
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 5571787807631634540, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Pivot.x
@@ -857,6 +873,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PhoneDesktopIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_text
+      value: Phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_fontSize
+      value: 31.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5571787807631634540, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -988,6 +1012,14 @@ PrefabInstance:
     - target: {fileID: 5192384664785435119, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Name
       value: BrowserDesktopIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_text
+      value: Browser
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365883644524201421, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
+      propertyPath: m_fontSize
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 5571787807631634540, guid: 621a23a9ca1cc6944995efdbf18d4fe7, type: 3}
       propertyPath: m_Pivot.x

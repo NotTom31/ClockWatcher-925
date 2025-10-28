@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7138957789550958663}
   - component: {fileID: 7899484742454541204}
+  - component: {fileID: 3549333599144787089}
   m_Layer: 5
   m_Name: TabsSELECT
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
   TabHeaderText: {fileID: 5189494363182165610}
   CurrentArea: {fileID: 11400000, guid: 48ddfff2eba58cc4895592c996ebc994, type: 2}
   UnlockedTabIDs: []
+--- !u!225 &3549333599144787089
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6679129102746017454}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7958728292617472824
 GameObject:
   m_ObjectHideFlags: 0

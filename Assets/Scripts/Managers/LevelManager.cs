@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
         ModifiyEnviromentStats();
 
-        ComputerManager.instance.UpdateTime(currentTime.ToString());
+        ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
     }
 
     public string GetTime()
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
             currentTime = currentTime.Add(TimeSpan.FromMinutes(10));
 
-            ComputerManager.instance.UpdateTime(currentTime.ToString());
+            ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
         }
 
         if(currentTime == clockOutTime)
