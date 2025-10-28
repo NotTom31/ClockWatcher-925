@@ -74,6 +74,7 @@ public class ComputerManager : Interactable
             //unlocks the mouse and make it visable and set the camera target position to the computer
             CameraManager.instance.SetMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
+            CameraManager.instance.cameraLock = true;
             //StartPopupMinigame(3);
         }
         else
@@ -81,6 +82,8 @@ public class ComputerManager : Interactable
             //Locks the mouse and make it invisable and set the camera target position to the center of the "room"
             CameraManager.instance.SetMouseLockState(true);
             CameraManager.instance.targetTransform = CameraManager.instance.orientation;
+            CameraManager.instance.cameraLock = false;
+
         }
     }
 

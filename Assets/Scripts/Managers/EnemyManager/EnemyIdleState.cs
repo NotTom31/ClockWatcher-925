@@ -8,6 +8,7 @@ public class EnemyIdleState : EnemyBaseState
     private float checkInterval = 1f;
     private float moveSpeed = 1f;
 
+    private float failedToStalk = 5f;
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
         checkTimer = 0f;
@@ -57,8 +58,9 @@ public class EnemyIdleState : EnemyBaseState
             float random = Random.value;
 
             // Check to see if we rolled a stalk then transition to another state
-            if (random > stalkChance)
+            if (random < stalkChance)
             {
+                Debug.Log("Stalking..." + random);
                 return true;
             }
             else
