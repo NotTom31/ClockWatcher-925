@@ -13,7 +13,7 @@ public class GameData
 
     public SerializableDictionary<string, bool> interactionsDone;
 
-    public int sceneToLoadIndex;
+    public int gameDifficulty;
 
     /// <summary>
     /// The game starts with thess values when there is no data. 

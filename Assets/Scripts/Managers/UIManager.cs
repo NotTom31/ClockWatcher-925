@@ -60,14 +60,21 @@ public class UIManager : MonoBehaviour, IDataPersistance
 
     public void SetUIText(string text = null)
     {
-        if(string.IsNullOrEmpty(text))
+        if(!InputManager.instance.MenuFlag)
         {
-            interactableText.text = interactableUIText + "Interact";
+            if (string.IsNullOrEmpty(text))
+            {
+                interactableText.text = interactableUIText + "Interact";
+            }
+            else
+            {
+                interactableText.text = interactableUIText + text;
+
+            }
         }
         else
         {
-            interactableText.text = interactableUIText + text;
-
+            interactableText.text = "";
         }
     }
 

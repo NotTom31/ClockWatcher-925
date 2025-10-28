@@ -7,7 +7,7 @@ public class GameLoadLevelState : GameBaseState
     public GameLoadLevelState() : base()
     {
         //Setting GameLoadLevel index to 0 for the main menu. (Make sure to set the project setting)
-        levelIndex = 0;
+        levelIndex = 1;
     }
 
     public GameLoadLevelState(int levelIndex) : base()
@@ -22,6 +22,8 @@ public class GameLoadLevelState : GameBaseState
 
         //Goes to next project build scene
         SceneManager.LoadSceneAsync(levelIndex);
+
+        gameStateManager.SwitchState(gameStateManager.gameStartState);
 
     }
 }

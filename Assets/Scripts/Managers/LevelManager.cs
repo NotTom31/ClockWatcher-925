@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistance
 {
     private float checkTimer;
-    private float checkInterval = 10f;
+    private float checkInterval = 3f;
 
     public TimeSpan currentTime = new TimeSpan();
-    private TimeSpan clockInTime = new TimeSpan(8, 00, 00);
-    private TimeSpan clockOutTime = new TimeSpan(4, 00, 00);
+    public TimeSpan clockInTime = new TimeSpan(8, 00, 00);
+    public TimeSpan clockOutTime = new TimeSpan(4, 30, 00);
 
-    public int currentLevel;
+    public int currentLevel = 1;
+    public int gameDifficulty;
 
     public IEnumerable<EnemyStats> enemyStats;
 
     public static LevelManager instance;
+
+    public bool switchingStates;
 
     private void Awake()
     {
@@ -27,6 +30,8 @@ public class LevelManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        switchingStates = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,11 +39,16 @@ public class LevelManager : MonoBehaviour
     {
         currentTime = clockInTime;
 
-        currentLevel = SceneManager.GetActiveScene().buildIndex;
-
         enemyStats = FindObjectsByType<EnemyStats>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         ModifiyEnviromentStats();
+
+        ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
+    }
+
+    public string GetTime()
+    {
+        return currentTime.ToString();
     }
 
     // Update is called once per frame
@@ -60,21 +70,29 @@ public class LevelManager : MonoBehaviour
             checkTimer = 0f;
 
             currentTime = currentTime.Add(TimeSpan.FromMinutes(10));
-            Debug.Log(currentTime);
+
+            ComputerManager.instance.UpdateTimeUI(currentTime.ToString());
         }
 
         if(currentTime == clockOutTime)
         {
-            checkForUnfinishedTasks();
+            if (checkForUnfinishedTasks() && switchingStates == false)
+            {
+                switchingStates = true;
+
+                GameStateManager.instance.SwitchState(GameStateManager.instance.gameWinState);
+            }
         }
     }
 
     /// <summary>
     /// Checks and hanldes at the end of day for the tasks.
     /// </summary>
-    public void checkForUnfinishedTasks()
+    public bool checkForUnfinishedTasks()
     {
         //TODO Write the logic for checking tasks at end of day.
+
+        return true;
     }
 
     /// <summary>
@@ -84,7 +102,25 @@ public class LevelManager : MonoBehaviour
     {
         foreach(EnemyStats enemy in enemyStats)
         {
-            enemy.UpdateStats(currentLevel);
+            enemy.UpdateStats(gameDifficulty);
         }
+    }
+
+    public void DisableEnemies()
+    {
+        foreach(var enemy in enemyStats)
+        {
+            enemy.gameObject.SetActive(false);
+        }
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.gameDifficulty = data.gameDifficulty;
+    }
+    
+    public void SaveData(GameData data)
+    {
+        data.gameDifficulty = this.gameDifficulty;
     }
 }

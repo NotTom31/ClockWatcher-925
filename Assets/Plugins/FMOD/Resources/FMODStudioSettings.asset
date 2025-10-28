@@ -317,8 +317,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD Projects/audio-system-fmod-test/audio-system-fmod-test.fspro
-  sourceBankPath: ../../FMOD Projects/audio-system-fmod-test/Build
+  sourceProjectPath: Assets/Audio/Fmod/sound_player.fspro
+  sourceBankPath: Assets/Audio/Fmod/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -340,7 +340,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

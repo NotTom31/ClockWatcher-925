@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ComputerManager : Interactable
 {
     public static ComputerManager instance { get; private set; }
     public Transform cameraPosition;
+    private Camera mainCamera;
+    private bool browserEnabled = true;
+    private bool emailEnabled = false;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -17,6 +22,13 @@ public class ComputerManager : Interactable
     [SerializeField] private GameObject windowPrefab;
     [SerializeField] private Transform windowParent;
 
+    [Header("Computer Canavs")]
+    [SerializeField] private Canvas computerCanvas;
+    [SerializeField] private GameObject browser;
+    [SerializeField] private GameObject email;
+    [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI emailCountText;
+
     private List<GameObject> activeWindows = new List<GameObject>();
 
     private void Awake()
@@ -25,6 +37,7 @@ public class ComputerManager : Interactable
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            Debug.Log("Destroyed Extra");
             return;
         }
 
@@ -33,6 +46,22 @@ public class ComputerManager : Interactable
         DontDestroyOnLoad(gameObject);
 
         uiText = "get on computer";
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void Start()
+    {
+        SetCanvasCamera();
+    }
+
+    public void UpdateTimeUI(string time)
+    {
+        timeText.text = time;
+    }
+
+    public void UpdateEmailCountUI(string count)
+    {
+        emailCountText.text = count;
     }
 
     public override void Interact()
@@ -43,14 +72,14 @@ public class ComputerManager : Interactable
         if (PlayerManager.instance.onComputer)
         {
             //unlocks the mouse and make it visable and set the camera target position to the computer
-            CameraManager.instance.setMouseLockState(false);
+            CameraManager.instance.SetMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
             //StartPopupMinigame(3);
         }
         else
         {
             //Locks the mouse and make it invisable and set the camera target position to the center of the "room"
-            CameraManager.instance.setMouseLockState(true);
+            CameraManager.instance.SetMouseLockState(true);
             CameraManager.instance.targetTransform = CameraManager.instance.orientation;
         }
     }
@@ -91,5 +120,74 @@ public class ComputerManager : Interactable
         appInstance.transform.localPosition = Vector3.zero;
 
         activeWindows.Add(newWindow);
+    }
+
+    public void ToggleBrowser()
+    {
+        CanvasGroup canvasGroup = browser.GetComponent<CanvasGroup>();
+
+        if (browserEnabled)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+            browserEnabled = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            browserEnabled = true;
+        }
+    }
+
+    public void ToggleEmail()
+    {
+        CanvasGroup canvasGroup = email.GetComponent<CanvasGroup>();
+
+        if (emailEnabled)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+            emailEnabled = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            emailEnabled = true;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Every time a scene loads, reassign the camera
+        SetCanvasCamera();
+    }
+
+    private void SetCanvasCamera()
+    {
+        // If no camera was assigned manually, grab the scene's main camera
+        if (mainCamera == null)
+            mainCamera = Camera.main;
+
+        if (computerCanvas == null)
+        {
+            Debug.LogWarning("ComputerManager: No canvas assigned to set the camera on.");
+            return;
+        }
+
+        if (mainCamera == null)
+        {
+            Debug.LogWarning("ComputerManager: No camera found in the scene.");
+            return;
+        }
+
+        // Assign the camera to the canvas
+        computerCanvas.worldCamera = mainCamera;
+        Debug.Log($"ComputerManager: Set {computerCanvas.name}'s camera to {mainCamera.name}");
     }
 }

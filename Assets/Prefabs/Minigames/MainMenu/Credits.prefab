@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 550
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2156982007155901442, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_SizeDelta.y
@@ -107,8 +107,12 @@ PrefabInstance:
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_text
       value: "Credits\n\nProgrammers:\n  Thomas Mezzie\n  Walter Lukkarila\n  Evan
-        Charfauros\n2D Art:\n  Tangent Sacket Pyle\n3D Art:\n  June\nMusic/SFX:\n 
-        Brendan"
+        Charfauros\n2D Art:\n  Tangent Sacket Pyle\n3D Art:\n  June McClelland\nMusic/SFX:\n 
+        Brendan \"Shmendin\" Cat O'Hara"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontSize
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_fontAsset
@@ -117,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_lineSpacing
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 6466198401030426062, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       propertyPath: m_sharedMaterial
