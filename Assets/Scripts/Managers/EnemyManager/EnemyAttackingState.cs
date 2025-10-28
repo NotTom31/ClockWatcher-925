@@ -9,6 +9,7 @@ public class EnemyAttackingState : EnemyBaseState
         PlayerManager.instance.jumpScaring = true;
         UIManager.instance.ToggleDeathUI();
         CameraManager.instance.targetTransform = enemyStateManager.jumpScareOrientation;
+        CameraManager.instance.cameraLock = true;
 
         InputManager.instance.MenuFlag = true;
     }

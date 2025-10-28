@@ -54,6 +54,11 @@ public class GameStateManager : MonoBehaviour, IDataPersistance
 
     public void MainMenu()
     {
+        SceneManager.LoadScene(0);
+    }
+
+    public void RestartGame()
+    {
         SwitchState(gameRestartState);
     }
 
