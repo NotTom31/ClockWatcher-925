@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
     public TimeSpan currentTime = new TimeSpan();
     public TimeSpan clockInTime = new TimeSpan(8, 00, 00);
-    public TimeSpan clockOutTime = new TimeSpan(4, 30, 00);
+    public TimeSpan clockOutTime = new TimeSpan(16, 30, 00);
 
     public int currentLevel = 1;
     public int gameDifficulty;
