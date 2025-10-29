@@ -17,7 +17,7 @@ MonoBehaviour:
   fromText: '<FROM: 287@staffinginc.org> '
   charsPerWord: 3
   containsMessage: 1
-  canReply: 0
+  canReply: 1
   recievedMessageText: "Hello again Employee 925,\r\n\r\nWe hope you are doing well.
     We have noticed that you are sending invoice requests to former Employee 621,
     and we wanted to let you know that they were lost and no longer work in the office.
@@ -26,7 +26,12 @@ MonoBehaviour:
     continue to be diligent and follow up to ensure that your tasks are complete.
     It is your responsibility to stay abreast of staffing changes.\r\n\r\nEmployee
     287"
-  replySubjectText: 
-  replyToText: 
-  replyFromText: 
-  bodyText: 
+  replySubjectText: '<FWD: Invoice Requests> '
+  replyToText: '<TO: 855@staffinginc.com>'
+  replyFromText: '<FROM: 925@staffinginc.org>'
+  bodyText: "Hello Employee 855,\r\n\r\nWelcome to the office! I hope you are learning
+    quickly how to get by. I was told that you are the new point person for invoices,
+    here is a backlog.\r\n\r\n-6 Green\r\n-3 Wet\r\n-16 Charlie\r\n\r\nI\u2019ve
+    attached the paperwork here. I have also heard of two flats of raw tissue you
+    may need to handle but you will have to contact Employee 137 about the release
+    for them.\r\n\r\nTake care,\r\nEmployee 925\r\n"

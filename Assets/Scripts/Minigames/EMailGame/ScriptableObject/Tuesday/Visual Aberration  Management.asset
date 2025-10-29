@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
-  m_Name: Visual Abberation Management
+  m_Name: Visual Aberration  Management
   m_EditorClassIdentifier: Assembly-CSharp::EMailData
-  subjectText: '<Visual Abberation Management> '
+  subjectText: '<Visual Aberration  Management> '
   toText: '<TO: 925@staffinginc.org> '
   fromText: '<FROM: 366@staffinginc.org> '
   charsPerWord: 2
   containsMessage: 1
   canReply: 0
-  bodyText: 
   recievedMessageText: "Hello Everyone,\r\n\r\nHope you had a great weekend! This
     is Employee 366 from the wellness department. I know many of you are still touched
     by the troubling events of last Thursday, which is why we wanted to give employees
@@ -29,3 +28,7 @@ MonoBehaviour:
     shows that in 50% of cases, correctly following the SALES protocol will keep
     employees in good enough physical health to come back to work next week!\r\n\r\nHave
     a great week!\r\nEmployee 366"
+  replySubjectText: 
+  replyToText: 
+  replyFromText: 
+  bodyText: 

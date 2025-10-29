@@ -12,19 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
   m_Name: Weekly Electrical Status
   m_EditorClassIdentifier: Assembly-CSharp::EMailData
-  subjectText: '<RE: Weekly Electrical Status>'
-  toText: '<TO: hr@staffinginc.org> '
+  subjectText: <Weekly Electrical Status>
+  toText: '<TO: 925@staffinginc.org>'
   fromText: '<FROM: 925@staffinginc.org> '
-  charsPerWord: 0
+  charsPerWord: 3
   containsMessage: 1
   canReply: 1
-  bodyText: "Greetings HR,\r\n\r\nI\u2019m responding to your memo to confirm that
-    I have agreed to your electrical management policy and forgo any right to litigation
-    in the event of injury or death sustained from low-lighting environments.\r\n\r\nHow
-    are the alternator repairs going? I was under the impression that these policies
-    were temporarily enforced until the repairs were finished, but I haven\u2019t
-    heard an update in months.\r\n\r\nThank you for your communication,\r\nEmployee
-    925"
   recievedMessageText: "This is our weekly reminder that due to low grid-level electrical
     supply, the office will continue to enforce power saving measures. Employees
     must choose one of the following electrical usages at a time:\r\n- Your computer\r\n-
@@ -33,3 +26,13 @@ MonoBehaviour:
     you have agreed to our electrical management policy and forego any right to litigation
     in the event of injury or death sustained from low-lighting environments.\r\n\r\nHave
     a great week!\r\nHR"
+  replySubjectText: '<RE: Weekly Electrical Status>'
+  replyToText: '<TO: hr@staffinginc.org>'
+  replyFromText: '<FROM: 925@staffinginc.org>'
+  bodyText: "Greetings HR,\r\n\r\nI\u2019m responding to your memo to confirm that
+    I have agreed to your electrical management policy and forgo any right to litigation
+    in the event of injury or death sustained from low-lighting environments.\r\n\r\nHow
+    are the alternator repairs going? I was under the impression that these policies
+    were temporarily enforced until the repairs were finished, but I haven\u2019t
+    heard an update in months.\r\n\r\nThank you for your communication,\r\nEmployee
+    925"
