@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
     private float checkInterval = 3f;
 
     public TimeSpan currentTime = new TimeSpan();
-    public TimeSpan clockInTime = new TimeSpan(8, 00, 00);
+    public TimeSpan clockInTime = new TimeSpan(9, 00, 00);
     public TimeSpan clockOutTime = new TimeSpan(16, 30, 00);
 
     public int currentLevel = 1;
@@ -76,6 +76,8 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
         if(currentTime == clockOutTime)
         {
+            Debug.Log("ending time");
+
             if (checkForUnfinishedTasks() && switchingStates == false)
             {
                 switchingStates = true;
@@ -90,7 +92,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
     /// </summary>
     public bool checkForUnfinishedTasks()
     {
-        //TODO Write the logic for checking tasks at end of day.
+        //TODO
 
         return true;
     }
