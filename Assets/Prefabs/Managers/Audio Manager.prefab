@@ -142,6 +142,27 @@ MonoBehaviour:
       Data3: 466221993
       Data4: 53356748
     Path: event:/hover
+  <printer>k__BackingField:
+    Guid:
+      Data1: 1457036956
+      Data2: 1160165566
+      Data3: 1886917041
+      Data4: 1936230892
+    Path: event:/printer
+  <lightSwitch>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <throwPaper>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <click>k__BackingField:
     Guid:
       Data1: 1446224952
@@ -149,6 +170,13 @@ MonoBehaviour:
       Data3: 20706957
       Data4: 378219987
     Path: event:/click
+  <hover>k__BackingField:
+    Guid:
+      Data1: 1361404054
+      Data2: 1330623147
+      Data3: 466221993
+      Data4: 53356748
+    Path: event:/hover
   <computerOpen>k__BackingField:
     Guid:
       Data1: 2046285497
@@ -191,6 +219,69 @@ MonoBehaviour:
       Data3: 1355114673
       Data4: 94285060
     Path: event:/keyspam_long
+  <negFeedback>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <posFeedback>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pos2Feedback>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <fileOpen>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <fileClose>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <emailSent>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <emailRecieved>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waterPlant>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <trashFile>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <crawlerClose>k__BackingField:
     Guid:
       Data1: 1408261438

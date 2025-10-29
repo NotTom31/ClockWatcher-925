@@ -24,6 +24,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Computer SFX")]
     [field: SerializeField] public EventReference click { get; private set; }
+    [field: SerializeField] public EventReference hover { get; private set; }
     [field: SerializeField] public EventReference computerOpen { get; private set; }
     [field: SerializeField] public EventReference computerClose { get; private set; }
     [field: SerializeField] public EventReference keyEntered { get; private set; }
