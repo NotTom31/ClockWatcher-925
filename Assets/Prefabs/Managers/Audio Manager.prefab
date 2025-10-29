@@ -261,7 +261,7 @@ MonoBehaviour:
       Data3: 891129256
       Data4: -787991382
     Path: event:/email_sent
-  <emailRecieved>k__BackingField:
+  <emailReceived>k__BackingField:
     Guid:
       Data1: 123680900
       Data2: 1271634791

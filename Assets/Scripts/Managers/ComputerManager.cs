@@ -12,6 +12,7 @@ public class ComputerManager : Interactable
     private bool emailEnabled = false;
     public bool isTyping = false;
     public bool isTyping2 = false;
+    public int emailCount = 0;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -64,9 +65,9 @@ public class ComputerManager : Interactable
         timeText.text = time;
     }
 
-    public void UpdateEmailCountUI(string count)
+    private void UpdateEmailCountUI()
     {
-        emailCountText.text = count;
+        emailCountText.text = emailCount.ToString();
     }
 
     public override void Interact()
@@ -180,6 +181,13 @@ public class ComputerManager : Interactable
     public void PrintPaper()
     {
         Paper.instance.IncrementPaper();
+    }
+
+    public void ReceiveEmail()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.emailReceived, this.transform.position);
+        emailCount += 1;
+        UpdateEmailCountUI();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

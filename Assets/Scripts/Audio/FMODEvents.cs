@@ -37,7 +37,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference fileOpen { get; private set; }
     [field: SerializeField] public EventReference fileClose { get; private set; }
     [field: SerializeField] public EventReference emailSent { get; private set; }
-    [field: SerializeField] public EventReference emailRecieved { get; private set; }
+    [field: SerializeField] public EventReference emailReceived { get; private set; }
     [field: SerializeField] public EventReference waterPlant { get; private set; }
     [field: SerializeField] public EventReference trashFile { get; private set; }
 
