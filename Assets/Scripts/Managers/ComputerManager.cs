@@ -11,6 +11,7 @@ public class ComputerManager : Interactable
     private bool browserEnabled = true;
     private bool emailEnabled = false;
     public bool isTyping = false;
+    public bool isTyping2 = false;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -70,7 +71,7 @@ public class ComputerManager : Interactable
 
     public override void Interact()
     {
-        if (isTyping)
+        if (isTyping || isTyping2)
             return;
 
         //toggles the player being on the computer
