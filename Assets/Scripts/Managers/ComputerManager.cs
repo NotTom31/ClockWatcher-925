@@ -16,7 +16,10 @@ public class ComputerManager : Interactable
     [SerializeField] private Texture2D clickCursor;
     [SerializeField] private Texture2D grabCursor;
     [SerializeField] private Texture2D dragCursor;
-    [SerializeField] private Vector2 cursorHotspot = Vector2.zero;
+    [SerializeField] private Vector2 normalHotspot = Vector2.zero;
+    [SerializeField] private Vector2 clickHotspot = Vector2.zero;
+    [SerializeField] private Vector2 grabHotspot = Vector2.zero;
+    [SerializeField] private Vector2 dragHotspot = Vector2.zero;
 
     [Header("Window Settings")]
     [SerializeField] private GameObject windowPrefab;
@@ -89,22 +92,22 @@ public class ComputerManager : Interactable
 
     public void SetNormalCursor()
     {
-        Cursor.SetCursor(normalCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(normalCursor, normalHotspot, CursorMode.Auto);
     }
 
     public void SetClickCursor()
     {
-        Cursor.SetCursor(clickCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(clickCursor, clickHotspot, CursorMode.Auto);
     }
 
     public void SetGrabCursor()
     {
-        Cursor.SetCursor(grabCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(grabCursor, grabHotspot, CursorMode.Auto);
     }
 
     public void SetDragCursor()
     {
-        Cursor.SetCursor(dragCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(dragCursor, dragHotspot, CursorMode.Auto);
     }
 
 
