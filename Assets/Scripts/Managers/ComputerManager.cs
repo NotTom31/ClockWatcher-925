@@ -168,6 +168,11 @@ public class ComputerManager : Interactable
         }
     }
 
+    public void PrintPaper()
+    {
+        Paper.instance.IncrementPaper();
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Every time a scene loads, reassign the camera

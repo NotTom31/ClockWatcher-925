@@ -18,15 +18,28 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference ballingPaper { get; private set; }
     [field: SerializeField] public EventReference interacted { get; private set; }
     [field: SerializeField] public EventReference interactableIdle { get; private set; }
+    [field: SerializeField] public EventReference printer { get; private set; }
+    [field: SerializeField] public EventReference lightSwitch { get; private set; }
+    [field: SerializeField] public EventReference throwPaper { get; private set; }
 
     [field: Header("Computer SFX")]
     [field: SerializeField] public EventReference click { get; private set; }
+    [field: SerializeField] public EventReference hover { get; private set; }
     [field: SerializeField] public EventReference computerOpen { get; private set; }
     [field: SerializeField] public EventReference computerClose { get; private set; }
     [field: SerializeField] public EventReference keyEntered { get; private set; }
     [field: SerializeField] public EventReference keySpamAll { get; private set; }
     [field: SerializeField] public EventReference keySpamShort { get; private set; }
     [field: SerializeField] public EventReference keySpamLong { get; private set; }
+    [field: SerializeField] public EventReference negFeedback { get; private set; }
+    [field: SerializeField] public EventReference posFeedback { get; private set; }
+    [field: SerializeField] public EventReference pos2Feedback { get; private set; }
+    [field: SerializeField] public EventReference fileOpen { get; private set; }
+    [field: SerializeField] public EventReference fileClose { get; private set; }
+    [field: SerializeField] public EventReference emailSent { get; private set; }
+    [field: SerializeField] public EventReference emailRecieved { get; private set; }
+    [field: SerializeField] public EventReference waterPlant { get; private set; }
+    [field: SerializeField] public EventReference trashFile { get; private set; }
 
     [field: Header("Monsters SFX")]
     [field: SerializeField] public EventReference crawlerClose { get; private set; }

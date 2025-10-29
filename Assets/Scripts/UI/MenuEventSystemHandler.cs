@@ -107,7 +107,7 @@ public class MenuEventSystemHandler : MonoBehaviour
 
     public void OnSelect(BaseEventData eventData)
     {
-        //Add Sound Here
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.hover, this.transform.position);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
 
         if (_animationExclusions.Contains(eventData.selectedObject))

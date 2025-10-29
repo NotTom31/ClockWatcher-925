@@ -393,26 +393,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 126969233090832061, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -395
+      objectReference: {fileID: 0}
+    - target: {fileID: 332963948071268158, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1032297717593172438, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
@@ -558,6 +562,34 @@ PrefabInstance:
     - target: {fileID: 2263467004830502008, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7819172680025997336}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PrintPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ComputerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981935690015385012, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3624290188160800497, guid: 9b2fd167019d5174bb1b77ef382de577, type: 3}
       propertyPath: m_SizeDelta.x

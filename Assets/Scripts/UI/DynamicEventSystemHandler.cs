@@ -88,7 +88,7 @@ public class DynamicEventSystemHandler : MonoBehaviour
 
     public virtual void OnSelect(BaseEventData eventData)
     {
-        //Add Sound Here
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.hover, this.transform.position);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
 
         float newScale = eventData.selectedObject.transform.localScale.y * _selectedAnimationScale;
