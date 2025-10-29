@@ -5,6 +5,8 @@ public class Paper : Interactable
 {
     public GameObject paper;
 
+    public static Paper instance;
+
     public int currentPaperCount = 0;
 
     public int maxPaperCount = 1;
@@ -12,6 +14,19 @@ public class Paper : Interactable
     private void Start()
     {
         uiText = "print more paper";
+    }
+
+    private void Awake()
+    {
+        // Ensure only one instance exists
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            Debug.Log("Destroyed Extra");
+            return;
+        }
+
+        instance = this;
     }
 
     public override void Interact()
