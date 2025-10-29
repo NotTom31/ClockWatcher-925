@@ -11,6 +11,7 @@ public class EnemyWanderState : EnemyBaseState
         enemyStateManager.enemyStats.currentWaitTimerBeforeWander = enemyStateManager.enemyStats.waitTimerBeforeWander;
         enemyStateManager.enemyStats.currentWanderPoint = enemyStateManager.idlePosition;
         enemyStateManager.enemyStats.indexForPoint = 0;
+        enemyStateManager.model.GetComponent<Collider>().enabled = false;
     }
 
     /// <summary>
@@ -48,6 +49,7 @@ public class EnemyWanderState : EnemyBaseState
     public override void OnExit(EnemyStateManager enemyStateManager)
     {
         Debug.Log("Exiting Wandering...");
+        enemyStateManager.model.GetComponent<Collider>().enabled = true;
     }
 
     private bool CalculateDisappearChance(float disappearChance)
