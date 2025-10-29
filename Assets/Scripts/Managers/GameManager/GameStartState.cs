@@ -6,5 +6,6 @@ public class GameStartState : GameBaseState
     {
         CameraManager.instance.SetMouseLockState(true);
         PlayerManager.instance.onComputer = false;
+        Time.timeScale = 1f;
     }
 }
