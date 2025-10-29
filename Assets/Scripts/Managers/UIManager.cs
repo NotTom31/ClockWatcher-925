@@ -17,8 +17,6 @@ public class UIManager : MonoBehaviour, IDataPersistance
 
     public static UIManager instance;
 
-    private string interactableUIText = "E to ";
-
     private void Awake()
     {
         if (instance == null)
@@ -64,11 +62,11 @@ public class UIManager : MonoBehaviour, IDataPersistance
         {
             if (string.IsNullOrEmpty(text))
             {
-                interactableText.text = interactableUIText + "Interact";
+                interactableText.text = "E to Interact";
             }
             else
             {
-                interactableText.text = interactableUIText + text;
+                interactableText.text = text;
 
             }
         }

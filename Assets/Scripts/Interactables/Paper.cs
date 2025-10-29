@@ -13,7 +13,7 @@ public class Paper : Interactable
 
     private void Start()
     {
-        uiText = "print more paper";
+        uiText = "Print more paper";
     }
 
     private void Awake()
@@ -48,7 +48,7 @@ public class Paper : Interactable
 
                 if(currentPaperCount == 0)
                 {
-                    uiText = "print more paper";
+                    uiText = "Print more paper";
                 }
             }
         }
@@ -62,6 +62,6 @@ public class Paper : Interactable
         }        
         currentPaperCount++;
 
-        uiText = "Grab Paper";
+        uiText = "E to Grab Paper";
     }
 }   

@@ -16,6 +16,8 @@ public class Lightswitch : Interactable
         currentLightTimer = lightTimer;
 
         light = GetComponentInChildren<Light>();
+
+        uiText = "E to turn on light";
     }
 
     public override void Interact()
@@ -44,10 +46,12 @@ public class Lightswitch : Interactable
                 currentLightTimer = 0;
                 light.enabled = false;
                 interactableEnabled = false;
+                uiText = "E to turn on light";
             }
             else
             {
                 light.enabled = true;
+                uiText = "E to turn off light";
             }
         }
         else
@@ -55,6 +59,7 @@ public class Lightswitch : Interactable
             //If the item has not been interacted, turn it off.
             light.enabled = false;
             currentLightTimer = lightTimer;
+            uiText = "E to turn on light";
         }
     }
 }

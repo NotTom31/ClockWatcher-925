@@ -170,7 +170,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             StopCoroutine(autoSaveCoroutine);
         }
-        autoSaveCoroutine = StartCoroutine(Autosave());
+        //autoSaveCoroutine = StartCoroutine(Autosave());
     }
 
     /// <summary>
