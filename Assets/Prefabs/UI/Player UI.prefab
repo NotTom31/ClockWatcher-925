@@ -57,6 +57,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7954083543368830949}
     m_Modifications:
+    - target: {fileID: 117771136768630110, guid: 8963b4c70c8fd694cb37f7ab6f214b41, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 117771136768630110, guid: 8963b4c70c8fd694cb37f7ab6f214b41, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1619519124274000064, guid: 5c9ebe3597a5a85429f34513ad48c6f2, type: 2}
+    - target: {fileID: 117771136768630110, guid: 8963b4c70c8fd694cb37f7ab6f214b41, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2417892225323660242, guid: 8963b4c70c8fd694cb37f7ab6f214b41, type: 3}
       propertyPath: m_Name
       value: UICanvas
