@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyWanderState : EnemyBaseState
 {
-    private float moveSpeed = 1f;
     /// <summary>
     /// Handles any logic that needs to be done when entering the state.
     /// </summary>
@@ -12,7 +11,6 @@ public class EnemyWanderState : EnemyBaseState
         enemyStateManager.enemyStats.currentWaitTimerBeforeWander = enemyStateManager.enemyStats.waitTimerBeforeWander;
         enemyStateManager.enemyStats.currentWanderPoint = enemyStateManager.idlePosition;
         enemyStateManager.enemyStats.indexForPoint = 0;
-
     }
 
     /// <summary>
@@ -95,6 +93,14 @@ public class EnemyWanderState : EnemyBaseState
 
     public void UpdatePosition(EnemyStateManager enemyStateManager, Transform newPosition)
     {
-        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, newPosition.position, moveSpeed * Time.deltaTime);
+        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, newPosition.position, enemyStateManager.enemyStats.moveSpeed * Time.deltaTime);
+        if (Vector3.Distance(enemyStateManager.model.transform.position, newPosition.position) > 0.1f)
+        {
+            enemyStateManager.animator.Play("Walk");
+        }
+        else
+        {
+            enemyStateManager.animator.Play("Idle");
+        }
     }
 }
