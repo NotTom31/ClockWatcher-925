@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    [Header("General stats")]
+    public float moveSpeed = 0.5f;
+
     [Header("Stalk stats")]
 
     public float stalkChance;

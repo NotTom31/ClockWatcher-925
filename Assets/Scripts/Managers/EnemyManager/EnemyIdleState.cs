@@ -4,13 +4,10 @@ using UnityEngine;
 public class EnemyIdleState : EnemyBaseState
 {
     //Check every checkInterval in seconds to roll a chance for the monster to start to stalk.
-    private float checkTimer;
-    private float checkInterval = 1f;
     private float moveSpeed = 1f;
 
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
-        checkTimer = 0f;
 
         //Check to see if we have failed to stalk in the past, if so, put a timer before rolling chance to stalk again.
         if(enemyStateManager.enemyStats.failedToStalk)
@@ -80,7 +77,6 @@ public class EnemyIdleState : EnemyBaseState
 
     private bool CalculateWanderChance(float wanderChance)
     {
-        checkTimer = 0f;
         float random = Random.value;
 
         // Check to see if we rolled a stalk then transition to another state
