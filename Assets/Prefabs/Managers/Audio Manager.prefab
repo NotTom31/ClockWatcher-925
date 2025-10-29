@@ -151,18 +151,18 @@ MonoBehaviour:
     Path: event:/printer
   <lightSwitch>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1446224952
+      Data2: 1084695677
+      Data3: 20706957
+      Data4: 378219987
+    Path: event:/click
   <throwPaper>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1238940010
+      Data2: 1181793812
+      Data3: 635064448
+      Data4: 997794469
+    Path: event:/woosh_open_mixed
   <click>k__BackingField:
     Guid:
       Data1: 1446224952

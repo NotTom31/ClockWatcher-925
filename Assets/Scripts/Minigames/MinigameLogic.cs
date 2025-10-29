@@ -7,9 +7,9 @@ using UnityEngine;
 public abstract class MinigameLogic : MonoBehaviour
 {
     [SerializeField] 
-    protected List<GameObject> prefabs;     // list of entity prefabs for instantiation. Populate this list inside a minigame-specific Prefab.
-    protected List<GameObject> entities;    // in-game entities handled by this minigame
-    public int minigameID;                  // referenced by MinigamesManager to determine which minigame this is. Set externally.
+    protected List<GameObject> prefabs;             // list of entity prefabs for instantiation. Populate this list inside a minigame-specific Prefab.
+    protected List<GameObject> entities = new();    // in-game entities handled by this minigame
+    public int minigameID;                          // referenced by MinigamesManager to determine which minigame this is. Set externally.
 
     [SerializeField]
     int instantiateOnAwake = -1;    // If non-negative, immediately instantiates at that difficulty. For testing purposes

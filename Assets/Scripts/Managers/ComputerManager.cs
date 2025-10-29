@@ -139,6 +139,7 @@ public class ComputerManager : Interactable
 
         if (browserEnabled)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileClose, this.transform.position);
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
@@ -146,6 +147,7 @@ public class ComputerManager : Interactable
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileOpen, this.transform.position);
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
@@ -159,6 +161,7 @@ public class ComputerManager : Interactable
 
         if (emailEnabled)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileClose, this.transform.position);
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
@@ -166,6 +169,7 @@ public class ComputerManager : Interactable
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileOpen, this.transform.position);
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
