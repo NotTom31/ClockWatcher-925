@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5e2b96261c6d547ba2040299e4d23f, type: 3}
   m_Name: EMail
   m_EditorClassIdentifier: Assembly-CSharp::AreaData
-  AreaName: EMail
+  AreaName: E-Mail
   Tabs:
   - {fileID: 11400000, guid: 0c638813e12d83343a12a731c6caaf2c, type: 2}

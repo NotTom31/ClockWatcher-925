@@ -10,6 +10,7 @@ public class ComputerManager : Interactable
     private Camera mainCamera;
     private bool browserEnabled = true;
     private bool emailEnabled = false;
+    public bool isTyping = false;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -69,6 +70,9 @@ public class ComputerManager : Interactable
 
     public override void Interact()
     {
+        if (isTyping)
+            return;
+
         //toggles the player being on the computer
         PlayerManager.instance.onComputer = !PlayerManager.instance.onComputer;
 
