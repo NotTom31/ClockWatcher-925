@@ -39,5 +39,6 @@ public class PlayerManager : MonoBehaviour
         objectInHand.GetComponent<Rigidbody>().AddForce(CameraManager.instance.transform.up * ballOfPaperUpwardForce, ForceMode.Impulse);
         objectInHand.GetComponent<PaperBallHandler>().StartCoroutine(objectInHand.GetComponent<PaperBallHandler>().SelfDestruct());
         objectInHand = null;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.throwPaper, this.transform.position);
     }
 }
