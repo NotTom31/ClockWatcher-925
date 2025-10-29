@@ -95,11 +95,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
   <music>k__BackingField:
     Guid:
-      Data1: 102099646
-      Data2: 1163790986
-      Data3: -1943344722
-      Data4: -276927030
-    Path: event:/hallways_demo
+      Data1: 234819538
+      Data2: 1089289661
+      Data3: 1863551889
+      Data4: -1696796495
+    Path: event:/hallways_elevators_loop
   <ambience>k__BackingField:
     Guid:
       Data1: 1361404054
@@ -109,10 +109,10 @@ MonoBehaviour:
     Path: event:/hover
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: 924562834
-      Data2: 1130745992
-      Data3: 1490199453
-      Data4: 1414008463
+      Data1: -103129669
+      Data2: 1181651340
+      Data3: -1685776220
+      Data4: -1647205139
     Path: event:/ambloop
   <paperImpact>k__BackingField:
     Guid:
@@ -158,11 +158,11 @@ MonoBehaviour:
     Path: event:/click
   <throwPaper>k__BackingField:
     Guid:
-      Data1: -1238940010
-      Data2: 1181793812
-      Data3: 635064448
-      Data4: 997794469
-    Path: event:/woosh_open_mixed
+      Data1: 583699213
+      Data2: 1321310860
+      Data3: 242447801
+      Data4: 472464980
+    Path: event:/throw
   <click>k__BackingField:
     Guid:
       Data1: 1446224952
@@ -263,17 +263,17 @@ MonoBehaviour:
     Path: event:/email_sent
   <emailReceived>k__BackingField:
     Guid:
-      Data1: 123680900
-      Data2: 1271634791
-      Data3: 517084333
-      Data4: -992878872
+      Data1: -952262491
+      Data2: 1086180928
+      Data3: 1098987932
+      Data4: -1842052994
     Path: event:/email_rcvd
   <waterPlant>k__BackingField:
     Guid:
-      Data1: 815412947
-      Data2: 1260688554
-      Data3: -1967994699
-      Data4: -477902101
+      Data1: -2102926982
+      Data2: 1309117175
+      Data3: 904770975
+      Data4: 17782104
     Path: event:/water_drop
   <trashFile>k__BackingField:
     Guid:
@@ -319,10 +319,10 @@ MonoBehaviour:
     Path: event:/crawlimpact
   <wagsIdle>k__BackingField:
     Guid:
-      Data1: -133494694
-      Data2: 1318805202
-      Data3: -401177421
-      Data4: -1253682725
+      Data1: 806765134
+      Data2: 1338252633
+      Data3: 1118562992
+      Data4: 1820645337
     Path: event:/wags_idle
   <wagsRage>k__BackingField:
     Guid:
@@ -333,10 +333,10 @@ MonoBehaviour:
     Path: event:/wags_rage
   <wagsStep>k__BackingField:
     Guid:
-      Data1: 1729786674
-      Data2: 1177519714
-      Data3: 1282476936
-      Data4: -163701323
+      Data1: -1793676815
+      Data2: 1287381057
+      Data3: 573341844
+      Data4: -718605180
     Path: event:/wags_step
   <sting1>k__BackingField:
     Guid:
