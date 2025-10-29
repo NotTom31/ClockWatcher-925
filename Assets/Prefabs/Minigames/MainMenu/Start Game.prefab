@@ -242,10 +242,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3008121659659773082}
+      addedObject: {fileID: 4860036159617973358}
     - targetCorrespondingSourceObject: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4860036159617973358}
+      addedObject: {fileID: 3008121659659773082}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
@@ -253,6 +253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4754909054860080762}
+    - targetCorrespondingSourceObject: {fileID: 6280334520790174481, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 246790466896556353}
   m_SourcePrefab: {fileID: 100100000, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
 --- !u!1 &804502078909195345 stripped
 GameObject:
@@ -287,6 +290,26 @@ MonoBehaviour:
   prefabs: []
   minigameID: 1
   instantiateOnAwake: -1
+--- !u!114 &246790466896556353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804502078909195345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb84ac30bd2486d4d907d14d621c9548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuEventSystemHandler
+  Selectables:
+  - {fileID: 3601114666933641712}
+  - {fileID: 4597104057414207181}
+  _firstSelected: {fileID: 3601114666933641712}
+  _navigateReference: {fileID: -8784545083839296357, guid: 981b1c35cf1706043bae67f0087d29eb, type: 3}
+  _selectedAnimationScale: 1.2
+  _scaleDuration: 0.25
+  _animationExclusions: []
 --- !u!224 &7392854876728623528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222866612422504168, guid: 1581ec4e560bfc7489db382c697ff630, type: 3}
@@ -483,6 +506,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a20693dee31cae48a7a37abc1a06546, type: 3}
+--- !u!114 &4597104057414207181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5402370545338264494, guid: 3a20693dee31cae48a7a37abc1a06546, type: 3}
+  m_PrefabInstance: {fileID: 8445694798102654307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &5877328823064660172 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2640611070324696495, guid: 3a20693dee31cae48a7a37abc1a06546, type: 3}
