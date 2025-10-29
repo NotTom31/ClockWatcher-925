@@ -7,6 +7,10 @@ public class EMailData : ScriptableObject
     public string subjectText;
     public string toText;
     public string fromText;
+    public int charsPerWord;
+    public bool containsMessage;
     [TextArea(3, 10)]
     public string bodyText;
+    [TextArea(3, 10)]
+    public string recievedMessageText;
 }

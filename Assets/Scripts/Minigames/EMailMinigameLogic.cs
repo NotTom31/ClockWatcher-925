@@ -22,7 +22,7 @@ public class EMailMinigameLogic : MinigameLogic
     private bool isRevealing = false;
     private int charTypedSinceLastWordTotal = 0;
     private int charTypedSinceLastWord = 0; // counts characters typed since last reveal
-    [SerializeField] private int charsPerWord = 3; // how many chars typed before revealing a word
+    [SerializeField] private int charsPerWord; // how many chars typed before revealing a word
 
     void Start()
     {
@@ -57,25 +57,46 @@ public class EMailMinigameLogic : MinigameLogic
         if (!isRevealing)
         {
             isRevealing = true;
-            sendButton.interactable = true;
         }
 
         if (wordsRevealed < bodyWords.Length)
         {
-            // Count characters typed since last word
             charTypedSinceLastWord += text.Length - charTypedSinceLastWordTotal;
             charTypedSinceLastWordTotal = text.Length;
 
             if (charTypedSinceLastWord >= charsPerWord)
             {
-                // Reveal a word
-                bodyText.text += (wordsRevealed > 0 ? " " : "") + bodyWords[wordsRevealed];
-                wordsRevealed++;
+                RevealNextWord();
                 charTypedSinceLastWord = 0;
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.keySpamShort, this.transform.position);
             }
         }
     }
+
+    private void RevealNextWord()
+    {
+        if (wordsRevealed >= bodyWords.Length) return;
+
+        string nextWord = bodyWords[wordsRevealed];
+
+        bodyText.text += (wordsRevealed > 0 ? " " : "") + nextWord;
+
+        if (nextWord.Contains("\n"))
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.keyEntered, this.transform.position);
+        }
+        else
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.keySpamShort, this.transform.position);
+        }
+
+        wordsRevealed++;
+
+        if (wordsRevealed >= bodyWords.Length)
+        {
+            sendButton.interactable = true;
+        }
+    }
+
 
     void Update()
     {
