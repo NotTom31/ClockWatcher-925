@@ -12,9 +12,14 @@ public class EMailMinigameLogic : MinigameLogic
     [SerializeField] private TMP_Text toText;
     [SerializeField] private TMP_Text fromText;
     [SerializeField] private TMP_Text bodyText;
+    [SerializeField] private TMP_Text recievedMessageText;
 
-    [SerializeField] private TMP_InputField replyField;
+    [SerializeField] private TMP_InputField composeField;
     [SerializeField] private Button sendButton;
+    [SerializeField] private Button composeButton;
+    [SerializeField] private TMP_Text composeButtonText;
+    [SerializeField] private GameObject inboxScreen;
+    [SerializeField] private GameObject composeScreen;
 
     private string fullBodyText;
     private string[] bodyWords;
@@ -22,16 +27,25 @@ public class EMailMinigameLogic : MinigameLogic
     private bool isRevealing = false;
     private int charTypedSinceLastWordTotal = 0;
     private int charTypedSinceLastWord = 0; // counts characters typed since last reveal
-    [SerializeField] private int charsPerWord; // how many chars typed before revealing a word
+    private int charsPerWord; // how many chars typed before revealing a word
+    private bool containsMessage;
+    private CanvasGroup inboxCanvasGroup;
+    private CanvasGroup composeCanvasGroup;
 
-    void Start()
+    private void Start()
     {
         LoadEmail(emailData);
         sendButton.onClick.AddListener(SendEmail);
+        composeButton.onClick.AddListener(OpenCompose);
         sendButton.interactable = false;
 
         // Start reveal when player begins typing
-        replyField.onValueChanged.AddListener(OnTypingStarted);
+        composeField.onValueChanged.AddListener(OnTypingStarted);
+
+        inboxCanvasGroup = inboxScreen.GetComponent<CanvasGroup>();
+        composeCanvasGroup = composeScreen.GetComponent<CanvasGroup>();
+
+        OpenInbox();
     }
 
     private void LoadEmail(EMailData data)
@@ -45,6 +59,14 @@ public class EMailMinigameLogic : MinigameLogic
         subjectText.text = data.subjectText;
         toText.text = data.toText;
         fromText.text = data.fromText;
+        charsPerWord = data.charsPerWord;
+        containsMessage = data.containsMessage;
+        recievedMessageText.text = data.recievedMessageText;
+
+        if (containsMessage)
+            composeButtonText.text = "Reply";
+        else
+            composeButtonText.text = "Compose";
 
         fullBodyText = data.bodyText;
         bodyWords = fullBodyText.Split(' ');
@@ -98,9 +120,9 @@ public class EMailMinigameLogic : MinigameLogic
     }
 
 
-    void Update()
+    private void Update()
     {
-        if (replyField.isFocused)
+        if (composeField.isFocused)
         {
             ComputerManager.instance.isTyping = true;
         }
@@ -110,10 +132,54 @@ public class EMailMinigameLogic : MinigameLogic
         }
     }
 
-    void SendEmail()
+    private void SendEmail()
     {
         sendButton.interactable = false;
-        Debug.Log("Sent reply: " + replyField.text);
+        Debug.Log("Sent reply: " + composeField.text);
+    }
+
+    private void ToggleReplyUI(bool isEnabled)
+    {
+        if (isEnabled)
+        {
+            composeCanvasGroup.alpha = 1f;
+            composeCanvasGroup.interactable = true;
+            composeCanvasGroup.blocksRaycasts = true;
+        }
+        else
+        {
+            composeCanvasGroup.alpha = 0f;
+            composeCanvasGroup.interactable = false;
+            composeCanvasGroup.blocksRaycasts = false;
+        }
+    }
+
+    private void ToggleInboxUI(bool isEnabled)
+    {
+        if (isEnabled)
+        {
+            inboxCanvasGroup.alpha = 1f;
+            inboxCanvasGroup.interactable = true;
+            inboxCanvasGroup.blocksRaycasts = true;
+        }
+        else
+        {
+            inboxCanvasGroup.alpha = 0f;
+            inboxCanvasGroup.interactable = false;
+            inboxCanvasGroup.blocksRaycasts = false;
+        }
+    }
+
+    public void OpenCompose()
+    {
+        ToggleReplyUI(true);
+        ToggleInboxUI(false);
+    }
+
+    public void OpenInbox()
+    {
+        ToggleReplyUI(false);
+        ToggleInboxUI(true);
     }
 
     public override float EvaluateScore()

@@ -15,7 +15,8 @@ MonoBehaviour:
   subjectText: '<RE: Two Week Notice> '
   toText: '<TO: hr@staffinginc.org> '
   fromText: '<FROM: 925@staffinginc.org>'
-  charsPerWord: 4
+  charsPerWord: 3
+  containsMessage: 0
   bodyText: "Hello HR Department,\r\n\r\nThank you for your generous offer to continue
     working at the office. However, I have concluded I am still committed to the
     two weeks notice that I sent last Monday.\r\n\r\nThat will make this Friday my
@@ -25,3 +26,4 @@ MonoBehaviour:
     me. So please do not offer me another bonus or raise, I cannot in good conscience
     commit to more than this last week.\r\n\r\nThank you again and hope you are well,\r\nEmployee
     925\r\n"
+  recievedMessageText: No new messages.
