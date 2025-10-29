@@ -28,9 +28,9 @@ public abstract class MinigameLogic : MonoBehaviour
 
     public virtual void DestroyGame()
     {
-        foreach (GameObject g in entities)
+        /*foreach (GameObject g in entities)
             Destroy(g);
-        Destroy(gameObject);
+        Destroy(gameObject);*/
     }
     
 }
