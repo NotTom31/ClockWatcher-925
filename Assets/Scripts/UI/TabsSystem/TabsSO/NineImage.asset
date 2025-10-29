@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9884792f994a70498ae74a54cfc65c9, type: 3}
+  m_Name: NineImage
+  m_EditorClassIdentifier: Assembly-CSharp::TabsData
+  TabID: Select The Image
+  MinigameID: 7
+  ISUnlockedByDefault: 1
+  Scene:
+    m_SceneAsset: {fileID: 0}
+    m_SceneName: 
+  tabName: Select The Image
+  minigame: {fileID: 343835481220965129, guid: 5e739f12ae4d09a48afcb923b0d37f12, type: 3}

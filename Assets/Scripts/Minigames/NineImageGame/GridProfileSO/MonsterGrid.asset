@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90569363cfc9eb7489a671481930442d, type: 3}
+  m_Name: MonsterGrid
+  m_EditorClassIdentifier: Assembly-CSharp::GridProfile
+  sprites:
+  - {fileID: -1370684170, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: -1964687288, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: 1521893057, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: -1501037487, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: 348878300, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: -647788459, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: 798067625, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: -1978080803, guid: ff2963772006a1244b13962ada273060, type: 3}
+  - {fileID: 1229305455, guid: ff2963772006a1244b13962ada273060, type: 3}
+  solution: 000101000101010101
+  message: Select him. Select him. Select him.

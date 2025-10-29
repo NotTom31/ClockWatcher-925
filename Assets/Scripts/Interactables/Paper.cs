@@ -1,7 +1,6 @@
 
-using UnityEngine.UIElements;
 using UnityEngine;
-
+using FMODUnity;
 public class Paper : Interactable
 {
     public GameObject paper;
@@ -15,6 +14,9 @@ public class Paper : Interactable
             PlayerManager.instance.objectInHand = (Instantiate(paper, CameraManager.instance.objectHolder.position, CameraManager.instance.objectHolder.rotation) as GameObject);
             //Set ball as child object of the player holder.
             PlayerManager.instance.objectInHand.transform.parent = CameraManager.instance.objectHolder.transform;
+
+            RuntimeManager.PlayOneShot(FMODEvents.instance.ballingPaper, this.gameObject.transform.position);
+
         }
     }
 }   
