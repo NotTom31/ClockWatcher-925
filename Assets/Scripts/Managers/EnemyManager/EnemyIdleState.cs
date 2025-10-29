@@ -4,18 +4,19 @@ using UnityEngine;
 public class EnemyIdleState : EnemyBaseState
 {
     //Check every checkInterval in seconds to roll a chance for the monster to start to stalk.
-    private float checkTimer;
-    private float checkInterval = 1f;
     private float moveSpeed = 1f;
 
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
-        checkTimer = 0f;
 
         //Check to see if we have failed to stalk in the past, if so, put a timer before rolling chance to stalk again.
         if(enemyStateManager.enemyStats.failedToStalk)
         {
             enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.TimeBeforeRetryToStalk;
+        }
+        else
+        {
+            enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.retryWaitTime;
         }
 
         enemyStateManager.animator.Play("Idle");
@@ -30,12 +31,22 @@ public class EnemyIdleState : EnemyBaseState
             {
                 enemyStateManager.SwitchState(enemyStateManager.enemyStalkingState);
             }
+            else
+            {
+                if (enemyStateManager.enemyStats.canWander)
+                {
+                    if (CalculateWanderChance(enemyStateManager.enemyStats.wanderChance))
+                    {
+                        enemyStateManager.SwitchState(enemyStateManager.enemyWanderState);
+                    }
+                }
+            }
+            enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.retryWaitTime;
         }
         else
         {
             enemyStateManager.enemyStats.currentRetryWaitTime -= Time.deltaTime;
         }
-
         UpdatePosition(enemyStateManager);
     }
 
@@ -48,25 +59,36 @@ public class EnemyIdleState : EnemyBaseState
 
     private bool CalculateStalkChance(float stalkChance)
     {
-        checkTimer += Time.deltaTime;
-
         //See if timer has passed the checkInterval
-        if (checkTimer >= checkInterval)
-        {
-            checkTimer = 0f;
-            float random = Random.value;
+        float random = Random.value;
 
-            // Check to see if we rolled a stalk then transition to another state
-            if (random > stalkChance)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        // Check to see if we rolled a stalk then transition to another state
+        if (random < stalkChance)
+        {
+            Debug.Log("Stalking..." + random);
+            return true;
         }
-        return false;    
+        else
+        {
+            return false;
+        }
+    
+    }
+
+    private bool CalculateWanderChance(float wanderChance)
+    {
+        float random = Random.value;
+
+        // Check to see if we rolled a stalk then transition to another state
+        if (random < wanderChance)
+        {
+            Debug.Log("Wandering..." + random);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void UpdatePosition(EnemyStateManager enemyStateManager)

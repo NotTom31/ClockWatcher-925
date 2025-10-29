@@ -10,13 +10,17 @@ public class ComputerManager : Interactable
     private Camera mainCamera;
     private bool browserEnabled = true;
     private bool emailEnabled = false;
+    public bool isTyping = false;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
     [SerializeField] private Texture2D clickCursor;
     [SerializeField] private Texture2D grabCursor;
     [SerializeField] private Texture2D dragCursor;
-    [SerializeField] private Vector2 cursorHotspot = Vector2.zero;
+    [SerializeField] private Vector2 normalHotspot = Vector2.zero;
+    [SerializeField] private Vector2 clickHotspot = Vector2.zero;
+    [SerializeField] private Vector2 grabHotspot = Vector2.zero;
+    [SerializeField] private Vector2 dragHotspot = Vector2.zero;
 
     [Header("Window Settings")]
     [SerializeField] private GameObject windowPrefab;
@@ -45,7 +49,7 @@ public class ComputerManager : Interactable
 
         DontDestroyOnLoad(gameObject);
 
-        uiText = "get on computer";
+        uiText = "E to get on computer";
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -66,6 +70,9 @@ public class ComputerManager : Interactable
 
     public override void Interact()
     {
+        if (isTyping)
+            return;
+
         //toggles the player being on the computer
         PlayerManager.instance.onComputer = !PlayerManager.instance.onComputer;
 
@@ -74,6 +81,7 @@ public class ComputerManager : Interactable
             //unlocks the mouse and make it visable and set the camera target position to the computer
             CameraManager.instance.SetMouseLockState(false);
             CameraManager.instance.targetTransform = cameraPosition;
+            CameraManager.instance.cameraLock = true;
             //StartPopupMinigame(3);
         }
         else
@@ -81,27 +89,29 @@ public class ComputerManager : Interactable
             //Locks the mouse and make it invisable and set the camera target position to the center of the "room"
             CameraManager.instance.SetMouseLockState(true);
             CameraManager.instance.targetTransform = CameraManager.instance.orientation;
+            CameraManager.instance.cameraLock = false;
+
         }
     }
 
     public void SetNormalCursor()
     {
-        Cursor.SetCursor(normalCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(normalCursor, normalHotspot, CursorMode.Auto);
     }
 
     public void SetClickCursor()
     {
-        Cursor.SetCursor(clickCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(clickCursor, clickHotspot, CursorMode.Auto);
     }
 
     public void SetGrabCursor()
     {
-        Cursor.SetCursor(grabCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(grabCursor, grabHotspot, CursorMode.Auto);
     }
 
     public void SetDragCursor()
     {
-        Cursor.SetCursor(dragCursor, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(dragCursor, dragHotspot, CursorMode.Auto);
     }
 
 
@@ -160,6 +170,11 @@ public class ComputerManager : Interactable
             canvasGroup.blocksRaycasts = true;
             emailEnabled = true;
         }
+    }
+
+    public void PrintPaper()
+    {
+        Paper.instance.IncrementPaper();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

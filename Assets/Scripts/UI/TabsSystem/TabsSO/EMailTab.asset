@@ -18,5 +18,5 @@ MonoBehaviour:
   Scene:
     m_SceneAsset: {fileID: 0}
     m_SceneName: 
-  tabName: EMail
+  tabName: Inbox
   minigame: {fileID: 2433673102665178850, guid: 6755a2d7ab1cd1847ad6c2cf130abf36, type: 3}

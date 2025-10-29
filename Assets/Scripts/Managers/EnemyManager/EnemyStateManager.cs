@@ -7,7 +7,11 @@ public class EnemyStateManager : MonoBehaviour
 
     public EnemyAttackingState enemyAttackingState = new EnemyAttackingState();
     public EnemyStalkingState enemyStalkingState = new EnemyStalkingState();
+    public EnemyWanderState enemyWanderState = new EnemyWanderState();
     public EnemyIdleState enemyIdleState = new EnemyIdleState();
+    public EnemyDisappearingState enemyDisappearingState = new EnemyDisappearingState();
+
+
     public EnemyStats enemyStats;
 
     public Transform jumpScareOrientation;

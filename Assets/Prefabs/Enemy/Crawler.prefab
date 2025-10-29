@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7598455316952960501}
   - component: {fileID: 7100305824923445717}
   - component: {fileID: 3109583377739469423}
+  - component: {fileID: 5213384632361656667}
   m_Layer: 0
   m_Name: Crawler_0
   m_TagString: Untagged
@@ -207,6 +208,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5213384632361656667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361005551115554110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25f6edba83c85c4caa5db66cd712232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  billboardType: 0
+  lockX: 1
+  lockY: 0
+  lockZ: 0
 --- !u!1 &8618017308140919705
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,13 +293,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c9153b9cd72424b9e8758cf4d22f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  stalkChance: 0.2
+  stalkChance: 0.1
   currentStalkTime: 0
   TimeBeforeAttack: 30
   TimeBeforeRetryToStalk: 15
+  RetryWaitTime: 1
   currentRetryWaitTime: 0
   failedToStalk: 0
   canResetFromThrowable: 0
+  canWander: 0
+  wanderChance: 0
+  currentWaitTimerBeforeWander: 0
+  waitTimerBeforeWander: 0
+  disappearingChance: 0
+  timeWhileDisappeared: 0
+  currentDisappearedTime: 0
+  currentWanderPoint: {fileID: 0}
+  indexForPoint: 0
+  wandersPositions: []
 --- !u!1 &9034790549333484203
 GameObject:
   m_ObjectHideFlags: 0

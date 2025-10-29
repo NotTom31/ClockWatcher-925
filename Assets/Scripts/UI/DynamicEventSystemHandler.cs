@@ -88,11 +88,11 @@ public class DynamicEventSystemHandler : MonoBehaviour
 
     public virtual void OnSelect(BaseEventData eventData)
     {
-        //Add Sound Here
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.hover, this.transform.position);
         _lastSelected = eventData.selectedObject.GetComponent<Selectable>();
 
-        Vector3 newScale = eventData.selectedObject.transform.localScale * _selectedAnimationScale;
-        _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration).SetEase(Ease.OutQuad);
+        float newScale = eventData.selectedObject.transform.localScale.y * _selectedAnimationScale;
+        _scaleUpTween = eventData.selectedObject.transform.DOScale(new Vector3(1, newScale, 1), _scaleDuration).SetEase(Ease.OutQuad);
     }
 
     public virtual void OnDeselect(BaseEventData eventData)

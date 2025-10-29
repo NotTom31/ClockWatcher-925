@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 951617181702950902}
   - component: {fileID: 5880021461501908997}
   - component: {fileID: 4573329350525840759}
+  - component: {fileID: 3392053300382762648}
   m_Layer: 5
   m_Name: TabButton
   m_TagString: Untagged
@@ -38,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 30}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6619290266184512
 CanvasRenderer:
@@ -136,6 +137,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TabsButton
   _tabNameText: {fileID: 7423862572911325278}
   AssignedApp: {fileID: 0}
+--- !u!114 &3392053300382762648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867776422536646456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d399d8e6cf490448a06d003ded70c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
 --- !u!1 &5993411031742995268
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4, y: 0}
-  m_SizeDelta: {x: 100, y: 25}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8743525052866814240
 CanvasRenderer:
@@ -228,8 +241,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

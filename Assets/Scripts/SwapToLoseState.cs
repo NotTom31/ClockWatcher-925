@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class SwapToLoseState : MonoBehaviour
 {

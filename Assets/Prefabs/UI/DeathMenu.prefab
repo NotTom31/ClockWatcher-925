@@ -553,6 +553,8 @@ GameObject:
   - component: {fileID: 3310909453145627883}
   - component: {fileID: 5193771528895941441}
   - component: {fileID: 2358777837200167621}
+  - component: {fileID: 2294072791513622118}
+  - component: {fileID: 4459977286273872630}
   m_Layer: 5
   m_Name: DeathAnimation
   m_TagString: Untagged
@@ -642,6 +644,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2294072791513622118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975701185913691687}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4817c1498d91274194021e7d0e8aa36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwapToLoseState
+--- !u!114 &4459977286273872630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975701185913691687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1685271522
+      Data2: 1116535671
+      Data3: 607961017
+      Data4: 207939614
+    Path: event:/sting2
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7702596529794180138
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &971090711591872186
 RectTransform:
   m_ObjectHideFlags: 0

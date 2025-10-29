@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyStalkingState : EnemyBaseState
 {
-    private float moveSpeed = 1;
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
         //Sets stalk countdown
@@ -50,7 +49,7 @@ public class EnemyStalkingState : EnemyBaseState
     /// <param name="enemyStateManager"></param>
     public void UpdatePosition(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position, moveSpeed * Time.deltaTime);
+        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position, enemyStateManager.enemyStats.moveSpeed * Time.deltaTime);
         if(Vector3.Distance(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position) > 0.1f)
         {
             enemyStateManager.animator.Play("Walk");
