@@ -16,9 +16,8 @@ MonoBehaviour:
   toText: '<TO: 925@staffinginc.org> '
   fromText: '<FROM: 287@staffinginc.org> '
   charsPerWord: 3
-  containsMessage: 0
+  containsMessage: 1
   canReply: 0
-  bodyText: 
   recievedMessageText: "Hello again Employee 925,\r\n\r\nWe hope you are doing well.
     We have noticed that you are sending invoice requests to former Employee 621,
     and we wanted to let you know that they were lost and no longer work in the office.
@@ -27,3 +26,7 @@ MonoBehaviour:
     continue to be diligent and follow up to ensure that your tasks are complete.
     It is your responsibility to stay abreast of staffing changes.\r\n\r\nEmployee
     287"
+  replySubjectText: 
+  replyToText: 
+  replyFromText: 
+  bodyText: 
