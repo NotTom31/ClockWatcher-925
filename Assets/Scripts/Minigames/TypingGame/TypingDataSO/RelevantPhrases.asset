@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RelevantPhrases
   m_EditorClassIdentifier: Assembly-CSharp::TypingData
   stringList:
-  - 'Summary Writeup: Workplace-Relevant Phrases'
-  - Measured dilligence
+  - 'Summary Writeup: Workplace-relevant Phrases'
+  - Measured diligence
   - Time-sensitive assignment
   - Anchored floorplan
   - Electronic mail notification
@@ -23,7 +23,7 @@ MonoBehaviour:
   - Do Not Look Behind You.
   - Printer-ink request form
   - Cubicle curfew
-  - One-way assistance correspondance
+  - One-way assistance correspondence
   - Wastepaper basket maintenance
   - Resignation discouragement and deterrence
   - And still more tomorrow.
