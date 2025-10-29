@@ -106,7 +106,7 @@ MonoBehaviour:
       Data2: 1330623147
       Data3: 466221993
       Data4: 53356748
-    Path: event:/hover_mixed
+    Path: event:/hover
   <playerFootsteps>k__BackingField:
     Guid:
       Data1: 924562834
@@ -114,6 +114,20 @@ MonoBehaviour:
       Data3: 1490199453
       Data4: 1414008463
     Path: event:/ambloop
+  <paperImpact>k__BackingField:
+    Guid:
+      Data1: 1768426748
+      Data2: 1130933271
+      Data3: 1671717004
+      Data4: -1995191140
+    Path: event:/paper_impact
+  <ballingPaper>k__BackingField:
+    Guid:
+      Data1: 1749596976
+      Data2: 1305467113
+      Data3: -145373515
+      Data4: 283395816
+    Path: event:/balling_paper
   <interacted>k__BackingField:
     Guid:
       Data1: 1446224952
@@ -127,4 +141,109 @@ MonoBehaviour:
       Data2: 1330623147
       Data3: 466221993
       Data4: 53356748
-    Path: event:/hover_mixed
+    Path: event:/hover
+  <click>k__BackingField:
+    Guid:
+      Data1: 1446224952
+      Data2: 1084695677
+      Data3: 20706957
+      Data4: 378219987
+    Path: event:/click
+  <computerOpen>k__BackingField:
+    Guid:
+      Data1: 2046285497
+      Data2: 1130478337
+      Data3: -1179037535
+      Data4: -1444735360
+    Path: event:/comp_open
+  <computerClose>k__BackingField:
+    Guid:
+      Data1: 1765869986
+      Data2: 1197625397
+      Data3: 1639478203
+      Data4: 1218768985
+    Path: event:/comp_close
+  <keyEntered>k__BackingField:
+    Guid:
+      Data1: -611970751
+      Data2: 1097134392
+      Data3: 1809571471
+      Data4: -1088863632
+    Path: event:/enter_key
+  <keySpamAll>k__BackingField:
+    Guid:
+      Data1: -1911131586
+      Data2: 1156874085
+      Data3: 1318048690
+      Data4: -2086137755
+    Path: event:/keyspam_all
+  <keySpamShort>k__BackingField:
+    Guid:
+      Data1: -1196531675
+      Data2: 1322328468
+      Data3: -1966127475
+      Data4: -1228087006
+    Path: event:/keyspam_short
+  <keySpamLong>k__BackingField:
+    Guid:
+      Data1: 1626231608
+      Data2: 1285631778
+      Data3: 1355114673
+      Data4: 94285060
+    Path: event:/keyspam_long
+  <crawlerClose>k__BackingField:
+    Guid:
+      Data1: 1408261438
+      Data2: 1325253762
+      Data3: -136839752
+      Data4: -1595891332
+    Path: event:/crawler_close
+  <crawlerFar>k__BackingField:
+    Guid:
+      Data1: -1703440877
+      Data2: 1090849355
+      Data3: 1883622529
+      Data4: 1645884727
+    Path: event:/crawler_far
+  <crawlerImpact>k__BackingField:
+    Guid:
+      Data1: -773466327
+      Data2: 1148832099
+      Data3: 2075466387
+      Data4: 928437640
+    Path: event:/crawlimpact
+  <wagsIdle>k__BackingField:
+    Guid:
+      Data1: -133494694
+      Data2: 1318805202
+      Data3: -401177421
+      Data4: -1253682725
+    Path: event:/wags_idle
+  <wagsRage>k__BackingField:
+    Guid:
+      Data1: 1442327528
+      Data2: 1206707514
+      Data3: 943840687
+      Data4: -752302835
+    Path: event:/wags_rage
+  <wagsStep>k__BackingField:
+    Guid:
+      Data1: 1729786674
+      Data2: 1177519714
+      Data3: 1282476936
+      Data4: -163701323
+    Path: event:/wags_step
+  <sting1>k__BackingField:
+    Guid:
+      Data1: -1360414035
+      Data2: 1158140650
+      Data3: -1346925159
+      Data4: 394409299
+    Path: event:/sting1
+  <sting2>k__BackingField:
+    Guid:
+      Data1: 1685271522
+      Data2: 1116535671
+      Data3: 607961017
+      Data4: 207939614
+    Path: event:/sting2
