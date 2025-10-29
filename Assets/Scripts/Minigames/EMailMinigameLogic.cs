@@ -14,17 +14,24 @@ public class EMailMinigameLogic : MinigameLogic
     [SerializeField] private TMP_Text bodyText;
 
     [SerializeField] private TMP_InputField replyField;
-    [SerializeField] private Button replyButton;
     [SerializeField] private Button sendButton;
 
-    private bool isReplying = false;
+    private string fullBodyText;
+    private string[] bodyWords;
+    private int wordsRevealed = 0;
+    private bool isRevealing = false;
+    private int charTypedSinceLastWordTotal = 0;
+    private int charTypedSinceLastWord = 0; // counts characters typed since last reveal
+    [SerializeField] private int charsPerWord = 3; // how many chars typed before revealing a word
 
     void Start()
     {
         LoadEmail(emailData);
-        replyButton.onClick.AddListener(StartReply);
         sendButton.onClick.AddListener(SendEmail);
         sendButton.interactable = false;
+
+        // Start reveal when player begins typing
+        replyField.onValueChanged.AddListener(OnTypingStarted);
     }
 
     private void LoadEmail(EMailData data)
@@ -38,7 +45,36 @@ public class EMailMinigameLogic : MinigameLogic
         subjectText.text = data.subjectText;
         toText.text = data.toText;
         fromText.text = data.fromText;
-        bodyText.text = data.bodyText;
+
+        fullBodyText = data.bodyText;
+        bodyWords = fullBodyText.Split(' ');
+        bodyText.text = "";
+        wordsRevealed = 0;
+    }
+
+    private void OnTypingStarted(string text)
+    {
+        if (!isRevealing)
+        {
+            isRevealing = true;
+            sendButton.interactable = true;
+        }
+
+        if (wordsRevealed < bodyWords.Length)
+        {
+            // Count characters typed since last word
+            charTypedSinceLastWord += text.Length - charTypedSinceLastWordTotal;
+            charTypedSinceLastWordTotal = text.Length;
+
+            if (charTypedSinceLastWord >= charsPerWord)
+            {
+                // Reveal a word
+                bodyText.text += (wordsRevealed > 0 ? " " : "") + bodyWords[wordsRevealed];
+                wordsRevealed++;
+                charTypedSinceLastWord = 0;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.keySpamShort, this.transform.position);
+            }
+        }
     }
 
     void Update()
@@ -53,16 +89,8 @@ public class EMailMinigameLogic : MinigameLogic
         }
     }
 
-    void StartReply()
-    {
-        isReplying = true;
-        replyButton.interactable = false;
-        sendButton.interactable = true;
-    }
-
     void SendEmail()
     {
-        isReplying = false;
         sendButton.interactable = false;
         Debug.Log("Sent reply: " + replyField.text);
     }
