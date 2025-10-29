@@ -17,6 +17,7 @@ MonoBehaviour:
   fromText: '<FROM: 925@staffinginc.org>'
   charsPerWord: 3
   containsMessage: 0
+  canReply: 1
   bodyText: "Hello HR Department,\r\n\r\nThank you for your generous offer to continue
     working at the office. However, I have concluded I am still committed to the
     two weeks notice that I sent last Monday.\r\n\r\nThat will make this Friday my

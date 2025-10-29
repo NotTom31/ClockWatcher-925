@@ -11,6 +11,9 @@ public class EMailMinigameLogic : MinigameLogic
     [SerializeField] private TMP_Text subjectText;
     [SerializeField] private TMP_Text toText;
     [SerializeField] private TMP_Text fromText;
+    [SerializeField] private TMP_Text replySubjectText;
+    [SerializeField] private TMP_Text replyToText;
+    [SerializeField] private TMP_Text replyFromText;
     [SerializeField] private TMP_Text bodyText;
     [SerializeField] private TMP_Text recievedMessageText;
 

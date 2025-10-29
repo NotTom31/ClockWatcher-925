@@ -9,8 +9,14 @@ public class EMailData : ScriptableObject
     public string fromText;
     public int charsPerWord;
     public bool containsMessage;
-    [TextArea(3, 10)]
-    public string bodyText;
+    public bool canReply;
     [TextArea(3, 10)]
     public string recievedMessageText;
+
+    public string replySubjectText;
+    public string replyToText;
+    public string replyFromText;
+
+    [TextArea(3, 10)]
+    public string bodyText;
 }

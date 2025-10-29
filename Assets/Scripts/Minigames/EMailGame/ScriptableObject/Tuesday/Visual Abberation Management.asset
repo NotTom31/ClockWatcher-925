@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
+  m_Name: Visual Abberation Management
+  m_EditorClassIdentifier: Assembly-CSharp::EMailData
+  subjectText: '<Visual Abberation Management> '
+  toText: '<TO: 925@staffinginc.org> '
+  fromText: '<FROM: 366@staffinginc.org> '
+  charsPerWord: 2
+  containsMessage: 1
+  canReply: 0
+  bodyText: 
+  recievedMessageText: "Hello Everyone,\r\n\r\nHope you had a great weekend! This
+    is Employee 366 from the wellness department. I know many of you are still touched
+    by the troubling events of last Thursday, which is why we wanted to give employees
+    a quick workshop on healthy practices in the workplace. Confidence is key to
+    delivering excellent performance!\r\n\r\nIf you are struggling with aberrant
+    visuals, just remember SALES! \r\n\r\nSee Anything? \r\nLights! \r\nEnergy Saving
+    - turn those lights back off so you can get to work!\r\nOur internal reporting
+    shows that in 50% of cases, correctly following the SALES protocol will keep
+    employees in good enough physical health to come back to work next week!\r\n\r\nHave
+    a great week!\r\nEmployee 366"

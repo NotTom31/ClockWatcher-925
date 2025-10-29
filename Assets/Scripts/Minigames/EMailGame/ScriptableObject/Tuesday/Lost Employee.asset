@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
+  m_Name: Lost Employee
+  m_EditorClassIdentifier: Assembly-CSharp::EMailData
+  subjectText: '<RE: Invoice Requests to Employee 621> '
+  toText: '<TO: 925@staffinginc.org> '
+  fromText: '<FROM: 287@staffinginc.org> '
+  charsPerWord: 3
+  containsMessage: 0
+  canReply: 0
+  bodyText: 
+  recievedMessageText: "Hello again Employee 925,\r\n\r\nWe hope you are doing well.
+    We have noticed that you are sending invoice requests to former Employee 621,
+    and we wanted to let you know that they were lost and no longer work in the office.
+    \r\n\r\nIn the future, please direct your invoice emails to Employee 855. We
+    have copied your incomplete invoices here to be sent to Employee 855.\r\n\r\nPlease
+    continue to be diligent and follow up to ensure that your tasks are complete.
+    It is your responsibility to stay abreast of staffing changes.\r\n\r\nEmployee
+    287"

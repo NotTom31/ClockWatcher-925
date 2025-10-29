@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
+  m_Name: Power Policies
+  m_EditorClassIdentifier: Assembly-CSharp::EMailData
+  subjectText: '<Weekly Electrical Status> '
+  toText: '<TO: 925@staffinginc.org>'
+  fromText: '<FROM: hr@staffinginc.org>'
+  charsPerWord: 2
+  containsMessage: 1
+  canReply: 0
+  bodyText: 
+  recievedMessageText: "This is our weekly reminder that due to low grid-level electrical
+    supply, the office will continue to enforce power saving measures. Employees
+    must choose one of the following electrical usages at a time:\n- Your computer\n-
+    Your printer\n- Your lights\nSwitching on one will disable the others. Remember
+    that lighting is a luxury! \n\nPlease respond to this email to confirm that you
+    have agreed to our electrical management policy and forego any right to litigation
+    in the event of injury or death sustained from low-lighting environments.\n\nHave
+    a great week!\nHR"
