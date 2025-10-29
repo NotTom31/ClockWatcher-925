@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     [Header("General stats")]
     public float moveSpeed = 0.5f;
+    public int MonsterID; //0 = wag, 1 = crawler
 
     [Header("Stalk stats")]
 

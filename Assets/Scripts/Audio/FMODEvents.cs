@@ -37,13 +37,15 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference fileOpen { get; private set; }
     [field: SerializeField] public EventReference fileClose { get; private set; }
     [field: SerializeField] public EventReference emailSent { get; private set; }
-    [field: SerializeField] public EventReference emailRecieved { get; private set; }
+    [field: SerializeField] public EventReference emailReceived { get; private set; }
     [field: SerializeField] public EventReference waterPlant { get; private set; }
     [field: SerializeField] public EventReference trashFile { get; private set; }
 
     [field: Header("Monsters SFX")]
-    [field: SerializeField] public EventReference crawlerClose { get; private set; }
-    [field: SerializeField] public EventReference crawlerFar { get; private set; }
+    [field: SerializeField] public EventReference crawlerThumpClose { get; private set; }
+    [field: SerializeField] public EventReference crawlerThumpFar { get; private set; }
+    [field: SerializeField] public EventReference crawlerDragClose { get; private set; }
+    [field: SerializeField] public EventReference crawlerDragFar { get; private set; }
     [field: SerializeField] public EventReference crawlerImpact { get; private set; }
     [field: SerializeField] public EventReference wagsIdle { get; private set; }
     [field: SerializeField] public EventReference wagsRage { get; private set; }

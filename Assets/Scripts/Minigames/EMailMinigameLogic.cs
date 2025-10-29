@@ -5,12 +5,15 @@ using TMPro;
 public class EMailMinigameLogic : MinigameLogic
 {
     [Header("Data")]
-    [SerializeField] private EMailData emailData;
+    [SerializeField] private EMailData[] emailData;
 
     [Header("UI References")]
     [SerializeField] private TMP_Text subjectText;
     [SerializeField] private TMP_Text toText;
     [SerializeField] private TMP_Text fromText;
+    [SerializeField] private TMP_Text replySubjectText;
+    [SerializeField] private TMP_Text replyToText;
+    [SerializeField] private TMP_Text replyFromText;
     [SerializeField] private TMP_Text bodyText;
     [SerializeField] private TMP_Text recievedMessageText;
 
@@ -18,7 +21,7 @@ public class EMailMinigameLogic : MinigameLogic
     [SerializeField] private Button sendButton;
     [SerializeField] private Button composeButton;
     [SerializeField] private TMP_Text composeButtonText;
-    [SerializeField] private GameObject inboxScreen;
+    [SerializeField] private GameObject receivedScreen;
     [SerializeField] private GameObject composeScreen;
 
     private string fullBodyText;
@@ -29,12 +32,14 @@ public class EMailMinigameLogic : MinigameLogic
     private int charTypedSinceLastWord = 0; // counts characters typed since last reveal
     private int charsPerWord; // how many chars typed before revealing a word
     private bool containsMessage;
-    private CanvasGroup inboxCanvasGroup;
+    private bool canReply;
+    private CanvasGroup receivedCanvasGroup;
     private CanvasGroup composeCanvasGroup;
+    private int emailIndex = 0;
 
     private void Start()
     {
-        LoadEmail(emailData);
+        LoadEmail(emailData[emailIndex]);
         sendButton.onClick.AddListener(SendEmail);
         composeButton.onClick.AddListener(OpenCompose);
         sendButton.interactable = false;
@@ -42,10 +47,10 @@ public class EMailMinigameLogic : MinigameLogic
         // Start reveal when player begins typing
         composeField.onValueChanged.AddListener(OnTypingStarted);
 
-        inboxCanvasGroup = inboxScreen.GetComponent<CanvasGroup>();
+        receivedCanvasGroup = receivedScreen.GetComponent<CanvasGroup>();
         composeCanvasGroup = composeScreen.GetComponent<CanvasGroup>();
 
-        OpenInbox();
+        OpenMessage();
     }
 
     private void LoadEmail(EMailData data)
@@ -59,20 +64,57 @@ public class EMailMinigameLogic : MinigameLogic
         subjectText.text = data.subjectText;
         toText.text = data.toText;
         fromText.text = data.fromText;
+        replySubjectText.text = data.replySubjectText;
+        replyToText.text = data.replyToText;
+        replyFromText.text = data.replyFromText;
         charsPerWord = data.charsPerWord;
         containsMessage = data.containsMessage;
+        canReply = data.canReply;
         recievedMessageText.text = data.recievedMessageText;
 
-        if (containsMessage)
+        if (containsMessage && canReply)
+        {
             composeButtonText.text = "Reply";
+        }
+        else if (containsMessage && !canReply)
+        {
+            //composeButton.interactable = false;
+            composeButtonText.text = "Mark Read";
+        }
         else
+        {
             composeButtonText.text = "Compose";
+        }
+
 
         fullBodyText = data.bodyText;
         bodyWords = fullBodyText.Split(' ');
         bodyText.text = "";
         wordsRevealed = 0;
     }
+
+    public void ResetEmail()
+    {
+        if (emailData.Length == 0) return;
+
+        // Reset variables
+        isRevealing = false;
+        wordsRevealed = 0;
+        charTypedSinceLastWord = 0;
+        charTypedSinceLastWordTotal = 0;
+
+        // Clear UI
+        bodyText.text = "";
+        composeField.text = "";
+        sendButton.interactable = false;
+
+        // Load the new email data
+        LoadEmail(emailData[emailIndex + 1]); //temp to keep the game moving
+
+        // Open inbox UI by default
+        OpenMessage();
+    }
+
 
     private void OnTypingStarted(string text)
     {
@@ -135,6 +177,7 @@ public class EMailMinigameLogic : MinigameLogic
     private void SendEmail()
     {
         sendButton.interactable = false;
+        ResetEmail();
         Debug.Log("Sent reply: " + composeField.text);
     }
 
@@ -158,25 +201,32 @@ public class EMailMinigameLogic : MinigameLogic
     {
         if (isEnabled)
         {
-            inboxCanvasGroup.alpha = 1f;
-            inboxCanvasGroup.interactable = true;
-            inboxCanvasGroup.blocksRaycasts = true;
+            receivedCanvasGroup.alpha = 1f;
+            receivedCanvasGroup.interactable = true;
+            receivedCanvasGroup.blocksRaycasts = true;
         }
         else
         {
-            inboxCanvasGroup.alpha = 0f;
-            inboxCanvasGroup.interactable = false;
-            inboxCanvasGroup.blocksRaycasts = false;
+            receivedCanvasGroup.alpha = 0f;
+            receivedCanvasGroup.interactable = false;
+            receivedCanvasGroup.blocksRaycasts = false;
         }
     }
 
     public void OpenCompose()
     {
-        ToggleReplyUI(true);
-        ToggleInboxUI(false);
+        if (containsMessage && !canReply)
+        {
+            ResetEmail();//temp to keep the game moving
+        }
+        else
+        {
+            ToggleReplyUI(true);
+            ToggleInboxUI(false);
+        }
     }
 
-    public void OpenInbox()
+    public void OpenMessage()
     {
         ToggleReplyUI(false);
         ToggleInboxUI(true);

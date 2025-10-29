@@ -95,11 +95,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
   <music>k__BackingField:
     Guid:
-      Data1: 102099646
-      Data2: 1163790986
-      Data3: -1943344722
-      Data4: -276927030
-    Path: event:/hallways_demo
+      Data1: 234819538
+      Data2: 1089289661
+      Data3: 1863551889
+      Data4: -1696796495
+    Path: event:/hallways_elevators_loop
   <ambience>k__BackingField:
     Guid:
       Data1: 1361404054
@@ -109,10 +109,10 @@ MonoBehaviour:
     Path: event:/hover
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: 924562834
-      Data2: 1130745992
-      Data3: 1490199453
-      Data4: 1414008463
+      Data1: -103129669
+      Data2: 1181651340
+      Data3: -1685776220
+      Data4: -1647205139
     Path: event:/ambloop
   <paperImpact>k__BackingField:
     Guid:
@@ -151,18 +151,18 @@ MonoBehaviour:
     Path: event:/printer
   <lightSwitch>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1446224952
+      Data2: 1084695677
+      Data3: 20706957
+      Data4: 378219987
+    Path: event:/click
   <throwPaper>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 583699213
+      Data2: 1321310860
+      Data3: 242447801
+      Data4: 472464980
+    Path: event:/throw
   <click>k__BackingField:
     Guid:
       Data1: 1446224952
@@ -221,81 +221,95 @@ MonoBehaviour:
     Path: event:/keyspam_long
   <negFeedback>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1401368000
+      Data2: 1214550248
+      Data3: -2027257423
+      Data4: -780321320
+    Path: event:/feedback_neg
   <posFeedback>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1851039492
+      Data2: 1137399214
+      Data3: -109868612
+      Data4: -1303688065
+    Path: event:/feedback_pos
   <pos2Feedback>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -592085300
+      Data2: 1274708505
+      Data3: -774128201
+      Data4: -1258418562
+    Path: event:/feedback_xtrapos
   <fileOpen>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1238940010
+      Data2: 1181793812
+      Data3: 635064448
+      Data4: 997794469
+    Path: event:/woosh_open_mixed
   <fileClose>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1348742622
+      Data2: 1103747214
+      Data3: -2083479143
+      Data4: 466024507
+    Path: event:/woosh_close_mixed
   <emailSent>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <emailRecieved>k__BackingField:
+      Data1: 1655054611
+      Data2: 1294026670
+      Data3: 891129256
+      Data4: -787991382
+    Path: event:/email_sent
+  <emailReceived>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -952262491
+      Data2: 1086180928
+      Data3: 1098987932
+      Data4: -1842052994
+    Path: event:/email_rcvd
   <waterPlant>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -2102926982
+      Data2: 1309117175
+      Data3: 904770975
+      Data4: 17782104
+    Path: event:/water_drop
   <trashFile>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <crawlerClose>k__BackingField:
+      Data1: 711972247
+      Data2: 1218362210
+      Data3: 1006403462
+      Data4: 1117722043
+    Path: event:/trash_file
+  <crawlerThumpClose>k__BackingField:
     Guid:
-      Data1: 1408261438
-      Data2: 1325253762
-      Data3: -136839752
-      Data4: -1595891332
-    Path: event:/crawler_close
-  <crawlerFar>k__BackingField:
+      Data1: 903120279
+      Data2: 1241145698
+      Data3: -1440127044
+      Data4: -558312406
+    Path: event:/crawler_thump_close
+  <crawlerThumpFar>k__BackingField:
     Guid:
-      Data1: -1703440877
-      Data2: 1090849355
-      Data3: 1883622529
-      Data4: 1645884727
-    Path: event:/crawler_far
+      Data1: 1076459298
+      Data2: 1294894799
+      Data3: 414397371
+      Data4: -704335623
+    Path: event:/crawler_thump_far
+  <crawlerDragClose>k__BackingField:
+    Guid:
+      Data1: 168350507
+      Data2: 1328322694
+      Data3: -1692591702
+      Data4: -1360990830
+    Path: event:/crawler_drag_close
+  <crawlerDragFar>k__BackingField:
+    Guid:
+      Data1: 1257476977
+      Data2: 1225136850
+      Data3: -751853180
+      Data4: 527689612
+    Path: event:/crawler_drag_far
   <crawlerImpact>k__BackingField:
     Guid:
       Data1: -773466327
@@ -305,10 +319,10 @@ MonoBehaviour:
     Path: event:/crawlimpact
   <wagsIdle>k__BackingField:
     Guid:
-      Data1: -133494694
-      Data2: 1318805202
-      Data3: -401177421
-      Data4: -1253682725
+      Data1: 806765134
+      Data2: 1338252633
+      Data3: 1118562992
+      Data4: 1820645337
     Path: event:/wags_idle
   <wagsRage>k__BackingField:
     Guid:
@@ -319,10 +333,10 @@ MonoBehaviour:
     Path: event:/wags_rage
   <wagsStep>k__BackingField:
     Guid:
-      Data1: 1729786674
-      Data2: 1177519714
-      Data3: 1282476936
-      Data4: -163701323
+      Data1: -1793676815
+      Data2: 1287381057
+      Data3: 573341844
+      Data4: -718605180
     Path: event:/wags_step
   <sting1>k__BackingField:
     Guid:

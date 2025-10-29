@@ -11,6 +11,8 @@ public class ComputerManager : Interactable
     private bool browserEnabled = true;
     private bool emailEnabled = false;
     public bool isTyping = false;
+    public bool isTyping2 = false;
+    public int emailCount = 0;
 
     [Header("Cursor Settings")]
     [SerializeField] private Texture2D normalCursor;
@@ -47,7 +49,7 @@ public class ComputerManager : Interactable
 
         instance = this;
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         uiText = "E to get on computer";
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -63,14 +65,14 @@ public class ComputerManager : Interactable
         timeText.text = time;
     }
 
-    public void UpdateEmailCountUI(string count)
+    private void UpdateEmailCountUI()
     {
-        emailCountText.text = count;
+        emailCountText.text = emailCount.ToString();
     }
 
     public override void Interact()
     {
-        if (isTyping)
+        if (isTyping || isTyping2)
             return;
 
         //toggles the player being on the computer
@@ -138,6 +140,7 @@ public class ComputerManager : Interactable
 
         if (browserEnabled)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileClose, this.transform.position);
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
@@ -145,6 +148,7 @@ public class ComputerManager : Interactable
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileOpen, this.transform.position);
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
@@ -158,6 +162,7 @@ public class ComputerManager : Interactable
 
         if (emailEnabled)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileClose, this.transform.position);
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
@@ -165,6 +170,7 @@ public class ComputerManager : Interactable
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fileOpen, this.transform.position);
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
@@ -175,6 +181,13 @@ public class ComputerManager : Interactable
     public void PrintPaper()
     {
         Paper.instance.IncrementPaper();
+    }
+
+    public void ReceiveEmail()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.emailReceived, this.transform.position);
+        emailCount += 1;
+        UpdateEmailCountUI();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

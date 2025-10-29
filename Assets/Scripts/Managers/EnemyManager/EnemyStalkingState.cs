@@ -6,6 +6,7 @@ public class EnemyStalkingState : EnemyBaseState
     {
         //Sets stalk countdown
         enemyStateManager.enemyStats.currentStalkTime = enemyStateManager.enemyStats.TimeBeforeAttack;
+        
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc664193b7dc35f46a738639c737b33f, type: 3}
   m_Name: MondayCutscene
   m_EditorClassIdentifier: Assembly-CSharp::EMailData
-  subjectText: '<RE: Two Week Notice> '
-  toText: '<TO: hr@staffinginc.org> '
-  fromText: '<FROM: 925@staffinginc.org>'
+  subjectText: 
+  toText: 
+  fromText: 
   charsPerWord: 3
   containsMessage: 0
+  canReply: 1
+  recievedMessageText: No new messages.
+  replySubjectText: '<RE: Two Week Notice> '
+  replyToText: '<TO: hr@staffinginc.org> '
+  replyFromText: '<FROM: 925@staffinginc.org>'
   bodyText: "Hello HR Department,\r\n\r\nThank you for your generous offer to continue
     working at the office. However, I have concluded I am still committed to the
     two weeks notice that I sent last Monday.\r\n\r\nThat will make this Friday my
@@ -26,4 +31,3 @@ MonoBehaviour:
     me. So please do not offer me another bonus or raise, I cannot in good conscience
     commit to more than this last week.\r\n\r\nThank you again and hope you are well,\r\nEmployee
     925\r\n"
-  recievedMessageText: No new messages.
