@@ -49,7 +49,7 @@ public class ComputerManager : Interactable
 
         DontDestroyOnLoad(gameObject);
 
-        uiText = "get on computer";
+        uiText = "E to get on computer";
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
