@@ -23,6 +23,8 @@ public class PlantGameLogic : MinigameLogic
     [SerializeField] float feedbackDelay;
     int realFeedbackTier = 1;
     int delayedFeedbackTier = 1;
+    private float waterSoundCooldown = 0f;
+    private float waterSoundInterval = 1f;
 
     [SerializeField] Image plant;
     [SerializeField] TextMeshProUGUI feedbackText;
@@ -40,7 +42,17 @@ public class PlantGameLogic : MinigameLogic
     private void UpdateWaterValue()
     {
         if (watering)
+        {
             waterValue += waterGainRate * Time.deltaTime;
+
+            waterSoundCooldown -= Time.deltaTime;
+
+            if (waterSoundCooldown <= 0f)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.waterPlant, this.transform.position);
+                waterSoundCooldown = waterSoundInterval;
+            }
+        }
         else
             waterValue -= waterDepleteRate * Time.deltaTime;
         if (waterValue < 0)
