@@ -134,6 +134,26 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
     }
 
+    public void MasterVolumeLevel(float newMasterVolume)
+    {
+        masterVolume = newMasterVolume;
+    }
+
+    public void MusicVolumeLevel(float newMusicVolume)
+    {
+        musicVolume = newMusicVolume;
+    }
+
+    public void AmbienceVolumeLevel(float newAmbienceVolume)
+    {
+        ambienceVolume = newAmbienceVolume;
+    }
+
+    public void SFXVolumeLevel(float newSFXVolume)
+    {
+        SFXVolume = newSFXVolume;
+    }
+
     /// <summary>
     /// Modify The music area parameter to change the song.
     /// </summary>
