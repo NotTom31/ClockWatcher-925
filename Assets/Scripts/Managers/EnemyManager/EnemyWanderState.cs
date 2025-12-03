@@ -95,14 +95,19 @@ public class EnemyWanderState : EnemyBaseState
 
     public void UpdatePosition(EnemyStateManager enemyStateManager, Transform newPosition)
     {
-        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, newPosition.position, enemyStateManager.enemyStats.moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(enemyStateManager.model.transform.position, newPosition.position) > 0.1f)
+        //TODO Update Position to NavMesh
+        if(!enemyStateManager.agent.hasPath)
         {
-            enemyStateManager.animator.Play("Walk");
+            enemyStateManager.agent.SetDestination(enemyStateManager.idlePosition.position);
+        }
+
+        if (enemyStateManager.agent.remainingDistance == 0)
+        {
+            enemyStateManager.animator.Play("Idle");
         }
         else
         {
-            enemyStateManager.animator.Play("Idle");
+            enemyStateManager.animator.Play("Walk");
         }
     }
 }

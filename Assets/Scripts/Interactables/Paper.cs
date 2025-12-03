@@ -66,6 +66,7 @@ public class Paper : Interactable
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.printer, this.transform.position);
         isIncrementing = true;
+        ComputerManager.instance.TogglePower(false);
         timer = 0f; // reset timer
         uiText = "Printing paper...";
     }
@@ -81,6 +82,7 @@ public class Paper : Interactable
                 currentPaperCount++;
                 uiText = "E to Grab Paper";
                 isIncrementing = false;
+                ComputerManager.instance.TogglePower(true);
             }
         }
     }

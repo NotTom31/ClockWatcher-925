@@ -8,8 +8,11 @@ public class ComputerManager : Interactable
     public static ComputerManager instance { get; private set; }
     public Transform cameraPosition;
     private Camera mainCamera;
+
+    public bool powerState = true;
     private bool browserEnabled = true;
     private bool emailEnabled = false;
+
     public bool isTyping = false;
     public bool isTyping2 = false;
     public int emailCount = 0;
@@ -48,7 +51,7 @@ public class ComputerManager : Interactable
         }
 
         instance = this;
-
+        canInteract = true;
         //DontDestroyOnLoad(gameObject);
 
         uiText = "E to get on computer";
@@ -75,9 +78,15 @@ public class ComputerManager : Interactable
         if (isTyping || isTyping2)
             return;
 
+        if (!canInteract)
+            return;
         //toggles the player being on the computer
         PlayerManager.instance.onComputer = !PlayerManager.instance.onComputer;
+        ToggleGettingOnComputer();
+    }
 
+    public void ToggleGettingOnComputer()
+    {
         if (PlayerManager.instance.onComputer)
         {
             //unlocks the mouse and make it visable and set the camera target position to the computer
@@ -92,7 +101,6 @@ public class ComputerManager : Interactable
             CameraManager.instance.SetMouseLockState(true);
             CameraManager.instance.targetTransform = CameraManager.instance.orientation;
             CameraManager.instance.cameraLock = false;
-
         }
     }
 
@@ -177,7 +185,6 @@ public class ComputerManager : Interactable
             emailEnabled = true;
         }
     }
-
     public void PrintPaper()
     {
         Paper.instance.IncrementPaper();
@@ -217,5 +224,17 @@ public class ComputerManager : Interactable
         // Assign the camera to the canvas
         computerCanvas.worldCamera = mainCamera;
         Debug.Log($"ComputerManager: Set {computerCanvas.name}'s camera to {mainCamera.name}");
+    }
+
+    public void TogglePower(bool newPowerState)
+    {
+        canInteract = newPowerState;
+        computerCanvas.enabled = newPowerState;
+
+        if (!newPowerState)
+        {
+            PlayerManager.instance.onComputer = newPowerState;
+            ToggleGettingOnComputer();
+        }
     }
 }
