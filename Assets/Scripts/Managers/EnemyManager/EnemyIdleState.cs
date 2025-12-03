@@ -4,8 +4,6 @@ using UnityEngine;
 public class EnemyIdleState : EnemyBaseState
 {
     //Check every checkInterval in seconds to roll a chance for the monster to start to stalk.
-    private float moveSpeed = 1f;
-
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
 
@@ -18,8 +16,7 @@ public class EnemyIdleState : EnemyBaseState
         {
             enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.retryWaitTime;
         }
-
-        enemyStateManager.animator.Play("Idle");
+        enemyStateManager.agent.SetDestination(enemyStateManager.idlePosition.position);
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
@@ -47,6 +44,7 @@ public class EnemyIdleState : EnemyBaseState
         {
             enemyStateManager.enemyStats.currentRetryWaitTime -= Time.deltaTime;
         }
+
         UpdatePosition(enemyStateManager);
     }
 
@@ -93,6 +91,13 @@ public class EnemyIdleState : EnemyBaseState
 
     public void UpdatePosition(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.idlePosition.transform.position, moveSpeed * Time.deltaTime);
+        if (enemyStateManager.agent.remainingDistance == 0)
+        {
+            enemyStateManager.animator.Play("Idle");
+        }
+        else
+        {
+            enemyStateManager.animator.Play("Walk");
+        }
     }
 }

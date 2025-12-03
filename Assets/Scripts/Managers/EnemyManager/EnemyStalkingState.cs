@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStalkingState : EnemyBaseState
 {
@@ -6,7 +7,8 @@ public class EnemyStalkingState : EnemyBaseState
     {
         //Sets stalk countdown
         enemyStateManager.enemyStats.currentStalkTime = enemyStateManager.enemyStats.TimeBeforeAttack;
-        
+        enemyStateManager.agent.SetDestination(enemyStateManager.stalkingPosition.transform.position);
+
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
@@ -41,7 +43,6 @@ public class EnemyStalkingState : EnemyBaseState
         {
             enemyStateManager.SwitchState(enemyStateManager.enemyAttackingState);
         }
-
     }
 
     /// <summary>
@@ -50,14 +51,13 @@ public class EnemyStalkingState : EnemyBaseState
     /// <param name="enemyStateManager"></param>
     public void UpdatePosition(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.model.transform.position = Vector3.Lerp(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position, enemyStateManager.enemyStats.moveSpeed * Time.deltaTime);
-        if(Vector3.Distance(enemyStateManager.model.transform.position, enemyStateManager.stalkingPosition.transform.position) > 0.1f)
+        if (enemyStateManager.agent.remainingDistance == 0)
         {
-            enemyStateManager.animator.Play("Walk");
+            enemyStateManager.animator.Play("Idle");
         }
         else
         {
-            enemyStateManager.animator.Play("Idle");
+            enemyStateManager.animator.Play("Walk");
         }
     }
 }

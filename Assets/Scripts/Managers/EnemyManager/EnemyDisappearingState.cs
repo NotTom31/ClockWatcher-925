@@ -5,7 +5,9 @@ public class EnemyDisappearingState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemyStateManager)
     {
         enemyStateManager.enemyStats.currentDisappearedTime = enemyStateManager.enemyStats.timeWhileDisappeared;
-        enemyStateManager.model.transform.position = enemyStateManager.idlePosition.position;
+
+        enemyStateManager.agent.SetDestination(enemyStateManager.idlePosition.position);
+
         enemyStateManager.model.SetActive(false);
         Debug.Log("Entered Disppeared.");
 

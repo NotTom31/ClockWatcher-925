@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(EnemyStats))]
 public class EnemyStateManager : MonoBehaviour
@@ -11,7 +12,6 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyIdleState enemyIdleState = new EnemyIdleState();
     public EnemyDisappearingState enemyDisappearingState = new EnemyDisappearingState();
 
-
     public EnemyStats enemyStats;
 
     public Transform jumpScareOrientation;
@@ -19,6 +19,8 @@ public class EnemyStateManager : MonoBehaviour
     public Transform idlePosition;
    
     public Interactable interactable;
+
+    public NavMeshAgent agent;
     
     public GameObject model;
     public Animator animator;
@@ -27,6 +29,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         //Destroy second instance of GameStateManager if it exists.
         enemyStats = GetComponent<EnemyStats>();
+        agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();  
     }
     public void Start()

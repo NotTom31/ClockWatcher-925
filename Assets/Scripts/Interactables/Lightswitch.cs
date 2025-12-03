@@ -18,11 +18,14 @@ public class Lightswitch : Interactable
         light = GetComponentInChildren<Light>();
 
         uiText = "E to turn on light";
+
+        emitter = GetComponent<StudioEventEmitter>();
     }
 
     public override void Interact()
     {
         base.Interact();
+        emitter.Play();
     }
 
     void Update()

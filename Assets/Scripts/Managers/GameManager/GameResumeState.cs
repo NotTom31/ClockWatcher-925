@@ -9,5 +9,7 @@ public class GameResumeState : GameBaseState
 
         //TODO Verify if we want to pause all audio or swap to menu music
         AudioListener.pause = false;
+
+        InputManager.instance.pauseFlag = false;
     }
 }
