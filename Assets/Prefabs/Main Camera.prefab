@@ -159,8 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraManager
   sensX: 250
   sensY: 250
-  miniumPivot: -45
-  maximumPivot: 45
+  miniumPivot: 360
+  maximumPivot: 360
   moveSpeedToComputer: 60
   rotateSpeedToComputer: 60
   cameraYMinClamp: -60
