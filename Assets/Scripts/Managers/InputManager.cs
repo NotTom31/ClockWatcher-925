@@ -23,12 +23,12 @@ public class InputManager : MonoBehaviour
     Vector2 movementInput;
     Vector2 cameraInput;
 
-    public static InputManager instance; 
+    public static InputManager instance;
     private void Awake()
     {
         gameStateManager = FindFirstObjectByType<GameStateManager>();
 
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -38,12 +38,12 @@ public class InputManager : MonoBehaviour
     {
         float delta = Time.deltaTime;
 
-        if(CameraManager.instance != null)
+        if (CameraManager.instance != null)
         {
             //If the player is not on the computer or being jumpscared, Handle the camera movement in 3D.
-            if(!PlayerManager.instance.onComputer && !PlayerManager.instance.jumpScaring)
+            if (!PlayerManager.instance.onComputer && !PlayerManager.instance.jumpScaring)
             {
-               CameraManager.instance.HandleMovement(delta, mouseX, mouseY);
+                CameraManager.instance.HandleMovement(delta, mouseX, mouseY);
             }
         }
     }
@@ -56,8 +56,23 @@ public class InputManager : MonoBehaviour
         if (inputActions == null)
         {
             inputActions = new InputSystem_Actions();
-            inputActions.Player.Move.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
-            inputActions.Player.Look.performed += i => cameraInput = i.ReadValue<Vector2>();
+
+            // Movement
+            inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+            inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
+
+            // Look
+            inputActions.Player.Look.performed += ctx => cameraInput = ctx.ReadValue<Vector2>();
+            inputActions.Player.Look.canceled += ctx => cameraInput = Vector2.zero;
+
+            // Interact
+            inputActions.Player.Interact.performed += ctx => interact_Input = true;
+
+            // Pause
+            inputActions.Player.Pause.performed += ctx => pause_Input = true;
+
+            // Shoot
+            inputActions.Player.Shoot.performed += ctx => shoot_Input = true;
         }
 
         inputActions.Enable();
@@ -99,7 +114,7 @@ public class InputManager : MonoBehaviour
     private void MoveInput(float delta)
     {
         //Remove ability to read inputs if being jumpscared.
-        if(!PlayerManager.instance.jumpScaring)
+        if (!PlayerManager.instance.jumpScaring)
         {
             //Recieve the raw values for the inputs
             horizontal = movementInput.x;
@@ -119,8 +134,6 @@ public class InputManager : MonoBehaviour
         if (MenuFlag)
             return;
 
-        inputActions.Player.Interact.performed += i => interact_Input = true;
-
         //Check if the player is interacting and if the game is not paused.
         if (interact_Input && !pauseFlag)
         {
@@ -135,8 +148,6 @@ public class InputManager : MonoBehaviour
     {
         if (MenuFlag)
             return;
-
-        inputActions.Player.Pause.performed += i => pause_Input = true;
 
         if (pause_Input)
         {
@@ -162,8 +173,6 @@ public class InputManager : MonoBehaviour
     {
         if (MenuFlag)
             return;
-
-        inputActions.Player.Shoot.performed += i => shoot_Input = true;
 
         if (shoot_Input)
         {

@@ -187,7 +187,7 @@ public class CameraManager : MonoBehaviour
                 else
                 {
                     //TODO May need to recalculate the rotation as well.
-                    transform.SetPositionAndRotation(Vector3.Slerp(transform.position, targetTransform.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, targetTransform.transform.rotation, rotateSpeedToComputer * Time.deltaTime));
+                    transform.SetPositionAndRotation(Vector3.Slerp(transform.position, targetTransform.transform.position, moveSpeedToComputer * Time.deltaTime), Quaternion.Slerp(transform.rotation, lookOnLook, rotateSpeedToComputer * Time.deltaTime));
                 }
             }
         }
