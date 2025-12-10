@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10447b6c31c2bf84f865231541bbdc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataPersistenceManager
-  initializeDataIfNull: 0
+  initializeDataIfNull: 1
+  disableDataPersistance: 0
+  overrideSelectedProfileId: 0
+  testSelectedProfileID: 67676767
   fileName: data.game
   useEncryption: 0
+  autoSaveTimeSeconds: 20
