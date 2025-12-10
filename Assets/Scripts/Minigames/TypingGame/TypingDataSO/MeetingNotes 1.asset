@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b401901f6f1a1e74dbb7511fcbf32c96, type: 3}
-  m_Name: MeetingNotes
+  m_Name: MeetingNotes 1
   m_EditorClassIdentifier: Assembly-CSharp::TypingData
   stringList:
   - Secretarial Directive Meeting Notes, XX/XX/XXXX; Transcribed for Archival Documentation
@@ -25,3 +25,8 @@ MonoBehaviour:
     days.
   - Approval notifications are received in-person outside normal work hours at Offices
     3E or 5J. Report to both offices each day while awaiting approval.
+  - This transcript is unofficial and therefore does not provide evidence, real or
+    imagined, of words that may or may not have been exchanged during an alleged
+    meeting on XX/XX/XXXX.
+  - To retrieve an official transcript admissible in a court of law, see the above
+    instructions for requesting approval.

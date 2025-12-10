@@ -131,7 +131,7 @@ public class ComputerManager : Interactable
     /// <param name="GameID">the id of the minigame to start</param>
     public void StartPopupMinigame(int GameID)
     {
-        GameObject appInstance = MinigamesManager.Instance.StartMinigame(GameID, 0, Vector2.zero).gameObject;
+        GameObject appInstance = MinigamesManager.Instance.StartMinigame(GameID, LevelManager.instance.gameDifficulty, Vector2.zero).gameObject;
 
         GameObject newWindow = Instantiate(windowPrefab, windowParent != null ? windowParent : null);
 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour, IDataPersistance
 {
@@ -12,11 +11,9 @@ public class LevelManager : MonoBehaviour, IDataPersistance
     public TimeSpan clockInTime = new TimeSpan(9, 00, 00);
     public TimeSpan clockOutTime = new TimeSpan(16, 30, 00);
 
-    public int currentLevel = 1;
-    public int gameDifficulty;
+    public int gameDifficulty = 0;
 
     public IEnumerable<EnemyStats> enemyStats;
-
     public static LevelManager instance;
 
     public bool switchingStates;
@@ -25,7 +22,6 @@ public class LevelManager : MonoBehaviour, IDataPersistance
     {
         if (instance != null)
         {
-            Debug.Log("Found more than one Level Manager. Destroying the newest one.");
             Destroy(gameObject);
             return;
         }

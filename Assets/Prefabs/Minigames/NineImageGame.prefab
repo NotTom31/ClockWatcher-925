@@ -2094,6 +2094,10 @@ MonoBehaviour:
   instantiateOnAwake: 0
   sequenceByDifficulty:
   - {fileID: 11400000, guid: 2d81ff62904b41f468b04857183d5a45, type: 2}
+  - {fileID: 11400000, guid: ee06a6c1aa051fd459b130ce2ec0a2a9, type: 2}
+  - {fileID: 11400000, guid: e4b5087ee94f35a4cb084882e14e26e3, type: 2}
+  - {fileID: 11400000, guid: 31bf761423d8fed459327a7ee7b7b543, type: 2}
+  - {fileID: 11400000, guid: 93bde1aa443501446869c06b330505f4, type: 2}
   cells:
   - {fileID: 8306175799929678303}
   - {fileID: 3086544238920840485}

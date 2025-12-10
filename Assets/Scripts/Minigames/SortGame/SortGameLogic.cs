@@ -37,14 +37,7 @@ public class SortGameLogic : MinigameLogic
 
     public override void InstantiateGame(int difficulty = 0)
     {
-        int num;
-        if (difficulty >= sorteesByDifficulty.Count)
-        {
-            Debug.Log("No specified sortee count for this difficulty; defaulting to 3");
-            num = 3;
-        }
-        else
-            num = sorteesByDifficulty[difficulty];
+        int num = sorteesByDifficulty[difficulty];
 
         // Spawn sortees
         RectTransform rt;

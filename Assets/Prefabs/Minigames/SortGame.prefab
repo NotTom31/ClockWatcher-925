@@ -694,7 +694,7 @@ MonoBehaviour:
   sorteeDragArea: {fileID: 8694308880614003547}
   blueArea: {fileID: 653255400618417771}
   redArea: {fileID: 7858598951540084849}
-  sorteesByDifficulty: 0400000007000000
+  sorteesByDifficulty: 020000000400000006000000080000000a000000
 --- !u!1001 &4560548093652340754
 PrefabInstance:
   m_ObjectHideFlags: 0

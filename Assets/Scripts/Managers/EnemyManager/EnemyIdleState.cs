@@ -32,10 +32,8 @@ public class EnemyIdleState : EnemyBaseState
             {
                 if (enemyStateManager.enemyStats.canWander)
                 {
-                    if (CalculateWanderChance(enemyStateManager.enemyStats.wanderChance))
-                    {
-                        enemyStateManager.SwitchState(enemyStateManager.enemyWanderState);
-                    }
+
+                    enemyStateManager.SwitchState(enemyStateManager.enemyWanderState);
                 }
             }
             enemyStateManager.enemyStats.currentRetryWaitTime = enemyStateManager.enemyStats.retryWaitTime;

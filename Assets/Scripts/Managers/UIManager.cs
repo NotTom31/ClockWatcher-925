@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour, IDataPersistance
 {
     public GameObject pauseUI;
     public GameObject deathUI;
+    public GameObject optionsUI;
     public TextMeshProUGUI interactableText;
 
     public int interactionCount;
@@ -36,12 +37,17 @@ public class UIManager : MonoBehaviour, IDataPersistance
 
         //Set the pauseUI to active.
         pauseUI.SetActive(isPauseEnabled);
+
+        if(!isPauseEnabled)
+        {
+           optionsUI.SetActive(isPauseEnabled);
+        }
     }
 
     public void ToggleDeathUI()
     {
         //Toggles isEnabled flag.
-        isDeathEnabled = !isDeathEnabled;
+        isDeathEnabled = true;
 
         //Set the DeathUI to active.
         deathUI.SetActive(isDeathEnabled);
