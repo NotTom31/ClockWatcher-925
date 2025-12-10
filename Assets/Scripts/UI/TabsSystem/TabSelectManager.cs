@@ -76,7 +76,7 @@ public class TabSelectManager : MonoBehaviour
                 GameObject appInstance = MinigamesManager.Instance.StartMinigame(ID[i], LevelManager.instance.gameDifficulty, Vector2.zero).gameObject;
 
                 //Instantiate(tabButton.TabData.app, AppParent);
-                appInstance.gameObject.transform.parent = this.transform;
+                appInstance.gameObject.transform.parent = AppParent.transform;
                 appInstance.name = tabButton.TabData.minigame.name + "_Instance";
                 CanvasGroup canvasGroup = appInstance.GetComponent<CanvasGroup>();
 
