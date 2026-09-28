@@ -72,14 +72,14 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
         if(currentTime == clockOutTime)
         {
-            Debug.Log("ending time");
+            Debug.Log("ending time"); //removed to fix jarring day reset with no warning
 
-            if (checkForUnfinishedTasks() && switchingStates == false)
+            /*if (checkForUnfinishedTasks() && switchingStates == false)
             {
                 switchingStates = true;
 
                 GameStateManager.instance.SwitchState(GameStateManager.instance.gameWinState);
-            }
+            }*/
         }
     }
 
