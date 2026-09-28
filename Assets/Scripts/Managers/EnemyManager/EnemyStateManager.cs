@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,9 +20,9 @@ public class EnemyStateManager : MonoBehaviour
     public Transform idlePosition;
    
     public Interactable interactable;
-
     public NavMeshAgent agent;
-    
+    public StudioEventEmitter emitter;
+
     public GameObject model;
     public Animator animator;
      
@@ -31,6 +32,7 @@ public class EnemyStateManager : MonoBehaviour
         enemyStats = GetComponent<EnemyStats>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();  
+        emitter = GetComponent<StudioEventEmitter>();
     }
     public void Start()
     {

@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 5502558025081666782}
   - component: {fileID: 7820709849719630980}
   m_Layer: 5
-  m_Name: VerticalGroup
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

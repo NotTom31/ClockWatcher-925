@@ -24,6 +24,14 @@ public class TabButton : MonoBehaviour
         ReturnColor = Color.grey;
     }
 
+    private void Update()
+    {
+        if(AssignedApp == null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     /// <summary>
     /// Method for setting up initial tabs in the scene.
     /// </summary>
@@ -99,4 +107,5 @@ public class TabButton : MonoBehaviour
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
     }
+
 }

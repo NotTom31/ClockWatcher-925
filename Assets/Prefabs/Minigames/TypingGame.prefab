@@ -1361,8 +1361,10 @@ MonoBehaviour:
   instantiateOnAwake: 2
   typingDataSOs:
   - {fileID: 11400000, guid: abad371bf2ae78e45a5bade6627b5b2d, type: 2}
-  - {fileID: 11400000, guid: 3979efb85ebb86a4a9c0e1de606cc1e6, type: 2}
   - {fileID: 11400000, guid: 404651aaa7762fa43829f3bd68e1dff5, type: 2}
+  - {fileID: 11400000, guid: f950b99800151b14da0b3908eea1dfab, type: 2}
+  - {fileID: 11400000, guid: 3979efb85ebb86a4a9c0e1de606cc1e6, type: 2}
+  - {fileID: 11400000, guid: caa9644a74f31c3488738f2a1dd82608, type: 2}
   prompt: {fileID: 8796279104830104411}
   wrongText: {fileID: 3642666703262558079}
   replyField: {fileID: 7794072986005979730}

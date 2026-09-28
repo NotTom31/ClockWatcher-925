@@ -315,9 +315,9 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: FMODUnity::FMODUnity.Settings
   switchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
-  sourceProjectPath: Assets/Audio/Fmod/sound_player.fspro
+  sourceProjectPath: ../../FMOD Projects/audio-system-fmod-test/audio-system-fmod-test.fspro
   sourceBankPath: Assets/Audio/Fmod/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5

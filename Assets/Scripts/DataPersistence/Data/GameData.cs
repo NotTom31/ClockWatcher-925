@@ -15,6 +15,13 @@ public class GameData
 
     public int gameDifficulty;
 
+    #region Audio Data
+    public float masterVolume;
+    public float musicVolume;
+    public float ambienceVolume;
+    public float SFXVolume;
+    #endregion
+
     /// <summary>
     /// The game starts with thess values when there is no data. 
     /// NOTE: Validate these values are what is needed AKA playerPosition = Vector3.zero will spawn the player at 0,0,0 into the new scene.
@@ -25,6 +32,12 @@ public class GameData
         this.interactedCount = 0;
         playerPosition = Vector3.zero;
         interactionsDone = new SerializableDictionary<string, bool>();
+        gameDifficulty = 0;
+
+        masterVolume = 1;
+        musicVolume = 1;
+        ambienceVolume = 1;
+        SFXVolume = 1;
     }
 
     /// <summary>

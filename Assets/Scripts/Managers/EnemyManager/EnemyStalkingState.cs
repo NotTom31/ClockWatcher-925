@@ -8,6 +8,7 @@ public class EnemyStalkingState : EnemyBaseState
         //Sets stalk countdown
         enemyStateManager.enemyStats.currentStalkTime = enemyStateManager.enemyStats.TimeBeforeAttack;
         enemyStateManager.agent.SetDestination(enemyStateManager.stalkingPosition.transform.position);
+        enemyStateManager.emitter.Play();
 
     }
 
